@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-2">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item"><a href="#home" data-toggle="tab" class="nav-link active">首页</a></li>
+                    <li class="nav-item"><a href="#qa" data-toggle="tab" class="nav-link">问答</a></li>
+                    <li class="nav-item"><a href="#topic" data-toggle="tab" class="nav-link">话题</a></li>
+                    <li class="nav-item"><a href="#expert" data-toggle="tab" class="nav-link">专家</a></li>
+                </ul>
+            </div>
+            <div class="col-10">
+                <!--把需要切换显示的元素放到 div.tab-content 的元素中  -->
+                <div class="tab-content">
+                    <div class="tab-pane show active" id="home">
+                        <div class="card card-body">
+                            <h2>首页</h2>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="qa">
+                        <div class="card card-body">
+                            <h2>问答</h2>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="topic">
+                        <div class="card card-body">
+                            <h2>话题</h2>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="expert">
+                        <div class="card card-body">
+                            <h2>专家</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../jquery/jquery.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

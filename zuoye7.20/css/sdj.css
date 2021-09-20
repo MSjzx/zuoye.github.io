@@ -1,0 +1,22 @@
+@charset "utf-8";
+.zz,
+.z1,
+.z2,
+.z3 {
+    text-align: center;
+}
+
+.g1,
+.g2,
+.g3 {
+    text-align: center;
+    background-color: cornflowerblue;
+}
+
+.bg {
+    background-image: url(./../img/sd.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+}

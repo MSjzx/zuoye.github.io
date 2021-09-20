@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*逻辑与运算符是一个短路操作 如果第一个操作数转换成布尔值之后是false，则第二个操作数无所谓*/
+        // js解析代码时 不会检查第一个操作数
+
+
+        //由于js解析引擎不会检查第二个操作数，此处不会报错
+        console.log('' && bar);
+        //由于第一个操作数转换成布尔值之后是true，所以第二个操作数其关键性作用，需要检测第二个操作数
+        //第二个操作数没有定义 所以此处会报错
+        console.log('ac' && foo);
+    </script>
+</body>
+
+</html>

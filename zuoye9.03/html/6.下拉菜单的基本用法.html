@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-6">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                          下拉菜单
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="" class="dropdown-item">菜单项1</a>
+                        <a href="" class="dropdown-item">菜单项2</a>
+                        <a href="" class="dropdown-item">菜单项3</a>
+                        <a href="" class="dropdown-item">菜单项4</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <!-- 我们可以通过改变按钮的大小，从而改变下拉按钮的尺寸 -->
+                <div class="dropdown">
+                    <button class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">下拉菜单</button>
+                    <div class="dropdown-menu">
+                        <a href="" class="dropdown-item">菜单项1</a>
+                        <a href="" class="dropdown-item">菜单项2</a>
+                        <a href="" class="dropdown-item">菜单项3</a>
+                        <a href="" class="dropdown-item">菜单项4</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 拆分按钮 -->
+        <div class="row mt-5">
+            <div class="col-6">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success">下拉菜单</button>
+                    <button type="button" class="btn btn-success dropdown-toggle data-toggle-split" data-toggle="dropdown"></button>
+                    <div class="dropdown-menu">
+                        <a href="" class="dropdown-item">菜单项1</a>
+                        <a href="" class="dropdown-item">菜单项2</a>
+                        <a href="" class="dropdown-item">菜单项3</a>
+                        <a href="" class="dropdown-item">菜单项4</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="dropdown">
+                    <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">下拉菜单</button>
+                    <div class="dropdown-menu">
+                        <a href="" class="dropdown-item">菜单项1</a>
+                        <a href="" class="dropdown-item">菜单项2</a>
+                        <!-- 菜单项之间的分隔线 -->
+                        <div class="dropdown-divider"></div>
+                        <a href="" class="dropdown-item">菜单项3</a>
+                        <a href="" class="dropdown-item">菜单项4</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../jquery/jquery.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

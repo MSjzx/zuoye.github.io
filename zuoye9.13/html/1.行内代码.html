@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 将js代码写到元素的事件属性值中 -->
+    <button type="button" onclick="window.alert('Hello World')">点我</button>
+
+    <!-- 使用js ：通信协议，将js 代码写到Url 属性值中 -->
+    <!-- 任何使用URl 的地方都可以使用该通信协议 -->
+    <a href="javascript:window.alert('Hello world')">点我</a>
+
+    <!-- 最常用的使用场景：在保留href属性的同时 放置点击链接时跳转页面（内外跳转） -->
+    <a href="javascript:;">点我</a>
+    <a href="javascript:viod(0);">点我</a>
+    <a href="javascript:void 0;">点我</a>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-6 ">
+                <div class="box">
+                    <!-- boot 为我们提供了很多带有情景颜色的按钮 -->
+                    <button type="button" class="btn btn-danger">删除</button>
+                    <button type="submit" class="btn btn-success">保存</button>
+                    <button type="reset" class="btn btn-primary">修改</button>
+                    <button type="button" class="btn btn-link">链接按钮</button>
+                </div>
+                <div class="box mt-4">
+                    <!-- 除了使用button元素作为按钮以外 我们还可以使用a元素和input
+                    元素作为按钮 -->
+                    <a href="./1.列在垂直方向上的对齐方式.html" class="btn btn-success">编辑</a>
+                    <input type="button" class="btn btn-primary" value="提交">
+                    <input type="submit" class="btn btn-warning" value="提交">
+                    <input type="reset" class="btn btn-primary" value="提交">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-6">
+                <!-- 轮廓按钮（带情景色边框的按钮） -->
+                <button type="button" class="btn btn-outline-danger">修改</button>
+                <button type="button" class="btn-outline-primary">修改</button>
+                <button type="button" class="btn-outline-success">修改</button>
+                <button type="button" class="btn btn-outline-warning">修改</button>
+            </div>
+            <div class="col-6">
+                <!-- 按钮的大小：大中小 三种尺寸 -->
+                <button type="button" class="btn btn-danger btn-lg">修改</button>
+                <button type="button" class="btn btn-dark">修改</button>
+                <button type="button" class="btn btn-warning btn-sm">修改</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <!-- 按钮的显示风格，默认情况下 按钮宽度紧紧包裹着文字，使
+                    用btn-block 可以让按钮显示块元素 -->
+                <button type="submit" class="btn btn-danger btn-block">登录</button>
+            </div>
+            <div class="col-6 mt-4">
+                <!-- 按钮的状态：被点击时的状态 禁用状态 -->
+                <button type="submit" class="btn btn-success active">禁用</button>
+                <!-- 如果你使用 button 或 input 元素作为按钮通过两种方式
+                    可让按钮禁用 -->
+                <!-- 第一种 为botton 或 input 元素添加 .disabled类名-->
+                <button type="submit" class="btn btn-warning disabled">禁用</button>
+                <input type="submit" class="btn btn-primary disabled" value="禁用">
+                <!-- 第二种 为botton 或 input 元素添加disabled 属性 -->
+                <button type="submit" class="btn btn-danger" disabled>禁用</button>
+                <input type="submit" class="btn btn-success" disabled value="禁用">
+                <!-- 但是 如果你使用的是a元素作为按钮的话 由于a 元素没有 disabled属性 
+                    此时你只能使用.disabled类 -->
+                <a href="" class="btn btn-danger disabled">禁用</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

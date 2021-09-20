@@ -1,0 +1,26 @@
+@charset "utf-8";
+//先导入sass 内置的模块 math
+@use "sass:math";
+//操作符，加减乘除，取余
+//版心宽度960px
+//主体内容区域宽度 600px
+main {
+    float: left;
+    width: math.div(600, 960)*100%;
+}
+
+//侧边栏区域宽度600px
+aside {
+    float: right;
+    width: math.div(300, 960)*100%;
+}
+
+$a:80px;
+$b:80px;
+.box {
+    //加法
+    width: 20px + 100px;
+    //height:$a*2;
+    //取余数
+    height: $b % 6;
+}

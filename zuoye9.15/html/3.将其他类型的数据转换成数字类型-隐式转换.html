@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //隐式转换
+        //当非数字的字符串相减时，结果都是NaN
+        console.log('ab' - '12'); //NaN
+
+        //在对两个字符串进行加法运算时，无论字符串的内容是什么，仅仅是将两个字符串进行拼接操作
+        console.log('20' + '21'); //2021
+
+        //如果在对数字形式的字符串进行减乘除以及取余运算时，
+        //js在解析代码时 会先将字符串转成数字，然后再进行运算
+        console.log('28' - '18'); //10
+        console.log('32' / '4'); //8
+        console.log('3' * '4'); //12
+        console.log('12' % '7'); //5
+    </script>
+</body>
+
+</html>

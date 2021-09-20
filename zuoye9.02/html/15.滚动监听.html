@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.css">
+    <style>
+        /* 1.将被监听的元素设置成相对定位 */
+        
+        body {
+            position: relative;
+        }
+        
+        .box {
+            height: 500px;
+            background-color: cyan;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<!-- 2.为被监听的元素添加自定义属性 data-spy="scroll" data-target="#mynav" -->
+
+<body data-spy="scroll" data-target="#mynav">
+    <!-- 3.将div.nav的父元素添加一个id，然后将id与data-target属性关联起来 -->
+    <div class="navbar fixed-top navbar-dark bg-dark">
+        <div class="container" id="mynav">
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="#home" class="nav-link">首页</a></li>
+                <li class="nav-item"><a href="#qa" class="nav-link">问答</a></li>
+                <li class="nav-item"><a href="#topic" class="nav-link">话题</a></li>
+                <li class="nav-item"><a href="#expert" class="nav-link">专家</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 4.为页面的不同部分添加id属性 然后将id属性值与连接的href连接起来 -->
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="box" id="home">首页</div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-12">
+                <div class="box" id="qa">问答</div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-12">
+                <div class="box" id="topic">话题</div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-12">
+                <div class="box" id="expert">专家</div>
+            </div>
+        </div>
+    </div>
+    <script src="../jquery/jquery.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

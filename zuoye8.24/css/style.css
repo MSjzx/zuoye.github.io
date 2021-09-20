@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/*多行注释
+在expanded 展开是会被输出
+在compressed压缩时不会被输出*/
+/*！在压缩格式下输出 在起始斜杠星号后面加感叹号*/
+body {
+  color: green;
+  background-color: #ff0;
+}
+
+/*# sourceMappingURL=style.css.map */

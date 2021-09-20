@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 310px;
+            height: 62px;
+            border: 1px solid #555;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .number {
+            width: 60px;
+            height: 60px;
+            background-color: black;
+            float: left;
+            margin: 1px 1px;
+        }
+        
+        .num {
+            width: 620px;
+            position: absolute;
+        }
+        
+        .number h1 {
+            margin: 10px 15px 25px 20px;
+            color: white;
+        }
+        
+        @keyframes donghua {
+            from {
+                left: 0px;
+            }
+            50% {
+                left: -150px;
+            }
+            to {
+                left: -310px;
+            }
+        }
+        
+        .num {
+            animation-name: donghua;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-play-state: paused;
+            animation-iteration-count: infinite;
+        }
+        
+        .num:hover {
+            animation-play-state: running;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div class="num">
+            <div class="number">
+                <h1>1</h1>
+            </div>
+            <div class="number">
+                <h1>2</h1>
+            </div>
+            <div class="number">
+                <h1>3</h1>
+            </div>
+            <div class="number">
+                <h1>4</h1>
+            </div>
+            <div class="number">
+                <h1>5</h1>
+            </div>
+            <div class="number">
+                <h1>1</h1>
+            </div>
+            <div class="number">
+                <h1>2</h1>
+            </div>
+            <div class="number">
+                <h1>3</h1>
+            </div>
+            <div class="number">
+                <h1>4</h1>
+            </div>
+            <div class="number">
+                <h1>5</h1>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.使用Boolean()函数强制转换（不会刻意把其他转为布尔值 无意义）
+        //0转为false， 非零转为true
+        console.log(Boolean(12)); //true
+        console.log(Boolean(-12)); //true
+        console.log(Boolean(0)); //false
+        console.log(Boolean([1, 2, 3])); //true
+        console.log(Boolean({
+            name: 'ab'
+        })); //true
+
+        //2.隐式转换（重点内容）
+        //例如 我们在进行条件判断时，条件表达式会被自动转换成布尔类型
+        //在进行条件判断之前 0会被转换成布尔值false
+        if (0) {
+            console.log('条件成立')
+        } else {
+            console.log('条件不成立')
+        }
+
+        //总结
+        /*下面的值会被转换成false
+        false
+        undefined
+        null
+        零
+        null
+        空字符串
+        */
+
+        /*下面的值会被转换成true
+       true
+       非零数字
+       非空字符串
+       对象（Object Array等等）
+        */
+    </script>
+</body>
+
+</html>

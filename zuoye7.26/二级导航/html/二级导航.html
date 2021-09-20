@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #box {
+            margin: 40px 40px;
+        }
+        
+        #box ul {
+            width: 140px;
+            height: 400px;
+            background-color: #363636;
+            list-style: none;
+        }
+        
+        #box li {
+            width: 140px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            padding: 5px 0;
+            color: white;
+            cursor: pointer;
+        }
+        
+        #box a {
+            text-decoration: none;
+            font-size: 15px;
+        }
+        
+        .main {
+            display: none;
+            width: 500px;
+            height: 400px;
+            background-color: #fff;
+            position: absolute;
+            top: 40px;
+            left: 150px;
+            overflow: hidden;
+            border: 1px solid olive;
+        }
+        
+        .goods {
+            width: 115px;
+            float: left;
+            margin: 2px 4px 5px 4px;
+            line-height: normal;
+            border: 1px solid transparent;
+        }
+        
+        .goods img {
+            width: 100%;
+        }
+        
+        a {
+            display: block;
+            color: #666;
+            text-decoration: none;
+        }
+        
+        p {
+            font-size: 10px;
+            text-align: center;
+            margin-bottom: -2px;
+        }
+        
+        #box li:hover {
+            background-color: #FF9200;
+        }
+        
+        #box ul li:hover .main {
+            display: block;
+        }
+        
+        a:hover {
+            color: #FF9200;
+        }
+        
+        .goods:hover {
+            border: 1px solid#FF9200;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul>
+            <li> 冰淇淋味
+                <div class="main">
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate1.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate2.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate3.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate4.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate5.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate6.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate7.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate8.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate9.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+
+            </li>
+            <li>奶油口味
+                <div class="main">
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk1.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk2.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk3.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk4.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li>巧克力味
+                <div class="main">
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk1.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk2.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk3.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk4.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate5.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate6.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate7.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate8.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate9.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+            </li>
+            <li>慕斯口味
+                <div class="main">
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/mousse/mousse1.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/mousse/mousse2.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/mousse/mousse3.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/mousse/mousse4.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/mousse/mousse5.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/mousse/mousse6.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/mousse/mousse7.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/mousse/mousse8.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/mousse/mousse9.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+            </li>
+            <li>拿破仑味
+                <div class="main">
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/napoleon/napoleon1.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/napoleon/napoleon2.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/napoleon/napoleon3.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/napoleon/napoleon4.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+            </li>
+            <li>芝士口味
+                <div class="main">
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk1.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk2.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk3.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk4.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate5.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate6.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate7.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate8.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate9.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+            </li>
+            <li>雪域口味
+                <div class="main">
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk1.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk2.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk3.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk4.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate5.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate6.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate7.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate8.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate9.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+            </li>
+            <li>鲜果口味
+                <div class="main">
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk1.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk2.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk3.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/milk/milk4.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate5.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate6.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate7.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate8.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+                    <div class="goods">
+                        <a href="">
+                            <img src="./../img/chocolate/chocolate9.jpg" alt="">
+                            <p>商品名称</p>
+                        </a>
+                    </div>
+            </li>
+        </ul>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+$nav-bgc:cyan;
+nav {
+    background-color: $nav-bgc;
+    ul {
+        display: flex;
+        flex-direction: row;
+    }
+    li {
+        margin-left: 20px;
+        &:last-child {
+            margin-left: auto;
+        }
+    }
+    a {
+        &:hover {
+            color: red;
+        }
+    }
+}
+
+@mixin prefix($property, $value) {
+    //在css属性名中插入变量时，需要使用#{} 模板，吧你要使用的变量放到花括号内
+    #{$property}: $value;
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+}

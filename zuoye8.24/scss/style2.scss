@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+/*嵌套用法*/
+
+nav {
+    background-color: #f0f;
+    ul {
+        height: 80px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+    }
+    li {
+        background-color: #ff0;
+    }
+    a {
+        display: block;
+        padding: 12px;
+    }
+}

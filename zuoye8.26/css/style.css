@@ -1,0 +1,17 @@
+nav {
+  background-color: #f0f0f0;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  color: #666;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style.css.map */

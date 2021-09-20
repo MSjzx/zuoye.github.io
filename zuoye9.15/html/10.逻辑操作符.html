@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //逻辑操作符的是与(&&)或(||)非(!)
+
+        /*第一操作数 第二操作数 结果
+          true       true      true
+          true       false     false
+          false      true      false
+          false      false     false
+        
+        */
+        //操作数不一定都是布尔值
+        console.log(false && false); //false
+        console.log(true && false); //false
+
+        //与运算符运算的步骤：
+        //如果操作符不是布尔值，在进行逻辑运算之前，先将操作数转成布尔值，在进行逻辑运算
+
+        console.log(2 && 0); //0
+        //返回起决定性作用的操作数
+        console.log('' && 'ab'); //''
+
+        //运算的规律：
+        /*r如果第一个操作数被替换成布尔值后是true，则返回第二操作数
+        如果第一个操作数被替换成布尔值后是false，则返回第一个操作数*/
+    </script>
+</body>
+
+</html>

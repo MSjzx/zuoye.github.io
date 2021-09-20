@@ -1,0 +1,12 @@
+.box1, .box3, .box2 {
+  width: 100px;
+  height: 100px;
+  background-color: brown;
+}
+
+.box2 {
+  font-size: 20px;
+  color: cornflowerblue;
+}
+
+/*# sourceMappingURL=style7.css.map */

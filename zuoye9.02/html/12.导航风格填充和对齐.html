@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-6">
+                <!-- nav-fill 类会根据链接中文字的多少，等比列的将导航链接的宽度变大
+                链接文字越多分配的空间越大，填充父元素的空间
+                -->
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item"><a href="" class="nav-link active">首页</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">问答</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">话题</a></li>
+                    <li class="nav-item"><a href="" class="nav-link active">关于我们</a></li>
+                </ul>
+            </div>
+            <!-- 在使用 .nav-fill类时候，必须要保证子元素上有 .nav-item类名 -->
+            <div class="col-6">
+                <div class="nav nav-fill">
+                    <a href="" class="nav-item nav-link active">首页</a>
+                    <a href="" class="nav-item nav-link">问答</a>
+                    <a href="" class="nav-item nav-link">话题</a>
+                    <a href="" class="nav-item nav-link">专家</a>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-6">
+                    <!-- nav-justified类名可以将所有的链接变成等宽的 -->
+                    <div class="nav nav-pills nav-justified">
+                        <a href="" class="nav-item nav-link active">首页</a>
+                        <a href="" class="nav-item nav-link">问答</a>
+                        <a href="" class="nav-item nav-link">话题</a>
+                        <a href="" class="nav-item nav-link">专家</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../jquery/jquery.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

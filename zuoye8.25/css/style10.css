@@ -1,0 +1,16 @@
+main {
+  float: left;
+  width: 62.5%;
+}
+
+aside {
+  float: right;
+  width: 31.25%;
+}
+
+.box {
+  width: 120px;
+  height: 2px;
+}
+
+/*# sourceMappingURL=style10.css.map */

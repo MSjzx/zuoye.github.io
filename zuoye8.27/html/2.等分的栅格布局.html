@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.css">
+    <style>
+        .box {
+            margin-top: 20px;
+            height: 30px;
+            width: 100%;
+            background-color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 在特定尺寸的屏幕上，才进行等分显示，例如 col-sm会让元素在小屏幕上，或
+大于小屏幕的设备上等分显示（宽度大于576px） -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="box">col1</div>
+            </div>
+            <div class="col-sm">
+                <div class="box">col1</div>
+            </div>
+            <div class="col-sm">
+                <div class="box">col1</div>
+            </div>
+            <div class="col-sm">
+                <div class="box">col1</div>
+            </div>
+        </div>
+        <!-- 在中等屏幕多大与小屏幕设备上等分显示 屏幕宽度大于768px -->
+        <div class="row">
+            <div class="col-md">
+                <div class="box">col11</div>
+            </div>
+            <div class="col-md">
+                <div class="box">col11</div>
+            </div>
+            <div class="col-md">
+                <div class="box">col11</div>
+            </div>
+            <div class="col-md">
+                <div class="box">col11</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

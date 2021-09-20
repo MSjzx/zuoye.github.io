@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //自减操作符（--）让数字自减一
+        //可以写在变量前面也可写在后面
+
+        //不参与运算时 写在前面或后面作用是一样的 都是自身增1
+        var age = 20;
+        age--;
+        --age;
+        console.log(age);
+        //参与运算时 写在前面，age会先自减一 然后参与运算
+        var num1 = 20;
+        var num2 = 2 + (--num1);
+        console.log(num1, num2); //19 21
+        //参与运算时 写在后面 age会先参与运算 然后在自身增1
+        var foo1 = 20;
+        var foo2 = 2 + (foo1--);
+        console.log(foo1, foo2); //19 22
+    </script>
+</body>
+
+</html>

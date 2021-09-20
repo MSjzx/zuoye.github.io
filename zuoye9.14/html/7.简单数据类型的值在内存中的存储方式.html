@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 简单数据类型的数据是直接被存储在操作系统为变量分配的内存空间中*/
+        var foo1 = 'Hello JS';
+        /*当我们将简单数据类型的变量赋值给另一个变量时，变量中的值会被完全复制一份，赋值给另一个变量*/
+        var foo2 = foo1;
+        /*当我们改变foo1中的值时，foo2不会受到任何影响，因为这两个变量中的值是相互独立的*/
+        foo1 = 'Hello World'
+        console.log(foo1)
+        console.log(foo2)
+    </script>
+</body>
+
+</html>

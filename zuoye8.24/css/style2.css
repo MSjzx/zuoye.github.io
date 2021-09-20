@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/*嵌套用法*/
+nav {
+  background-color: #f0f;
+}
+nav ul {
+  height: 80px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+nav li {
+  background-color: #ff0;
+}
+nav a {
+  display: block;
+  padding: 12px;
+}
+
+/*# sourceMappingURL=style2.css.map */

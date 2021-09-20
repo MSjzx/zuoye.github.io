@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //if-else 条件语句的格式一：
+        //if (条件表达式) {
+        //    当条件表达式成立时要执行的带码
+        //  }
+
+        // 当条件成立时 执行一些代码 不成立时 什么都不做
+        // var age = 16;
+        // if (age < 18) {
+        //     alert('no')
+        // }
+
+
+
+        //if-else 条件语句的格式二：
+        //    if (条件表达式) {
+        //        当条件表达式成立时要执行的代码
+        //    }else{
+        //        不成立执行的代码
+        //    }
+        // 根据天气情况(true表示会下雨 false不会下雨) 选择是否出行
+        var rain = false;
+        if (rain) {
+            alert('no')
+        } else {
+            alert('go')
+        }
+
+        //if-else 条件语句的格式三：
+        // if (条件表达式1) {
+        //     成立时执行的代码
+        // }else if (条件表达式2) {
+        //     成立时执行的代码
+        // }else if (条件表达式3) {
+        //     成立时执行的代码
+        // }else {
+        //     都不执行时执行的代码
+        // }
+
+        //根据天气情况(true 表示会下雨 false不会下雨)选择是否出行
+        var rain = false,
+            home = true,
+            bag = true;
+        if (rain) {
+            alert('go')
+        } else if (home) {
+            alert('ss')
+        } else if (bag) {
+            alert('to')
+        } else {
+            alert('home')
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .top {
+            font-size: 20px;
+            color: #767D82;
+        }
+        
+        .logo {
+            margin-left: 80px;
+            vertical-align: middle;
+        }
+        
+        #bod {
+            width: 100%;
+            height: 479px;
+            background-color: #E93854;
+        }
+        
+        .ph {
+            margin: 0 15%;
+            position: relative;
+        }
+        
+        .dl {
+            width: 380px;
+            height: 300px;
+            background-color: #FFFFFF;
+            border: 1px solid transparent;
+            /* position: relative;
+            margin: -430px 55%; */
+            border-radius: 5px;
+            position: absolute;
+            left: 840px;
+            top: 140px;
+        }
+        
+        .dl p {
+            font-size: 17px;
+            color: #767D82;
+            margin-left: 20px;
+        }
+        
+        .dl1 a {
+            text-decoration: none;
+            color: #E93854;
+            font-size: 12px;
+            margin-left: 280px;
+            background: url(./../img/login-icons.png) no-repeat -95px -75px;
+            padding-left: 30px;
+        }
+        
+        .user {
+            width: 38px;
+            height: 38px;
+            position: absolute;
+            background-image: url(./../img/login-icons.png);
+            border: 1px solid #767D82;
+        }
+        /*         
+        .text {
+            padding-left: 20px;
+            
+        }
+         */
+        
+        .user1 {
+            width: 38px;
+            height: 38px;
+            position: absolute;
+            border: 1px solid #767D82;
+            background: url(./../img/login-icons.png) no-repeat -48px 0;
+        }
+        
+        input {
+            width: 302px;
+            height: 35px;
+            margin-left: 40px;
+            border-left: none;
+        }
+        
+        .dx {
+            font-size: 10px;
+            /* margin: 10px; */
+            margin-left: -18px;
+        }
+        
+        .dx a {
+            margin-left: 220px;
+            text-decoration: none;
+            color: #767D82;
+        }
+        
+        .zd {
+            width: 0px;
+            vertical-align: middle;
+            text-align: center;
+        }
+        
+        .button {
+            width: 220px;
+            height: 30px;
+            background-color: #E4393C;
+            margin-left: 70px;
+            margin-bottom: 400px;
+            cursor: pointer;
+        }
+        
+        .foot ul {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .foot {
+            margin-top: 80px;
+            text-align: center;
+        }
+        
+        .foot li {
+            list-style: none;
+            display: inline;
+        }
+        
+        .foot a {
+            text-decoration: none;
+            font-size: 12px;
+            color: #767D82;
+        }
+        
+        .foot p {
+            font-size: 12px;
+            color: #767D82;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div class="top">
+            <img class="logo" src="./../img/logo.png" alt=""> 欢迎登录
+        </div>
+        <div id="bod">
+            <div class="ph"><img src="./../img/banner.png" alt=""></div>
+            <div class="dl">
+                <form action="">
+                    <div class="dl1">
+                        <p>京东会员</p><a href="">立即注册</a>
+                    </div>
+                    <p>
+                        <label class="user" for=""></label>
+                        <input type="text" class="text" placeholder="邮箱/用户名/已验证手机">
+                    </p>
+                    <p>
+                        <label class="user1" for=""></label>
+                        <input type="password">
+                    </p>
+                    <div class="dx">
+                        <input class="zd" type="checkbox" style="font-size: 8px;">自动登录 <a href="">忘记密码?</a>
+                    </div>
+
+
+                    <input class="button" type="button" value="登录">
+
+                </form>
+            </div>
+        </div>
+        <div class="foot">
+            <ul>
+                <li>
+                    <a href="">关于我们 &ensp;|&ensp; </a>
+                </li>
+                <li>
+                    <a href="">联系我们&ensp;|&ensp;</a>
+                </li>
+                <li>
+                    <a href="">人才招聘&ensp;|&ensp;</a>
+                </li>
+                <li>
+                    <a href="">商家入驻&ensp;|&ensp;</a>
+                </li>
+                <li>
+                    <a href="">广告服务&ensp;|&ensp;</a>
+                </li>
+                <li>
+                    <a href="">手机京东&ensp;|&ensp;</a>
+                </li>
+                <li>
+                    <a href="">友情链接&ensp;|&ensp;</a>
+                </li>
+                <li>
+                    <a href="">销售联盟&ensp;|&ensp;</a>
+                </li>
+                <li>
+                    <a href="">京东社区&ensp;|&ensp;</a>
+                </li>
+                <li>
+                    <a href="">京东公益&ensp;|&ensp;</a>
+                </li>
+                <li>
+                    <a href="">English Site</a>
+                </li>
+            </ul>
+            <p>Copyright&copy;2004-2015京东JD.com版权所有</p>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.css">
+    <style>
+        .box {
+            height: 600px;
+            background-color: chocolate;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="box"></div>
+            </div>
+        </div>
+    </div>
+    <!-- sticky-top 当页面向上滚动经过该元素时，元素会自动黏贴到页面的顶部
+    fixed-top 固定在页面顶部
+    fixed-bottom 固定在页面底部
+    -->
+    <div class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <!-- 公司的logo和名称 -->
+            <a href="" class="navbar-brand">
+                <img src="./../img/logo.jpeg" class="d-inline-block" width="30" height="30" alt=""> 百度翻译
+            </a>
+            <!-- 切换导航链接的显示与否 -->
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#mylinks">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- 导航的链接 -->
+            <div class="collapse navbar-collapse" id="mylinks">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="" class="nav-link active">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">产品中心</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">联系我们</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">关于我们</a>
+                    </li>
+                </ul>
+
+                <!-- 搜索表单 -->
+                <form action="" class="form-inline my-2 my-lg-0">
+                    <input type="search" name="" class="form-control mr-sm-2" placeholder="请输入关键字">
+                    <button type="submit" class="btn btn-success my-2 my-sm-0">搜索</button>
+                </form>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="" class="nav-link">登录</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">注册</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery的下载地址：https://jquery.com/download/ -->
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="box"></div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="box"></div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="box"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./../jquery/jquery.js"></script>
+    <script src="./../bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

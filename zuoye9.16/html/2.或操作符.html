@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //或运算的真值表：两个操作数只要有一个是true，则结果就是true
+
+        // 第一个操作数  第二个操作数   结果
+
+        //  true          true         true
+
+        //   true          false        true
+
+        //   false          true         true  
+
+        //    false           false        false
+
+        console.log(true || true); //true
+        console.log(true || false); //true
+        console.log(false || false); //false
+
+        //但是我们的操作数不一定都是布尔值，此时 在进行或运算之前需要先将操作数转换成布尔值 再进行运算
+
+        console.log(undefined || 'ac'); //false||true--->ac
+        console.log(20 || 0); //true||false-->20
+    </script>
+</body>
+
+</html>

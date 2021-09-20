@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.css">
+    <style>
+        .box {
+            height: 50px;
+            background-color: #f00;
+            margin-top: 20px;
+            color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 使用offset-*-* 类让列进行偏移，例如 offset-lg-3 表示元素会在992px以上的屏幕
+    向右偏移3列 -->
+    <!-- 
+        offset-sm
+        offset-md
+        offset-lg
+        offset-xl
+     -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="box">col1</div>
+            </div>
+            <div class="col-lg-3 offset-lg-6">
+                <div class="box">col2</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

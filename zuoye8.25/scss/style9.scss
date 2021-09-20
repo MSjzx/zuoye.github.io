@@ -1,0 +1,14 @@
+@charset "utf-8";
+//我们没有必要把所有的sass代码都放到一个文件中，你可以将代码拆分到不同的
+//文件中，然后已模块的方式导入到同一个文件中。
+//导入nav模块中的内容
+//模块中的 sass代码会被编译输出
+@use "nav";
+//通过模块的名字引入模块内的成员（混入，变量）
+.box1 {
+    //使用 nav模块中的prefix 混入
+    @include nav.prefix(transform, scaleY(0.5));
+    //使用nav模块中的$nav-bgc 变量
+    background-color: nav.$nav-bgc;
+    height: 100px;
+}

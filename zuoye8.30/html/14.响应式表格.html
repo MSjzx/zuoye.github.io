@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-4">
+                <!-- 
+                table-responsive 在所有尺寸上 设备都会响应父元素的宽度
+                table-responsive-md 中屏幕以下才会进行响应式显示
+                table-responsive-sm 小屏幕以下才会进行响应式显示
+                table-responsive-lg 大屏幕以下才会进行响应式显示
+                table-responsive-xl 超大屏幕以下才会进行响应式显示
+                 -->
+                <div class="table-responsive-md">
+                    <table class="table table-bordered">
+                        <caption>学员信息表</caption>
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>姓名</th>
+                                <th>班级</th>
+                                <th>学号</th>
+                                <th>年龄</th>
+                                <th>电话</th>
+                                <th>性别</th>
+                                <th>
+                                    <a href="#" class="btn btn-danger btn-sm">编辑</a>
+                                    <button type="button" class="btn btn-primary btn-sm">删除</button>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>福袋</td>
+                                <td>4.3</td>
+                                <td>0001</td>
+                                <!-- 为单元格添加背景色 -->
+                                <td class="table-info">22</td>
+                                <td>13334545591</td>
+                                <td>男</td>
+                            </tr>
+                            <!-- 给一行中所有单元格都添加背景色 -->
+                            <tr class="table-danger">
+                                <td>福袋</td>
+                                <td>4.3</td>
+                                <td>0001</td>
+                                <td>22</td>
+                                <td>13334545591</td>
+                                <td>女</td>
+                            </tr>
+                            <tr class="table-primary">
+                                <td>福袋</td>
+                                <td>4.3</td>
+                                <td>0001</td>
+                                <td>22</td>
+                                <td>13334545591</td>
+                                <td>男</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

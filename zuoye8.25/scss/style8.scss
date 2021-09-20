@@ -1,0 +1,21 @@
+@charset "utf-8";
+//有时候 我不希望被继承的选择器输出任何内容
+//我们可以写一个以百分号开头的选择器，这个选择器被称为站位选择器，
+//站位选择器本身不会在css中输出任何内容 浏览器不显示样式，仅仅是用于被其他类继承的。
+%box1 {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+
+.box2 {
+    font-size: 20px;
+    color: darkcyan;
+    //使用 @extend 指令让 box2 继承 box1 中的样式。
+    @extend %box1;
+}
+
+.box3 {
+    //使用 @extend 指令让 box2 继承 box1中的样式。
+    @extend %box1;
+}

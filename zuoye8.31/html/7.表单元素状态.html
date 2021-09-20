@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-12">
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="uname"> 昵称：</label>
+                        <input id="uname" type="text" value="昵称" class="form-control">
+                    </div>
+
+                    <!--readonly 设置表单控件中的值不能被修改 但是会被提交给服务器  -->
+                    <div class="form-group">
+                        <label for="dd">账号：</label>
+                        <input id="dd" type="text" class="form-control" value="13333333" readonly>
+                    </div>
+
+                    <!-- disabled 设置表单控件不可用，控件中的值不会被提交到服务器 -->
+                    <div class="form-group">
+                        <label for="dd">禁用：</label>
+                        <input id="dd" type="text" class="form-control" value="13333333" disabled>
+                    </div>
+
+                    <!-- 如果你想去掉只读输入框的样式时 可以添加 form-control-plaintext 类名 -->
+                    <div class="form-group">
+                        <label for="dd">Email：</label>
+                        <input id="dd" type="text" class="form-control-plaintext" value="13333333@qq.com" readonly>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script src="./../jquery/jquery.js"></script>
+    <script src="./../bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

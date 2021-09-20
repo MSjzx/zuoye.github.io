@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // if条件语法可以无限的嵌套使用 不建议嵌套太多 最多三层
+        var gender = prompt('请输入性别：')
+        var age = parseInt(prompt('请输入年龄：'))
+        if (gender == '男' || gender == 'men') {
+            console.log('男性用户')
+            if (age > 18) {
+                alert('成年男性用户')
+            } else {
+                alert('未成年男性用户')
+            }
+
+        } else if (gender == '女' || gender == 'women') {
+            console.log('女性用户')
+            if (age > 18) {
+                console.log('成年女性用户')
+            } else {
+                console.log('未成年女性用户')
+            }
+        } else {
+            alert('正确输入性别')
+        }
+    </script>
+</body>
+
+</html>

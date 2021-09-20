@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.css">
+    <style>
+        .container {
+            height: 5000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- 响应式图片， img-fluid类可以将图片的宽度设置响应式的
+            也就是说，图片的宽度会根据父元素的宽度自动调整 -->
+            <div class="col-10 offset-1">
+                <img src="./../img/boy.jpg" class="img-fluid" alt="" srcset=""></div>
+        </div>
+
+        <div class="row mt-4">
+            <!-- img-thumbnail 类会给图片加一个边框 -->
+            <div class="col-6"><img class="img-fluid img-thumbnail" src="./../img/mao1.jpeg" alt=""></div>
+            <div class="col-6"><img class="img-fluid img-thumbnail" src="./../img/mao.jpeg" alt=""></div>
+        </div>
+
+        <div class="row mt-4">
+            <!-- boot为我们提供了两个关于浮动的工具，float-left float-right -->
+            <div class="col-12">
+                <img src="./../img/mao.jpeg" class="img-fluid img-thumbnail float-right" alt="">
+                <img src="./../img/mao1.jpeg" class="img-fluid img-thumbnail float-left" alt="">
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <!-- 除了使用 d-block 和 mx-auto 将图片水平居中以外 我们还可以使用
+            文本居中，让图片在水平方向上居中 -->
+            <div class="col-12 text-center">
+                <img src="./../img/boy.jpg" class="img-fluid img-thumbnail" alt="">
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <!-- boot 还给我提供一个元素水平居中的类，mx-auto 将元素左右两边的
+                外边距（margin）设置成 auto，d-block 将元素设置成块元素 -->
+            <div class="col-12 ">
+                <img src="./../img/boy.jpg" class="img-fluid img-thumbnail d-block mx-auto" alt="">
+            </div>
+        </div>
+
+        <!-- 使用H5 新增加的picture 元素，为img 标签设置多种尺寸的图片 -->
+        <picture>
+            <source srcset="./../img/mao.jpeg" media="(min-width:1140px)">
+            <source srcset="./../img/mao1.jpeg" media="(min-width:992px)">
+            <source srcset="./../img/mao.jpeg" media="(min-width:768px)">
+            <img src="./../img/mao.jpeg" alt="">
+        </picture>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-10 offset-1">
+                <button type="button" data-toggle="modal" data-target="#modal1" class="btn btn-danger">删除</button>
+
+                <div class="modal fade" tabindex="-1" id="modal1">
+                    <!-- fade类名可以在模态框显示的时候添加一个渐入 -->
+                    <!-- modal-dialog-centered类名可以让模态框显示整个页面的正中心 -->
+                    <!-- modal-sm 小号模态框
+                    modal-lg  大号模态框
+                    modal-xl  超大号
+                    -->
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">删除操作确认</h5>
+                                <button type="button" data-dismiss="modal" class="close">
+                                        <span>&times;</span>
+                                    </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>确认要删除该学生的信息？</p>
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button class="btn btn-primary">确定</button>
+                                <button class="btn btn-success" data-dismiss="modal">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="./../jquery/jquery.js"></script>
+    <script src="./../bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

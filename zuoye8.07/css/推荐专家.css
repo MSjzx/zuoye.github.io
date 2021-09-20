@@ -1,0 +1,59 @@
+@charset "utf-8";
+#box {
+    width: 360px;
+    height: 440px;
+}
+
+.top {
+    font-size: 16px;
+    color: #333333;
+    padding: 10px 20px;
+    border-bottom: 2px solid #f5f5f5;
+}
+
+.kar {
+    padding: 12px 20px;
+    width: 330px;
+    height: 61px;
+    position: relative;
+    border-bottom: 2px solid #f5f5f5;
+    margin: 0 auto;
+}
+
+.pho img {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+.name {
+    position: absolute;
+    left: 75px;
+    top: 13px;
+    vertical-align: top;
+}
+
+.name a {
+    font-size: 14px;
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.name a:hover {
+    text-decoration: underline;
+}
+
+.text {
+    position: absolute;
+    left: 75px;
+    top: 30px;
+    vertical-align: bottom;
+}
+
+.text p {
+    font-size: 14px;
+    color: #777777;
+}

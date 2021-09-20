@@ -1,0 +1,16 @@
+.box1 {
+  font-size: 18px;
+  width: 200px;
+  height: 200px;
+  background-color: blueviolet;
+}
+
+.box2 {
+  transform: scaleY(0.5);
+  -webkit-transform: scaleY(0.5);
+  -moz-transform: scaleY(0.5);
+  -ms-transform: scaleY(0.5);
+  -o-transform: scaleY(0.5);
+}
+
+/*# sourceMappingURL=style6.css.map */

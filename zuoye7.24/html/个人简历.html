@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 800px;
+            border: 1px solid black;
+            /* /* 指定单元格之间是相互挨着的还是独立分隔的，默认值为 separate（分隔的）， collapse（相互挨着，折叠） */
+            border-collapse: collapse;
+            /* 设置单元格是否显示空单位 hide隐藏 show显示 */
+            empty-cells: show;
+            margin: auto;
+        }
+        
+        td {
+            border: 1px solid black;
+            width: 8%;
+            padding: 10px 10px;
+        }
+        
+        #bgc {
+            background-color: bisque;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>个人简历</caption>
+        <thead>
+            <tr>
+                <td>姓名</td>
+                <td> </td>
+                <td>性别</td>
+                <td> </td>
+                <td>民族</td>
+                <td> </td>
+                <td rowspan="3">照片</td>
+            </tr>
+            <tr>
+                <td>出生年月</td>
+                <td></td>
+                <td>政治面貌</td>
+                <td></td>
+                <td>籍贯</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>毕业院校</td>
+                <td></td>
+                <td>专业</td>
+                <td></td>
+                <td>毕业时间</td>
+                <td></td>
+            </tr>
+
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>外语水平</td>
+                <td colspan="3"></td>
+                <td>计算机</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td>电话</td>
+                <td colspan="3"></td>
+                <td>Email</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td>社会实践</td>
+                <td colspan="6"></td>
+            </tr>
+            <tr>
+                <td>获奖情况</td>
+                <td colspan="6"></td>
+            </tr>
+            <tr id="bgc">
+                <td id="bgc">兴趣爱好</td>
+                <td colspan="6"></td>
+            </tr>
+            <tr>
+                <td rowspan="4">工作经历</td>
+                <td>时间</td>
+                <td>单位</td>
+                <td>经历</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+
+                <td>2016年3月</td>
+                <td></td>
+                <td colspan="4"></td>
+            </tr>
+            <tr>
+
+                <td>2017年3月</td>
+                <td></td>
+                <td colspan="4"></td>
+            </tr>
+            <tr>
+
+                <td>2018年3月</td>
+                <td></td>
+                <td colspan="4"></td>
+            </tr>
+            <tr>
+                <td>项目经验</td>
+                <td colspan="6"></td>
+            </tr>
+            <tr>
+                <td>求职意向</td>
+                <td colspan="6"></td>
+            </tr>
+            <tr>
+                <td>自我评价</td>
+                <td colspan="6"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ZH">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <SCript>
+        //第一个操作数是false，表示带一个开关是没有闭合的，此时js解析引擎会去检查第二个操作数。
+        //由于第二个操作数没有定义，所以此处会报错
+        // console.log(false || foo);
+
+        //第一个操作数是true，表示第一个开关是闭合的，此时已经能够决定灯泡是亮的了
+        //因此js解析引擎不会再检查第二个操作数 所以此处不会报错
+
+        console.log(true || bar); //true
+    </SCript>
+</body>
+
+</html>

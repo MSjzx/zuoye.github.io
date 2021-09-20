@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            margin: 80px 300px;
+        }
+        
+        #box1 {
+            width: 1000px;
+            margin: 20px auto;
+            border: 1px solid rgb(128, 124, 124);
+        }
+        
+        input {
+            width: 300px;
+            height: 25px;
+            border: 1PX solid rgb(128, 124, 124);
+            border-radius: 5px;
+        }
+        
+        input.tel1 {
+            width: 40px;
+        }
+        
+        input.tel2 {
+            width: 250px;
+        }
+        
+        input.button {
+            width: 80px;
+            height: 30px;
+            background-color: #4688F1;
+            color: white;
+            margin: 20px 220px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .text {
+            font-size: 12px;
+            margin-left: 120px;
+        }
+        
+        .ft {
+            width: 250px;
+            height: 262px;
+            float: left;
+            border: 1px solid white;
+            position: absolute;
+            left: 800px;
+            top: 140px;
+            background-image: url(./../img/fastoin.png);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <h3>注册新用户</h3>
+        <form action="">
+            <div id="box1"></div>
+            <p>
+                <label for="mail">邮 &emsp;&ensp;&nbsp;箱</label>
+                <input type="text" id="mail" name="mail">
+            </p>
+            <p>
+                <label for="tel-number">手机号码</label>
+                <label for=""></label>
+                <input class="tel1" type="" value="+86">
+                <input class="tel2" type="tel" id="tel-number" name="tel">
+            </p>
+            <p>
+                <label for="name">登录名称</label>
+                <input type="text" id="name" name="username">
+            </p>
+            <p>
+                <label for="nickname">显示昵称</label>
+                <input type="text" id="nickname" name="nickname">
+            </p>
+            <p>
+                <label for="">密 &emsp;&ensp;&nbsp;码</label>
+                <input type="password" id="" name="paw">
+            </p>
+            <p>
+                <label for="">确认密码</label>
+                <input type="password" id="" name="">
+            </p>
+            <div>
+                <p>
+                    <input class="button" type="button" value="注册">
+                </p>
+                <p class="text">*点击“注册”按钮，即表示您同意并愿意遵守<a href="#"> 用户协议。</a></p>
+            </div>
+            <div class="ft"></div>
+        </form>
+    </div>
+</body>
+
+</html>

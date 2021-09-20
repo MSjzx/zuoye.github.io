@@ -1,0 +1,12 @@
+.box3, .box2 {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+}
+
+.box2 {
+  font-size: 20px;
+  color: darkcyan;
+}
+
+/*# sourceMappingURL=style8.css.map */

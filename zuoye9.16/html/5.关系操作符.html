@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //关系操作符
+        /* 
+        >大于 
+        <小于 
+        >=大于等于 
+        <=小于等于 
+        ==等于 
+        ===全等于 
+        !=不等于
+         !==不全等于 
+         */
+
+        //如果操作数数值类型时，运算原理与我们在数学中学的关系运算一样
+        console.log(12 > 6); //true
+        console.log(12 > 24); //false
+        console.log(12 >= 12); //true
+        console.log(12 != 12); //false
+        console.log(12 == 12); //true
+        console.log('12' == 12); //true
+        console.log('12' === 12); //false
+
+        //如果操作数字符串类型 则会将字符串转换成ASCII码表上对应的数值，然后进行条件运算
+        console.log('a' > 'b'); //97>98-->false
+        console.log('able' > 'apple'); //false
+        console.log('20' > '9'); //false
+
+        //如果比较是中文字符，则先将字符转换成Unicode编码值，然后进行对比
+        console.log('我' > '你'); //25105>20320--->true
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //三目运算符的语法格式；
+        // 条件表达式?当条件表达式成立的时候执行的代码 ： 当条件表达式不成立时执行的代码；
+        // 执行顺序：
+        //1.判断条件表达式的计算结果是否为true
+        //如果为true，则执行冒号前面的代码
+        //如果为false 则执行冒号后面的代码
+
+        //当我们执行的代码比较少时 推荐使用三目运算符 代码比较多时 不推荐
+
+        var a = 12;
+        var b = 4;
+        a > b ? console.log(a) : console.log(b);
+        //使用场景之一： 根据条件是否成立 将不同的值赋值给变量
+        var c = a > b ? a : b;
+    </script>
+</body>
+
+</html>

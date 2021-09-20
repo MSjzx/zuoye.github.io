@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //复杂数据类型的变量中保存的不是对象本身而是对象在内存中的地址
+        //换句话来说，变量中的地址指向真实的对象
+        var obj1 = {
+            name: 'jzx',
+            age: 21
+        };
+        //下面的赋值操作会将obj1 变量中保存的地址复制一份，放到obj2的内存空间中
+        var obj2 = obj1;
+        //当多个变量同时引用一个对象时，无论使用哪个变量去修改对象 其他变量所引用的内容也会发生改变
+        obj1.name = 'jjj';
+        console.log(obj2.name)
+    </script>
+</body>
+
+</html>

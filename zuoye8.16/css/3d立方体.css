@@ -1,0 +1,66 @@
+@charset "utf-8";
+#box {
+    width: 200px;
+    height: 200px;
+    margin: 100px auto 0;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective-origin: center center;
+    animation: donghua 6s linear infinite;
+}
+
+.child1,
+.child2,
+.child3,
+.child4,
+.child5,
+.child6 {
+    width: 100%;
+    height: 100%;
+    font-size: 100px;
+    text-align: center;
+    border-radius: 10px;
+    line-height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes donghua {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+.child1 {
+    background-color: rgba( 255, 0, 0, 0.5);
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.child2 {
+    background-color: rgba(0, 255, 0, 0.5);
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.child3 {
+    background-color: rgba(0, 0, 255, 0.5);
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.child4 {
+    background-color: rgba(255, 255, 0, 0.5);
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+.child5 {
+    background-color: rgba(255, 0, 255, 0.5);
+    transform: rotateX(-180deg) translateZ(100px);
+}
+
+.child6 {
+    background-color: rgba(0, 255, 255, 0.5);
+    transform: translateZ(100px);
+}

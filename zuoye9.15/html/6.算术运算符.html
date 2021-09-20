@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //算术运算符指的是数学计算中的加减乘除和取余
+        //加法，可以用来进行数学相加运算 还可以用来连接多个字符串
+        console.log(12 + 12); //24
+        console.log('ab' + 'cd' + 'ef'); //abcdef
+
+        //减法，可以用来进行数学相减运算，还可以将数字形式的字符串转换为数字类型
+        console.log(12 - 2); //10
+        console.log('12' - 0); //12
+
+        //乘法 可以用来进行数学相乘运算
+        console.log(3 * 4); //12
+        //除法 可以用来进行数学相除运算
+        console.log(12 / 4); //3
+
+        //取余 计算两个数相除之后的余数 如果能除尽 则余数为零
+        console.log(12 % 4); //0
+        //次方 计算某个数相乘n次后的结果
+        console.log(2 * 2 * 2 * 2); //16
+        console.log(2 ** 4); //16
+
+        //注意操作符是有优先级的 上述几种操作符中 乘 除 取余求次方 优先级比加 减高。
+        //此外还具有运算顺序，在优先级相同的情况下，运算顺序是从左到右的
+        console.log(12 + 2 - 4); //10
+        console.log(12 + (2 - 4) * 2); //8
+    </script>
+</body>
+
+</html>

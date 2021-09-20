@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.css">
+    <style>
+        .box1 {
+            height: 50px;
+            margin-top: 20px;
+            background-color: #f00;
+        }
+        
+        .box2 {
+            height: 80px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="container">
+        <div class="box1">box</div>
+    </div>
+
+
+
+     无论在何种尺寸的屏幕上，宽度永远是100% 
+    <div class="container-fluid">
+        <div class="box2">box</div>
+    </div> -->
+
+    <!-- 超小屏幕以下，宽度是100%，在其他尺寸的屏幕上，宽度变化是与 .container容器是一致的 -->
+    <div class="container-sm">
+        <div class="box1">box</div>
+    </div>
+
+    <!-- 中等屏幕以下，宽度是100%，其他尺寸上，宽度变化是与 .container容器是一致的 -->
+    <div class="container-md">
+        <div class="box1"></div>
+    </div>
+
+    <!-- 大屏幕以下，宽度是 100%，在其他尺寸的屏幕上，宽度的变化与 .container 容器是一致的。 -->
+    <div class="container-lg">
+        <div class="box1"></div>
+    </div>
+
+    <!-- 超大屏幕以下，宽度是 100%，在其他尺寸的屏幕上，宽度的变化与 .container 容器是一致的。 -->
+    <div class="container-xl">
+        <div class="box1"></div>
+    </div>
+</body>
+
+</html>

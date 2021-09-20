@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 我们可以通过如下3个函数将其他类型的数据转换成数字：
+        // Number()  parseInt()  ParseFloat()
+
+        //1.使用Number() 函数将字符串转成数字
+
+        //如果字符串是非数字的形式，不能被转成数字
+        console.log(Number('a')); //NaN
+        console.log(Number('abc')); //NaN
+
+        //如果字符串是整数或小数得形式，可以转换成数字
+        console.log(Number('123')); //123
+        console.log(Number('12.99')); //12.99
+
+        console.log(Number(null)); //0
+        console.log(Number(false)); //0
+        console.log(Number(true)); //1
+        console.log(Number(undefined)); //NaN
+        console.log(Number([1, 2, 3])); //NaN
+        console.log(Number({
+            name: 'abc'
+        })); //NaN
+
+        //2.使用parseInt()函数将其他类型的数据转换成数字类型
+        console.log(parseInt('a')); //NaN
+        console.log(parseInt('abc')); //NaN
+
+        //如果字符串是整数或小数得形式，只保留整数的部分，不会进行四舍五入
+        console.log(parseInt('123')); //123
+        console.log(parseInt('123.99')); //123
+
+        //如果字符串是以数字开头，则保留数字的整数部分，忽略其他部分
+        console.log(parseInt('123abc')); //123
+        console.log(parseInt('abc123')); //NaN
+        console.log(parseInt('123.99abc')); //123
+
+        console.log(parseInt(null)); //NaN
+        console.log(parseInt(false)); //NaN
+        console.log(parseInt(true)); //NaN
+        console.log(parseInt(undefined)); //NaN
+        console.log(parseInt([1, 2, 3])); //1
+        console.log(parseInt({
+            name: 'abc'
+        })); //NaN
+
+        //如果数组中的第一个成员是数字或是数字形式的字符串，则该成员会被转换的整数输出，否则为NaN
+        console.log(parseInt([12, 'b', 'c'])); //12
+        console.log(parseInt(['12', 'b', 'c'])); //12
+        console.log(parseInt(['12.99', 'b', 'c'])); //12
+        console.log(parseInt(['a', 'b', 'c'])); //NaN
+
+
+        //3.使用parseFloat()函数将其他类型的值转化为小数
+        console.log(parseFloat('a')); //NaN
+        console.log(parseFloat('abc')); //NaN
+
+        //如果字符串是整数或小数得形式，保留整数和小数的部分
+        console.log(parseFloat('123')); //123
+        console.log(parseFloat('12.99')); //12.99
+
+        //如果字符串是以数字开头，则保留数字 忽略其他
+        console.log(parseFloat('123abc')); //123
+        console.log(parseFloat('abc123')); //NaN
+        console.log(parseFloat('123.99abc')); //123.99
+
+        console.log(parseFloat(null)); //NaN
+        console.log(parseFloat(false)); //NaN
+        console.log(parseFloat(true)); //NaN
+        console.log(parseFloat(undefined)); //NaN
+        console.log(parseFloat({
+            name: 'abc'
+        })); //NaN
+
+        //如果数组中的第一个成员是数组或数字形式的字符串，则该成员会被转换成整数输出，否则结果NaN
+        console.log(parseFloat([12, 'b', 'c'])); //12
+        console.log(parseFloat(['12', 'b', 'c'])); //12
+        console.log(parseFloat(['12.99', 'b', 'c'])); //12.99
+        console.log(parseFloat(['a', 'b', 'c'])); //NaN
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = prompt('请输入数字')
+        var b = 0
+        for (var i = 1; i <= a; i++) {
+            if (a % i == 0 && a != 1) {
+                b++;
+            }
+
+        }
+        if (b == 2) {
+            alert('是质数')
+        } else {
+            alert('不是质数')
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+@charset "utf-8";
+//1.不需要传入参数的混入
+//定义不需要传入参数的混入
+@mixin hunru {
+    width: 200px;
+    height: 200px;
+    background-color: blueviolet;
+}
+
+//使用不需要传入的混入
+.box1 {
+    font-size: 18px;
+    @include hunru;
+}
+
+//2.基于参数的顺序进行传值
+@mixin prefix($property, $value) {
+    #{$property}: $value;
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+}
+
+.box2 {
+    //基于参数的顺序进行传值，
+    //transform会被传递给 $property, scaleY(0.5) 会被传递给$value
+    @include prefix(transform, scaleY(0.5))
+}

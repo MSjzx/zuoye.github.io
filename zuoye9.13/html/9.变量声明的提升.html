@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //var foo;
+        //console.log(foo);
+
+        //通过上面代码的输出结果,可以得出结论:只声明而没有赋值的变量,默认值会被赋值为undefined.
+
+
+        //console.log(foo);
+        //var foo='hello world';
+
+        //上面的代码等价于:
+        var foo;
+        console.log(foo);
+        foo = 'Hello World';
+        //通过上面的代码,我们可以得到一个结论,变量的声明会被提升到当前script标签的最顶部,而赋值不会被提升.
+        //当我们在变量定义之前使用变量时,变量的值时underfined
+    </script>
+</body>
+
+</html>

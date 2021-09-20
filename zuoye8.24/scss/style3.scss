@@ -1,0 +1,35 @@
+@charset "utf-8";
+//父选择器的用法
+//&符号表示父选择器，编译输出时会被替换成父选择器
+//如果自嵌套了一层，则&表示的就是父选择器
+a {
+    display: inline-block;
+    padding: 12px;
+    &:hover {
+        background-color: aqua;
+    }
+}
+
+//如果嵌套了多层，则&表示的是由多层祖先选择器组成的选择器
+nav {
+    background-color: aqua;
+    ul {
+        height: 80px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        li {
+            background-color: #ff0;
+            a {
+                display: block;
+                padding: 12px;
+                &:hover {
+                    display: block;
+                    padding: 12px;
+                }
+            }
+        }
+    }
+}

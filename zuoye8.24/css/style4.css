@@ -1,0 +1,19 @@
+@charset "UTF-8";
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: 100% Arial, Helvetica, sans-serif;
+}
+
+/*片段的特点：
+1.文件名以下划线开始
+2.文件中包含的是css代码
+3.sass不hi编译处理以下划线开始的文件
+4.用于导入到其他的文件中
+5.片段要配合着  @use  指令使用
+*/
+
+/*# sourceMappingURL=style4.css.map */

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-8 offset-2">
+                <!-- 轮播的基本用法 -->
+                <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                    <!-- 要轮播的图片 -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./../img/slider_img1.jpg" alt="" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>标题文字</h5>
+                                <p>详细的文字说明</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="./../img/slider_img2.jpg" alt="" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>标题文字</h5>
+                                <p>详细的文字说明</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="./../img/slider_img3.jpg" alt="" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>标题文字</h5>
+                                <p>详细的文字说明</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="./../img/slider_img4.jpg" alt="" class="d-block w-100">
+
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>标题文字</h5>
+                                <p>详细的文字说明</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="./../img/slider_img5.jpg" alt="" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block ">
+                                <h5>标题文字</h5>
+                                <p>详细的文字说明</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 轮播的控制器 -->
+                    <a href="#mycarousel" class="carousel-control-prev" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a href="#mycarousel" class="carousel-control-next" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+
+                    <!-- 轮播的指示器 -->
+                    <ol class="carousel-indicators">
+                        <li data-ride-to="0" data-target="#mycarousel" class="active"></li>
+                        <li data-ride-to="1" data-target="#mycarousel"></li>
+                        <li data-ride-to="2" data-target="#mycarousel"></li>
+                        <li data-ride-to="3" data-target="#mycarousel"></li>
+                        <li data-ride-to="4" data-target="#mycarousel"></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./../jquery/jquery.js"></script>
+    <script src="./../bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

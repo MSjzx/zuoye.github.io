@@ -1,0 +1,21 @@
+@charset "utf-8";
+//扩展（或继承）
+.box1 {
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+}
+
+//假设box2也需要box1中的样式，怎样做
+.box2 {
+    font-size: 20px;
+    color: cornflowerblue;
+    //使用 @extend 指令让 box2继承 box1中的样式
+    @extend .box1;
+}
+
+.box3 {
+    //使用 @extend 指令让 box3 继承 box1 中的样式
+    //由于 box3 中没有自己的样式 因此就不会在css中单独输出 box3
+    @extend .box1;
+}

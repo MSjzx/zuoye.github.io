@@ -1,0 +1,29 @@
+/* 标准的css语法，也支持变量和操作符*/
+
+
+/*定义变量*/
+
+:root {
+    --width: 200px;
+    --height: 200px;
+    --color: #333;
+}
+
+
+/* 通过 var() 方法使用变量*/
+
+.box1 {
+    width: var(--width);
+    height: var(--height);
+    color: var(--color);
+    background-color: cyan;
+}
+
+
+/*通过 calc() 方法运用数学运算符*/
+
+.box2 {
+    height: calc(100px * 2);
+    width: calc(100px * 2);
+    background-color: #0f0;
+}

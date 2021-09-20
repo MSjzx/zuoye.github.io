@@ -1,0 +1,36 @@
+@charset "utf-8";
+//混入(混合)
+//使用 @mixin 指令定义混入
+@mixin hunru($width:100px, $height:100px, $bgc:green) {
+    width: $width;
+    height: $height;
+    background-color: $bgc;
+}
+
+//使用@include 指令应用混合（将hunru 中的代码包含进来）
+.box1 {
+    color: aqua;
+    //当混合有默认值时，我们在使用它时候可以不用给它传值，此时小括号也不写
+    @include hunru;
+}
+
+.box2 {
+    border: 1px solid aqua;
+    //向混合中传参数
+    @include hunru($width: 200px, $height: 200px, $bgc: red);
+}
+
+//混合的使用场景：给属性加浏览器私有前缀
+@mixin prefix($property, $value) {
+    //在css属性名中插入变量时，需要使用#{} 模板，把你要使用的变量放到{}内
+    #{$property}: $value;
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+}
+
+.box3 {
+    @include prefix($property: transform, $value: scaleY(0.5));
+    @include prefix($property: transform-origin, $value: 0 0);
+}

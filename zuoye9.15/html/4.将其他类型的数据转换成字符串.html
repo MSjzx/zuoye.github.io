@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.使用String()函数将其他类型的的数据转换成字符串
+        console.log(String(19.9)); //'19.9'
+        console.log(String(null)); //null
+        console.log(String(false)); //false
+        console.log(String(true)); //true
+        console.log(String(undefined)); //undefined
+
+        //将数组中的成员全部变成字符串，成员之间以逗号连接。
+        console.log(String([1, 2, 3])); //1,2,3
+        console.log(String({
+            name: 'ab'
+        })); //[object Object]
+
+        //2.使用加法操作符将其他类型的数据转成字符串，实际上，就是把其他类型的数据与字符串相加
+        //js解析代码时 会先将其他类型的数据转换成字符串，然后在进行加法运算
+        //无论什么类型的数据与字符串相加，得到的结果都是字符串类型的
+
+        console.log(19.99 + ''); //19.99
+        console.log(true + ''); //true
+    </script>
+</body>
+
+</html>

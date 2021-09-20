@@ -1,0 +1,32 @@
+a {
+  display: inline-block;
+  padding: 12px;
+}
+a:hover {
+  background-color: aqua;
+}
+
+nav {
+  background-color: aqua;
+}
+nav ul {
+  height: 80px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+nav ul li {
+  background-color: #ff0;
+}
+nav ul li a {
+  display: block;
+  padding: 12px;
+}
+nav ul li a:hover {
+  display: block;
+  padding: 12px;
+}
+
+/*# sourceMappingURL=style3.css.map */

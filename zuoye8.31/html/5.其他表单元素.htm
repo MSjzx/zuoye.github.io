@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-12">
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input id="name" class="form-control" type="text" placeholder="请输入账号">
+                        <small class="form-text text-danger">用户名</small>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check form-check-inline">
+                            <input id="nan" class="form-check-input" type="radio" name="gender" value="male">
+                            <label class="form-check-label" for="nan">男</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input id="nv" class="form-check-input" type="radio" name="gender" value="fmale">
+                            <label class="form-check-label" for="nv">女</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check form-check-inline">
+                            <input id="chi" type="checkbox" class="form-check-input" name="hobbies" value="eat">
+                            <label for="chi" class="form-check-label">吃饭</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input id="shui" type="checkbox" class="form-check-input" name="hobbies" value="sleep">
+                            <label for="shui" class="form-check-label">睡觉</label>
+                        </div>
+                    </div>
+
+                    <!-- 下拉列表 -->
+                    <div class="form-group">
+                        <label for="cty">城市：</label>
+                        <select name="city" id="cty" class="form-control">
+                            <option value="">北京</option>
+                            <option value="">上海</option>
+                            <option value="">深圳</option>
+                        </select>
+                    </div>
+
+                    <!-- 多行文本输入框 -->
+                    <div class="form-grouop">
+                        <label for="rmk">备注：</label>
+                        <textarea name="remark" id="rmk" cols="30" rows="10" class="form-control"></textarea>
+                    </div>
+
+                    <!-- 文件选择 -->
+                    <div class="form-group">
+                        <label for="upload">文件上传：</label>
+                        <input type="file" class="form-control-file" id="upload">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="./../jquery/jquery.js"></script>
+    <script src="./../bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>
