@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .foo {
+            background-color: #f00;
+            color: white;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div class="box">
+            <p>文本内容1</p>
+        </div>
+        <div class="box">
+            <p>文本内容2</p>
+        </div>
+        <div class="box">
+            <p>文本内容3</p>
+        </div>
+    </div>
+    <script>
+        //标签中属性与节点对象中的属性并不是一一对应的，例如：标签上class属性在节点对象中对应的是className
+        var boxs = document.querySelectorAll('.box');
+
+
+        //通过className 为节点添加新的类名
+        boxs[0].clsaaName = '.box foo';
+
+
+        //此外 还可以通过classList 对象操作节点的类名
+        //为节点添加新的类名
+        boxs[0].classList.add('foo');
+
+        //删除节点上的类名
+        boxs[0].classList.remove('foo');
+
+        //判断节点上是否包含某个类名
+        console.dir(boxs[0].classList.contains('box')) //true
+        console.dir(boxs[0].classList.contains('foo')) //false
+
+        //替换指定的类名
+        boxs[0].classList.replace('box', 'foo');
+
+        //切换节点上的某个类名（有则删除，无则添加）
+        //true表示没有 则强制添加，有 则什么都不做
+        //false表示有 则删除 没有的话也不会强制添加
+        boxs[0].classList.toggle('foo', true);
+        console.dir(boxs[0].classList)
+    </script>
+</body>
+
+</html>

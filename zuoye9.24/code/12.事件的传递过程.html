@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 400px;
+            height: 400px;
+            background-color: #f00;
+        }
+        
+        #box2 {
+            width: 300px;
+            height: 300px;
+            background-color: #0f0;
+        }
+        
+        #box3 {
+            width: 200px;
+            height: 200px;
+            background-color: #00f;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">
+        <div id="box2">
+            <div id="box3"></div>
+        </div>
+    </div>
+    <script>
+        var box1 = document.querySelector('#box1');
+        var box2 = document.querySelector('#box2');
+        var box3 = document.querySelector('#box3');
+
+        //addEventListener() 方法 最后一个参数 是用于控制事件是在捕获阶段执行还是在冒泡阶段执行。
+        //false 也就是默认值 表示在冒泡阶段执行
+        //true 表示在捕获阶段执行
+
+        // box1.addEventListener('click', function() {
+        //     console.log('box1')
+        // }, false);
+
+        // box2.addEventListener('click', function() {
+        //     console.log('box2')
+        // }, false);
+
+        // box3.addEventListener('click', function() {
+        //     console.log('box3')
+        // }, false)
+
+        //注意 如果使用的是节点对象属性注册的事件，则一律是在冒泡阶段执行
+        box1.onclick = function() {
+            console.log('box1')
+        };
+        box2.onclick = function() {
+            console.log('box2')
+        };
+        box3.onclick = function() {
+            console.log('box3')
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 550px;
+            height: 550px;
+            border: 1px solid #000;
+            /* 父元素设置成相对定位，让子元素基于父元素定位 */
+            position: relative;
+        }
+        
+        #box {
+            width: 150px;
+            height: 150px;
+            background-color: #f0f;
+            /* 子元素设置成绝对定位 */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="btn_left">向左移动 400px</button>
+    <button id="btn_right">向右移动 400px</button>
+    <div id="container">
+        <div id="box"></div>
+    </div>
+    <script>
+        // 获取被移动的元素
+        var box = document.querySelector('#box');
+
+        // 获取控制元素向右移动的按钮
+        var btnRight = document.querySelector('#btn_right');
+
+        //  获取控制元素向左移动的按钮
+        var btnLeft = document.querySelector('#btn_left');
+
+        // 为按钮注册点击事件
+        btnRight.onclick = function() {
+            animate(box, 400, 20)
+        };
+        // 为按钮注册点击事件
+        btnLeft.onclick = function() {
+            animate(box, 0, 20)
+        };
+
+        // 创建一个通用的方法，用于向左或向右移动元素
+        function animate(ele, target, step) {
+            // 清除上一个计时器
+            clearInterval(ele.timer)
+            ele.timer = setInterval(function() {
+                if (ele.offsetLeft < target) {
+                    // 向右移动元素
+                    ele.style.left = (ele.offsetLeft + step) > target ? target + 'px' : ele.offsetLeft + step + 'px';
+
+                } else if (ele.offsetLeft > target) {
+                    // 向左移动元素
+                    ele.style.left = (ele.offsetLeft - step) < target ? target + 'px' : ele.offsetLeft - step + 'px';
+
+                } else {
+
+                    // 如果偏移量等于目标距离时（target），
+                    // 则说明元素不是在最左边就是在最右边
+                    clearInterval(ele.timer);
+                }
+
+            }, 16.7);
+        }
+    </script>
+</body>
+
+</html>

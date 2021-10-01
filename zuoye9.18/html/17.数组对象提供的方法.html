@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //使用字面量创建数组对象
+        var arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+        //splice() 方法可以对元素进行删除 替换 插入操作
+        //splice(start[,deleteCount][,item1,item2,item...])
+
+        //1.使用splice() 方法删除元素
+        //如果指定开始索引，没有指定删除的数量，则会从开始索引处删除到数组结尾
+        // arr1.splice(4);
+        // arr1.splice(4, 2);
+
+
+        //2.使用splice() 方法替换元素、
+        //使用2个字符串替换3个元素
+        arr1.splice(4, 3, 'a', 'b', 'c')
+
+
+
+        //3.使用splice() 方法插入元素
+        //不删除任何元素，把三个字符串 插入到索引为4的位置
+        arr1.splice(4, 0, 'a', 'b', 'c');
+        console.log(arr1)
+    </script>
+</body>
+
+</html>

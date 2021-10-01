@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="nav">
+        <h1 id="heading">Hello World</h1>
+    </div>
+    <script>
+        //创建h2元素
+        var h2 = document.createElement('h2');
+        h2.innerText = '你好世界';
+
+        //获取div元素（h1和h2共同的父元素）
+        var div = document.querySelector('#nav');
+        //获取h1元素
+        var h1 = document.querySelector('h1');
+        //使用h2元素替换h1元素
+        div.replaceChild(h2, h1);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //创建日期对象
+        var date1 = new Date(); //代码执行的日期
+        var date2 = new Date('2021-9-27 20:50:30:600'); //表示特定日期的对象
+        var date3 = new Date(2021, 8, 27, 20, 51, 600); //表示特定日期的对象
+        var date4 = new Date(1632619536000);
+
+        //当我们在控制台中输出日期对象时，会自动调用日期对象的 toString()方法，将日期对象转换成字符串，然后输出
+        console.log(date1.toString());
+        console.log(date2.toLocaleDateString()); //输出本地化的日期
+        console.log(date3.toLocaleDateString()); //输出本地化的日期和时间
+        console.log(date4.toLocaleDateString()); //输出本地化的时间
+
+        //1970年1月1日0点到现在时间的时间戳
+        console.log(date1.getTime()); //以毫秒形式返回时间
+
+        //使用构造函数的 now() 方法获取当前的时间戳
+        console.log(Date.now())
+
+        //在创建日期对象之后，我们还可以修改时间的各个组成部分
+        var date5 = new Date(2021, 8, 27, 6, 12, 30, 500);
+        date5.setFullYear(2022);
+        date5.setMonth(9);
+        date5.setDate(1);
+
+        date5.setHours(8)
+        date5.setMinutes(20)
+        date5.setSeconds(30)
+        date5.setMilliseconds(600)
+
+        console.log(date5.toLocaleString())
+    </script>
+</body>
+
+</html>

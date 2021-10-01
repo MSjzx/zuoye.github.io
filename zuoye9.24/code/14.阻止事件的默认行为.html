@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="http://baidu.com" id="link">点我</a>
+    <form action="" id="form">
+        <p><label for="">账号：<input type="text" name="usn"></label></p>
+        <p><label for="">密码：<input type="text" name="pwd"></label></p>
+        <p>
+            <input type="submit" value="提交">
+        </p>
+    </form>
+
+    <script>
+        var link = document.querySelector('#link');
+
+        link.addEventListener('click', function(event) {
+            console.log('link')
+                //使用事件对象的preventDefault()方法阻止事件的默认行为
+            event.preventDefault();
+        }, false);
+
+        var form = document.querySelector('#form');
+
+        form.addEventListener('submit', function(event) {
+            console.log('submit')
+
+            event.preventDefault();
+        }, false)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box" style="width: 980px;height: 1200px;background-color: #f0f; margin: 0 auto;"></div>
+    <script>
+        //页面的总高度
+        document.documentElement.scrollHeight
+            //页面已经被滚动出去的高度（下面三个属性都能获取已滚动的高度）
+        document.documentElement.scrollTop
+        window.pageYoff
+        document.body.scrollTop
+            //为了兼容不同的浏览器，我们需要写成如下形式：
+        var scrollTop = document.body.scrollTop || window.pageYOffset || document.documentElement.scrollTop
+
+        //页面可视区域的高度
+        window.innerHeight
+
+        //当下面的条件成立时 说明页面滚动到了最底部
+        //总高度-已经滚动的高度<=可视区域的高度
+
+        //监视页面是否滚动到了最底部
+        window.onscroll = function(event) {
+            if (document.documentElement.scrollTop - scrollTop <= window.innerHeight)
+                console.log('已经到底了')
+        }
+    </script>
+</body>
+
+</html>

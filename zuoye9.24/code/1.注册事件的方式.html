@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1.通过HTML标签属性注册事件处理程序 -->
+    <!-- 注意：同种类型的事件只能注册一个 -->
+    <button type="button" onclick="console.log('Hello World')" onclick="console.log('你好世界')">点我</button>
+
+    <!-- 一个元素上可以注册多个不同类型的事件 -->
+    <button type="button" onclick="console.log('Hello World')" ondblclick="console.log('你好世界')">点我</button>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //全局作用域 
+
+
+
+
+        //我们在script标签下定义内容 都属于全局作用域
+        //全局作用域下定义的内容 在任何地方都能被访问（使用）
+
+        //在全局作用域下定义变量也被称为全局变量
+        var fullName = 'jzx';
+
+        //局部作用域
+        function foo() {
+            var fullName = 'zx'
+            console.log(fullName)
+
+            function zz(fullName) {
+                var fullName = 'jxx';
+                console.log(fullName)
+            }
+            zz('jzxx');
+        }
+        foo();
+
+        //同一作用域下的两个函数之间的作用域是相互独立的
+
+        //内部函数可以访问外部函数作用域内的成员
+
+        //当我访问某个变量时 首先会在当前作用域下查找该变量 如果当前作用域下找不到该变量 则取上一层作用域查找
+
+        //如果所有的上层作用域都找遍了 还是没有 则报错 说该变量未被定义
+        //函数的形参也是属性函数作用域内的成员
+    </script>
+</body>
+
+</html>

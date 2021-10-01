@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 400px;
+            height: 400px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        var bar = document.querySelector('#box');
+
+        //鼠标刚接触到目标元素的区域时触发
+        box.onmouseover = function(event) {
+            console.log(event.type)
+        };
+
+        //鼠标进入目标区域时触发
+        box.onmouseenter = function(event) {
+            console.log(event.type)
+        };
+        //鼠标在目标元素上移动时触发
+        box.onmousemove = function(event) {
+            console.log(event.type)
+        };
+        //鼠标刚要离开目标元素时触发
+        box.onmouseout = function(event) {
+            console.log(event.type)
+        };
+        //鼠标完全离开目标元素时触发
+        box.onmouseleave = function(event) {
+            console.log(event.type)
+        }
+    </script>
+</body>
+
+</html>

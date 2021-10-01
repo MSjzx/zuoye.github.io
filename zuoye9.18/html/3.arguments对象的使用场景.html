@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 当实参个数不固定时 可以使用arguments对象接受实参
+        // 需求：计算任意个数之和
+        function sum() {
+            // arguments[1, 2, 3, 4, 5]
+            // console.log(arguments)
+            var result = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                result += arguments[i]
+            }
+            return result;
+        }
+        var num = sum(1, 2, 3, 4, 5)
+        alert(num)
+    </script>
+</body>
+
+</html>

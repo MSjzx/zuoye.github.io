@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *,
+        ::after,
+        ::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .carousel {
+            width: 790px;
+            height: 340px;
+            margin: 40px auto 0;
+            overflow: hidden;
+            /* border: 1px solid #f00; */
+
+            position: relative;
+        }
+        .img-list {
+            width: 500%;
+            height: 340px;
+            display: flex;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .img-list-item {
+
+        }
+        .circle-list {
+            width: 140px;
+            height: 24px;
+            border-radius: 12px;
+            background-color: hsla(0, 0%, 100%, 0.3);
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            /* left: calc(50% - 70px); */
+            margin-left: -70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .circle-list-item {
+            display: block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+        .active {
+            background-color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <!-- 图片列表 -->
+        <div class="img-list">
+            <div class="img-list-item"><img src="images/banner-1.jpg" alt=""></div>
+            <div class="img-list-item"><img src="images/banner-2.jpg" alt=""></div>
+            <div class="img-list-item"><img src="images/banner-3.jpg" alt=""></div>
+            <div class="img-list-item"><img src="images/banner-4.jpg" alt=""></div>
+            <div class="img-list-item"><img src="images/banner-5.jpg" alt=""></div>
+        </div>
+
+        <!-- 指示符号 -->
+        <div class="circle-list">
+            <span class="circle-list-item active"></span>
+            <span class="circle-list-item"></span>
+            <span class="circle-list-item"></span>
+            <span class="circle-list-item"></span>
+            <span class="circle-list-item"></span>
+        </div>
+    </div>
+    <script src="js/myscripts.js"></script>
+    <script>
+        // 获取所有图片共同的父元素
+        var imgList = document.querySelector('.img-list');
+
+        // 获取所有的指示符
+        var circles = document.querySelectorAll('.circle-list-item');
+
+        // 为所有的指示符注册鼠标悬浮其上的事件
+        for (var i = 0; i < circles.length; i++) {
+            // 为当前遍历出来的节点对象声明一个自定义属性，用于保存 i 的值
+            circles[i].index = i;
+            circles[i].onmouseover = function () {
+
+                // 清除其他元素上的 active 类名
+                for (var j = 0; j < circles.length; j++) {
+
+                    // circles[j].setAttribute('class', 'circle-list-item');
+                    // circles[j].className = 'circle-list-item';
+
+                    circles[j].classList.remove('active');
+                }
+
+                // 为当前获取焦点的元素添加 active 类名
+                this.classList.add('active');
+
+                /* 
+                    0 * -790px = 0px
+                    1 * -790px = -790px
+                    2 * -790px = -1580px
+                */
+                animate(imgList, this.index * -790, 20);
+            };
+        }
+
+    </script>
+</body>
+</html>

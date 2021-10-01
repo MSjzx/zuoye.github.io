@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <div class="box">
+            <p>文本内容1</p>
+        </div>
+        <div class="box">
+            <p>文本内容2</p>
+        </div>
+        <div class="box">
+            <p>文本内容3</p>
+        </div>
+    </div>
+    <script>
+        var ps = document.querySelectorAll('p');
+        for (var i = 0; i < ps.length; i++) {
+            //CSS属性名如果出现了链接符(-)，在JS中需要把连接符去掉，并把链接符后面的单词首字母大写
+            ps[i].style.backgroundColor = 'red';
+            ps[i].style.color = 'yellow';
+            ps[i].fontSize = '24px';
+        }
+    </script>
+</body>
+
+</html>

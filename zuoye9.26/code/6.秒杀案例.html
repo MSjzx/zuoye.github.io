@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="heading"></h1>
+    <script>
+        //获取标题
+        var heading = document.querySelector('#heading');
+        //设置时间
+        var endTime = new Date(2021, 8, 28, 21, 06, 10, 0);
+        //设置间歇定时器，每隔一秒更新一次标题中的剩余时间
+        var timer = setInterval(function() {
+            //计算剩余时间 剩余时间=结束时间-当前时间
+            // var remainingTime = endTime.getTime() - new Date().getTime();
+
+            // 当我们让两个日期对象相减时，会自动调用对象的 getTime() 方法，将对象转换成毫秒值
+            var remainingTime = endTime - new Date();
+
+            //将剩余毫秒时间，转换成时分秒
+
+            //天
+            var days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+
+            // 小时
+            var hours = Math.floor(remainingTime / (1000 * 60 * 60) - days * 24);
+
+            // 分钟
+            var minutes = Math.floor(remainingTime / (1000 * 60) - (days * 24 * 60) - (hours * 60));
+
+
+            // 秒
+            var seconds = Math.floor(remainingTime / 1000) - (days * 24 * 60 * 60) - (hours * 60 * 60) - (minutes * 60);
+
+            // 判断秒杀时间是否结束
+            if (remainingTime < 1000) {
+                // 停止定时器
+                clearInterval(timer);
+                heading.innerText = '秒杀结束';
+            } else {
+                // 在标题中显示剩余时间
+                heading.innerText = '剩余时间：' + days + ' 天 ' + hours + ' 小时 ' + minutes + ' 分钟 ' + seconds + ' 秒';
+            }
+
+
+        }, 1000)
+    </script>
+</body>
+
+</html>

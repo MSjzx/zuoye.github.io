@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //使用字面量闯进啊数组对象
+        var arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+        //使用forEach() 方法遍历数组元素
+        //forEach() 方法每遍历出来一个元素，都会调用匿名函数一次
+        //并把遍历出来的元素和元素对应的索引传递给匿名函数
+        //接着，我们就可以在函数内部使用数组元素了
+        arr1.forEach(function(num, index) {
+            console.log(num, index)
+        });
+    </script>
+</body>
+
+</html>

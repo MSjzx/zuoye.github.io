@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="h1"></h1>
+    <h2 id="h2"></h2>
+    <div style="width: 980px;height: 1200px;background-color: #f0f; margin: 0 auto;"></div>
+    <script>
+        //窗口事件需要注册到window对象上
+        //当文档以及文档所引用的资源文件（css文件 js文件 图片等等）
+        window.onload = function(event) {
+            console.log(event.type)
+            localStorage.setItem('username', 'abc')
+        };
+        //当浏览器被关闭时触发
+        window.onunload = function(event) {
+            console.log(event.type)
+            localStorage.removeItem('username');
+        };
+        //当浏览器窗口大小发生变化时触发
+        var h1 = document.querySelector('#h1');
+        var h1 = document.querySelector('#h2');
+
+        window.onresize = function(event) {
+            h1.innerText = event.target.innerWidth + '*' + event.target.innerHeight;
+            h2.innerText = event.target.outerWidth + '*' + event.target.outerHeight;
+
+
+        };
+        //当浏览器的窗口滚动时触发
+        window.onscroll = function(event) {
+            console.log(event.type)
+        }
+    </script>
+</body>
+
+</html>

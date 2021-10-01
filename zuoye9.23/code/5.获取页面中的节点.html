@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <div class="box">
+            <p>文本内容1</p>
+        </div>
+        <div class="box">
+            <p>文本内容2</p>
+        </div>
+        <div class="box">
+            <p>文本内容3</p>
+        </div>
+    </div>
+
+    <script>
+        //根据id获取元素节点
+        // var main = document.getElementById('main');
+
+
+        //dir()方法可以输出节点对象的所有属性和属性值
+
+        // console.dir(main);
+        // //根据类名获取元素节点
+        // var boxs = document.getElementsByClassName('box');
+        // console.dir(boxs);
+        // //根据标签名获取元素节点
+        // var ps = document.getElementsByTagName('p');
+        // console.dir(ps);
+
+        //使用css选择器获取单个元素，即使有多个元素匹配选择器，它只返回找到的第一个元素
+        // var $main = document.querySelector('#main');
+        // console.dir($main);
+        // var $boxs = document.querySelector('.box');
+        // console.dir($boxs);
+        // var $ps = document.querySelector('p');
+        // console.dir($ps);
+
+        //该方法会以类数组的形式返回所有匹配选择器的元素，即使只有一个元素匹配选择器 也会以数组的形式返回
+        var _main = document.querySelectorAll('#main');
+        console.dir(_main);
+        var _boxs = document.querySelectorAll('.box');
+        console.dir(_boxs);
+        var _ps = document.querySelectorAll('p');
+        console.dir(_ps);
+    </script>
+</body>
+
+</html>

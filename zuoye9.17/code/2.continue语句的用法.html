@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //continue 语句在循环语句中的作用是终止本次循环，接着进行下一次循环
+
+        //continue 语句后面的代码不会被执行，也就是遇到continue 语句，后面的代码就不会执行
+
+        //continue 语句只会终止一次循环，并不会终止整个循环
+
+        //例如 报数游戏 遇到7或者7的倍数时 不会进行报数 说“过”
+        for (var i = 1; i <= 100; i++) {
+            //使用取余操作 判断i当前的值是否为7或者7的倍数
+            if (i % 7 == 0) {
+                console.log('过')
+                continue;
+            }
+            console.log(i)
+        }
+    </script>
+</body>
+
+</html>

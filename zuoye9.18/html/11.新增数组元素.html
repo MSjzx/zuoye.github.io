@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //使用字面量创建数组对象
+        var arr1 = [1, 2, 3];
+        //为数组的新索引赋值即可
+        arr1[3] = 'a';
+        arr1[5] = 'c';
+        //使用数组对象的 length 属性在数组末尾添加新元素
+        arr1[arr1.length] = 'e';
+        console.log(arr1);
+    </script>
+</body>
+
+</html>

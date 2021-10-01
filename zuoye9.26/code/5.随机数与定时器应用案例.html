@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="h1"></h1>
+    <button id="btn" type="button">开始</button>
+    <script src="./seed.js"></script>
+    <script>
+        //获取开始按钮
+        var button = document.querySelector('#btn');
+
+        // 获取标题
+        var heading = document.querySelector('#h1');
+
+        // 为按钮注册点击事件
+        button.addEventListener('click', function() {
+            //开始间歇定时器 每隔100毫秒 随机显示学生的名字
+            var timer = setInterval(function() {
+                var index = Math.floor(Math.random() * students.length)
+                heading.innerText = students[index].name
+
+            }, 100);
+            // 计算出一个随机时间 用于停止上一个定时器
+            // 例如 1000ms到3000ms之间的随机时间
+            var duration = Math.floor(Math.random() * (3000 - 1000 + 1)) + 1000;
+
+            // 设置超时定时器 当随机时间到的时候 停止上一个定时器
+            setTimeout(function() {
+                clearInterval(timer);
+            }, duration);
+        });
+    </script>
+</body>
+
+</html>

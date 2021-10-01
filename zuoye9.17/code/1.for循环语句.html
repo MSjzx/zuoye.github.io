@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //for 循环的语法：
+        // for(变量的初始化;条件表达式;变量的自增自减){
+        //     循环体
+        // // }
+
+        // for 循环的执行顺序：
+        // 1. 变量的初始化操作。(只执行一次)
+        // 2. 判断条件表达式是否成立(i <= 10)
+        // 3. 如果条件表达式成立， 则执行一次大括号中的代码， 执行完成后， 执行i++, 让i自增一
+        // 接着再次判断条件表达式是否成立， 如此往复， 直到表达式不成立为止
+        // 4. 如果条件表达式不成立， 则循环体内代码不会执行； 当大括号中的代码被执行完成后，
+        // 然后执行变量的自增自减操作
+
+        //如数字1循环到10
+        for (var i = 1; i <= 10; i++) {
+            console.log(i)
+        }
+        //10到1
+        for (var i = 10; i >= 1; i--) {
+            console.log(i)
+        }
+    </script>
+</body>
+
+</html>

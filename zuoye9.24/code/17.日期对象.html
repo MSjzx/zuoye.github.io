@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //日期对象只能通过构造函数创建
+        var date1 = new Date(); //当前时间
+        alert(date1.toLocaleString())
+
+        var date2 = new Date('2021-9-24 16:33:30:500'); //指定日期
+        console.log(date2.toLocaleString())
+
+        var date3 = new Date(2021, 8, 27, 20, 36, 30, 500); //指定日期
+        alert(date3.toLocaleString())
+
+        //年
+        console.log(date1.getFullYear());
+
+        //月
+        console.log(date1.getMonth());
+
+        //日
+        console.log(date1.getUTCDate());
+
+        //星期
+        console.log(date1.getUTCDay());
+
+        //时
+        console.log(date1.getUTCHours());
+
+        //分
+        console.log(date1.getUTCMinutes());
+
+        //秒
+        console.log(date1.getSeconds());
+
+        //毫秒
+        console.log(date1.getUTCMilliseconds());
+
+
+        setInterval(function() {
+            console.log(new Date().toLocaleString())
+        }, 2000)
+    </script>
+</body>
+
+</html>

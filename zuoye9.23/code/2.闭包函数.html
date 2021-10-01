@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //闭包函数的特点：
+        //1.函数嵌套函数
+        //2.内部函数使用了外部函数的成员(变量 形参)
+
+        function foo() {
+            var count = 0;
+
+            function bar() {
+                //内部函数使用了外部函数的成员变量 greeting
+                count++;
+                console.log(count);
+            }
+            return bar;
+        }
+        var fun = foo();
+        //变量fun 只要一直引用函数bar(),则bar()函数中使用count变量就一直不会被销毁
+
+        fun();
+        fun();
+        fun();
+        //当变量不在引用函数bar()时，bar()以及bar()函数中使用的count变量就会回收
+
+        fun = null;
+
+
+        /*一般情况下，函数执行结束之后，函数作用域中的成员都会被回收
+        如果内部函数使用外部函数的成员，则内部函数只要没有被销毁
+        它就会一直引用外部函数的成员，也就是说，内部函数所引起的变量会一直驻留在内存中
+        注意：不推荐大量使用闭包函数，因为这么做会导致内存溢出*/
+    </script>
+</body>
+
+</html>

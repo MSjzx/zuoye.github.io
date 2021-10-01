@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <div class="box">
+            <p>文本内容1</p>
+        </div>
+        <div class="box">
+            <p>文本内容2</p>
+        </div>
+        <div class="box">
+            <p>文本内容3</p>
+        </div>
+    </div>
+    <script>
+        var boxs = document.querySelectorAll('.box');
+        for (var i = 0; i < boxs.length; i++) {
+            //通过节点对象的innerHTML 属性获取节点中得标签内容
+            console.dir(boxs[i].innerHTML);
+            //通过为innerHTML 属性重新赋值 即可修改节点中得标签内容
+            boxs[i].innerHTML = '<p><a href="">链接' + i + '</a></p>';
+        }
+    </script>
+</body>
+
+</html>

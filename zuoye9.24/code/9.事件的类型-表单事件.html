@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="login_form">
+        <p><label>账号：<input type="text" name="usn" id="username"></label></p>
+        <p><label>密码：<input type="text" name="pwd"></label></p>
+        <p>
+            <input type="submit" value="提交">
+            <input type="reset" value="重置">
+        </p>
+    </form>
+
+    <script>
+        var username = document.querySelector('#username');
+        // //当输入框获取焦点时触发
+        // username.onfocus = function(evt) {
+        //     console.log(evt.type)
+        // };
+
+        // //当输入框失去焦点时触发
+        // username.onblur = function(evt) {
+        //     console.log(evt.type)
+        // };
+
+        // //当输入框输入内容时触发
+        // username.oninput = function(evt) {
+        //     console.log(evt.type)
+        // };
+        // //当输入框中的内容发生改变 然后失去焦点时触发
+        // username.onchange = function(event) {
+        //     console.log(event.type)
+        // };
+        //当表单被提交时触发
+        var loginForm = document.querySelector('#login_form');
+
+        loginForm.onsubmit = function(event) {
+            console.log(event.type)
+            console.log(event)
+                //使用事件对象的 preventDefault()方法阻止表单提交
+            event.preventDefault();
+        };
+        loginForm.onreset = function(event) {
+            console.log(event.type)
+        };
+        //注意：onsubmit 和 onreset 事件是需要注册到form元素上的
+    </script>
+</body>
+
+</html>

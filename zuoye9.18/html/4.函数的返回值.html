@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //在函数执行结束后 我们可以使用retyrn语句将执行的结果返回到函数外部
+
+        //return 语句后面的代码不会被执行
+
+        function sum(a, b) {
+            return a + b;
+        }
+
+        //一个函数可以有多个return语句 但只只有一个会被执行
+
+        function max(a, b) {
+            if (a > b) {
+                return a;
+            } else {
+                return b;
+            }
+        }
+
+        //return 语句后面还可以不写任何返回值 默认会返回一个 undefined 
+        //这种写法通常在需要提前结束函数 并且不需要返回值任何指的情况下
+
+        function max(a, b) {
+            //验证实参是否都是数字 不是数字 返回undefined
+            if (typeof a != 'number' || typeof b != 'number') return;
+            return a > b ? a : b;
+        }
+        console.log(max('3', 2))
+
+        //没有任何返回值的函数(函数中没有出现return 语句) 默认返回undefined
+
+        function foo() {
+
+        }
+        console.log(foo())
+    </script>
+</body>
+
+</html>

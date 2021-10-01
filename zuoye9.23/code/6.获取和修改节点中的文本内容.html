@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <div class="box">
+            <p>文本内容1</p>
+        </div>
+        <div class="box">
+            <p>文本内容2</p>
+        </div>
+        <div class="box">
+            <p>文本内容3</p>
+        </div>
+    </div>
+    <script>
+        var ps = document.querySelectorAll('p');
+        for (var i = 0; i < ps.length; i++) {
+            //通过节点对象的innerText 属性获取节点中纯文本
+
+            console.dir(ps[i].innerText);
+            //通过为innerText 属性重新赋值，可以改变节点中的文本
+            ps[i].innerText = '段落内容' + (i + 1);
+        }
+    </script>
+</body>
+
+</html>

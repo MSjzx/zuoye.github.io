@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" id="btn">点我</button>
+    <script>
+        var btn = document.querySelector('#btn');
+        //当元素上某个事件触发时，会自动生成一个事件对象，该事件对象会被传递给事件的处理方法
+        //事件对象是用来描述当前触发的事件的详细信息，比如，事件类型，触发的按键等等
+        btn.onclick = function(event) {
+            console.log(event.type)
+        }
+    </script>
+</body>
+
+</html>

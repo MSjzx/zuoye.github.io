@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .foo {
+            background-color: #f00;
+            color: white;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <p title="这是一个段落">文本内容1</p>
+    <script>
+        //attribute 指的是标签上的属性 比如id class title
+        //property 指的是节点对象上的属性，比如 innerText innerHTML id className
+
+        var p = document.querySelector('p');
+
+        //使用setAttribute() 方法为标签添加新属性
+        p.setAttribute('id', 'p1');
+        p.setAttribute('class', 'paragraph');
+
+        //使用getAttribute() 方法获取标签的属性值
+        console.log(p.getAttribute('title'));
+        console.log(p.getAttribute('class'));
+        console.log(p.getAttribute('id'));
+
+        //使用setAttribute() 方法为已有的属性重新赋值
+        p.setAttribute('title', 'Hello World');
+
+        //使用 removeAttribute()方法删除已有属性
+        p.removeAttribute('id');
+    </script>
+</body>
+
+</html>

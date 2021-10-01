@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 550px;
+            height: 550px;
+            border: 1px solid #000;
+            /* 父元素设置成相对定位，让子元素基于父元素定位 */
+            position: relative;
+        }
+        
+        #box {
+            width: 150px;
+            height: 150px;
+            background-color: #f0f;
+            /* 子元素设置成绝对定位 */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="btn_left">向左移动 400px</button>
+    <button id="btn_right">向右移动 400px</button>
+    <div id="container">
+        <div id="box"></div>
+    </div>
+
+    <script>
+        // 获取被移动的元素
+        var box = document.querySelector('#box');
+
+        //获取控制元素向右移动的按钮
+        var btnRight = document.querySelector('#btn_right');
+        // 获取控制元素向左移动的元素
+        var btnLeft = document.querySelector('#btn_left');
+
+        //为按钮注册点击事件
+        btnRight.onclick = function() {
+            // 让元素向右走时，应该把控制元素向左走的定时器清楚
+            clearInterval(box.timer);
+
+            // 通过为节点对象添加自定义属性的方式记录定时器的ID
+            box.timer = setInterval(function() {
+                if (box.offsetLeft >= 400) {
+                    // 如果元素距离父元素左边的偏移量大于或等于400px
+                    // 则清楚定时器 父元素停止移动
+                    clearInterval(box.timer);
+                } else {
+                    // 每隔一段时间 向右移动10px
+                    // 偏移量+步长=left值
+                    box.style.left = box.offsetLeft + 10 + 'px';
+                }
+            }, 16.7)
+
+            // 为按钮注册点击事件
+            btnLeft.onclick = function() {
+                // 让元素向左走时，应该把控制元素向右走的定时器清除
+                clearInterval(box.timer)
+                box.timer = setInterval(function() {
+                    if (box.offsetLeft <= 0) {
+                        clearInterval(box.timer);
+                    } else {
+                        box.style.left = box.offsetLeft - 10 + 'px';
+                    }
+                }, 16.7);
+            };
+        }
+    </script>
+</body>
+
+</html>

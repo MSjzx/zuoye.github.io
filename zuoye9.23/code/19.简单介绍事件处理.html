@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1.使用标签的onlick 属性注册点击事件 -->
+    <!-- 注意:onclick 属性的值需要是可以执行的代码 不是函数声明 -->
+    <button type="button" onclick="foo()">点我</button>
+    <script>
+        function foo() {
+            console.log('foo')
+        }
+
+        //2.通过节点对象的onclick属性注册点击事件
+        var btn = document.querySelector('button');
+        btn.onclick = function handleClick() {
+            console.log('Hello')
+        }
+    </script>
+</body>
+
+</html>

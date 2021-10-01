@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //通常只有我们主动调用函数时 函数内的代码才会执行
+        //但是 当我们将函数变成一个表达式时 该函数就会立即执行
+        //怎样将函数变成表达式呢？
+        //立即执行函数表达式：IIFE（Immediately-invoked function expression）
+
+        + function foo(fullName) {
+            console.log(fullName)
+        }('zz');
+
+
+
+
+
+        -
+
+        function foo(fullName) {
+            console.log(fullName)
+        }('zz');
+
+        (function foo(fullName) {
+            console.log(fullName)
+        }('zz'));
+
+        (function foo(fullName) {
+            console.log(fullName)
+        })('zz');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="h1"></h1>
+    <button id="btn" type="button">点名</button>
+    <script src="./seed.js"></script>
+    <script>
+        //获取元素
+        var heading = document.querySelector('#h1');
+        var button1 = document.querySelector('#btn');
+
+        button1.onclick = function() {
+            //需求，随机获取数组中的元素，下限0 上限40
+            //1.求随机索引
+            var randomIndex = Math.floor(Math.random() * students.length)
+                // 2.根据随机索引获取数组中的元素
+            console.log(students[randomIndex]);
+
+            heading.innerText = students[randomIndex].name;
+        }
+    </script>
+</body>
+
+</html>

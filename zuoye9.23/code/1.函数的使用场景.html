@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.作为值赋值给另一个变量
+        // function foo (){
+        // }
+        // var bar=foo;
+
+        //无论是使用函数名(foo)还是变量名(bar)调用函数。它执行的都是同一个函数
+        // bar()
+        // foo()
+
+        //2.作为实参传递给另一个函数的形参
+        // function foo() {
+
+        // }
+
+        // function bar(fun) {
+        //     //调用传入的函数
+        //     fun()
+        // }
+
+        // //将foo 作为实参传递给bar 函数的形参 fun
+        // bar(foo)
+
+        //3.作为另一个函数的返回值
+        function foo() {
+            function bar() {
+                console.log('bar')
+            }
+            //将内部函数作为返回值传递到函数外部
+            return bar;
+        }
+        //使用变量fun 接受foo() 函数返回的内部函数(bar)
+        var fun = foo();
+        //通过变量fun调用bar函数
+        fun();
+    </script>
+</body>
+
+</html>

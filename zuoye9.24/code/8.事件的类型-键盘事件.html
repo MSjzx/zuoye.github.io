@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <script>
+        var input = document.querySelector('#input');
+        //键盘按下
+        input.onkeydown = function(event) {
+            console.log(event.type)
+        };
+        //键盘按下不松开
+        input.onkeypress = function(event) {
+            console.log(event.type)
+        };
+        //键盘按键弹起
+        input.onkeyup = function(event) {
+            console.log(event.type)
+        }
+    </script>
+</body>
+
+</html>

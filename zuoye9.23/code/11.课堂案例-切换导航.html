@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #nav {
+            /* height: 50px; */
+            background-color: #FF8900;
+        }
+        
+        #nav ul {
+            width: 1170px;
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+        
+        #nav ul li {
+            float: left;
+        }
+        
+        #nav ul li a {
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 14px;
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        #nav ul li a:hover {
+            background-color: #dd7b0b;
+        }
+        
+        #nav ul li a.current {
+            background-color: #bd6908;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <ul>
+            <li><a href="#">主题市场</a></li>
+            <li><a href="#" class="current">天猫</a></li>
+            <li><a href="#">聚划算</a></li>
+            <li><a href="#">天猫超市</a></li>
+            <li><a href="#">淘抢购</a></li>
+            <li><a href="#">电器城</a></li>
+            <li><a href="#">司法拍卖</a></li>
+            <li><a href="#">中国制造</a></li>
+            <li><a href="#">兴农扶贫</a></li>
+            <li><a href="#">飞猪旅行</a></li>
+            <li><a href="#">智能生活</a></li>
+            <li><a href="#">苏宁易购</a></li>
+        </ul>
+    </div>
+    <script>
+        var links = document.querySelectorAll('a');
+        //遍历所有的链接
+        for (var i = 0; i < links.length; i++) {
+
+            //每遍历出来一个链接 就给他注册一个点击事件的处理方法
+            links[i].onclick = function() {
+                //当用户点击某个链接时 先将其他链接上的current的类名删除
+                for (var j = 0; j < links.length; j++) {
+                    if (links[j].classList.contains('current')) {
+                        links[j].classList.remove('current');
+                    }
+                }
+                //然后 再给当前点击的链接上加上current类名
+                this.classList.add('current')
+                    // console.log(i)
+                    // 我们可以使用 this 关键字，this 关键字指的是当前属性（onclick）所属的对象
+                    // console.log(this.innerText)
+                    // this.classList.add('current');
+            };
+        }
+        //标签属性onlick在节点对象上没有对应属性
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.使用字面量创建函数对象（推荐使用）
+        // function foo(a, b) {
+        //     return a + b;
+        // }
+
+        // 2. 使用函数表达式（ 匿名函数）
+        // var foo = function(a, b) {
+        //     return a + b;
+        // }
+
+        // 3.使用构造函数创建对象（不推荐）
+        // var foo =new Function('a','b','return a+b')
+
+        //函数内的代码不会主动执行，需要开发人员手动调用才会执行
+        // var c = foo(1, 2);
+        // alert(c);
+
+        //判断一个数是否是质数
+        function isPrimeNumber(num) {
+            var count = 0;
+            for (var i = 1; i <= num; i++) {
+                if (num % i == 0) {
+                    count++;
+                }
+            }
+            // if(count==2){
+            //     return true;
+            // }else{
+            //     return false;
+            // }
+            //由于if语句逻辑简单，因此可以使用三目运算符改写
+            // return count==2? turn:false;
+            // 由于count==2表达式结果是true或false因此可以直接将表达式结果返回；
+            return count == 2;
+        }
+        alert(isPrimeNumber(11))
+    </script>
+</body>
+
+</html>

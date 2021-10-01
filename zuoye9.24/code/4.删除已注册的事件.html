@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" id="btn">点我</button>
+    <script>
+        var button = document.querySelector('#btn');
+
+        //1.如果是通过节点对象的属性注册的事件处理程序
+        //或通过HTML标签属性的事件处理程序
+        button.onclick = function() {
+                console.log('Hello')
+            }
+            //则 只需要将事件属性的赋值为null 即可删除该事件
+        button.onclick = null;
+
+        //2.如果是通过节点对象的方法注册的事件处理程序
+        function handleClick() {
+            console.log('Hello World')
+        }
+        button.addEventListener('click', handleClick.false);
+
+        //则 需要使用 removeEventListener()方法删除注册的事件
+        button.removeEventListener('click', handleClick);
+
+        //注意 注册事件时和删除事件所使用的函数必须是同一个函数。
+    </script>
+</body>
+
+</html>

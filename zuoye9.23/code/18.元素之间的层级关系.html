@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <p>p1</p>
+            <p>p2</p>
+            <p>p3</p>
+        </div>
+        <div id="div2">
+            <p>p4</p>
+            <p>p5</p>
+            <p>p6</p>
+        </div>
+        <div>
+            <p>p7</p>
+            <p>p8</p>
+            <p>p9</p>
+        </div>
+    </div>
+    <script>
+        var div2 = document.querySelector('#div2');
+
+        //获取父节点
+        // div2.parentNode
+        //     //上一个兄弟文本节点
+        // console.log(div2.previousSibling);
+        // //上一个兄弟元素节点
+        // console.log(div2.previousElementSibling);
+
+        // //下一个兄弟文本节点
+        // console.log(div2.nextSibling);
+        // //下一个兄弟元素节点
+        // console.log(div2.nextElementSibling);
+
+        //所有子节点(包含文本节点)
+        console.log(div2.childNodes);
+        //所有元素子节点(只包含元素节点)
+        console.log(div2.children);
+
+        //第一个文本子节点
+        console.log(div2.firstChild)
+            //第一个元素子节点
+        console.log(div2.firstElementChild)
+
+        //最后一个文本子节点
+        console.log(div2.lastChild)
+            //最后一个元素节点
+        console.log(div2.lastElementChild)
+    </script>
+</body>
+
+</html>

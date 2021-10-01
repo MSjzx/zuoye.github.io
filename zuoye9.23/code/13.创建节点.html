@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="nav">
+
+    </div>
+    <script>
+        //使用createElement()方法创建元素节点
+        var h1 = document.createElement('h1');
+
+        h1.innerText = 'HEllo World';
+        h1.setAttribute('id', 'heading');
+        h1.setAttribute('class', 'heading1');
+
+        //使用appendChild()向目标元素节点中追加子元素
+        var div = document.querySelector('#nav');
+        div.appendChild(h1);
+        console.dir(h1);
+    </script>
+</body>
+
+</html>

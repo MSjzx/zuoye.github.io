@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" id="btn">点我</button>
+
+    <script>
+        //通过节点对象的属性注册事件处理程序
+
+        //1.获取节点对象
+        var button = document.querySelector('#btn');
+        //2.通过节点对象的属性注册事件处理程序
+        button.onclick = function() {
+            console.log('Hello World');
+        }
+
+        button.ondblclick = function() {
+            console.log('你好世界');
+        }
+
+        //注意,同类型的事件只能注册一次,如果注册了多次 则只执行最后添加的事件处理程序
+        button.onclick = function() {
+            console.log('你好世界')
+        }
+    </script>
+</body>
+
+</html>
