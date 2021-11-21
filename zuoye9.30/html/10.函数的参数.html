@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function max(a, b) {
+            console.log(arguments);
+            if (a > b) {
+                return a;
+            } else {
+                return b;
+            }
+        }
+
+        // 形参：创建函数时 在函数名后面指定的参数列表
+        // 实参：调用函数时 给函数传入的数据（或值）。
+
+        // 当我们调用函数时 给函数传入的实参会被按照顺序赋值给形参
+        max(12, 48); //12和48会被分别赋值给形参a和b（a=12 b=48）
+
+        // 函数的形参和实参的数量可以不匹配
+        // 当实参的数量小于形参的数量时 未被赋值的形参会被自动赋值为undefined
+
+        // 当实参的数量多于形参的数量时 多余的实参会被忽略
+        console.log(max(12, 48, 99)); //48
+        // 实际上 我们给函数传入的实参都被放到了函数内部的arguments对象中
+    </script>
+</body>
+
+</html>

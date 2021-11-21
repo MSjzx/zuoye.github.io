@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // 扩展自定义构造函数的原型对象
+
+        function Rectangle(width, height) {
+            this.width = width;
+            this.height = height;
+            // this.getArea = function () {
+            //     return '矩形的面积为：'+ this.width * this.height;
+            // }
+        }
+
+        var rect1 = new Rectangle(60, 30);
+        var rect2 = new Rectangle(60, 60);
+
+        // 两个对象中 getArea() 方法的作用都是一样的，没有必要每个对象都有一个这样的方法。
+        console.log(rect1)
+        console.log(rect2)
+
+        // 将 getArea() 方法添加到原型对象中，这样以来，两个对象就可以共享一个方法了。
+        Rectangle.prototype.getArea = function () {
+            return '矩形的面积为：'+ this.width * this.height;
+        };
+
+        // 调用原型对象中的 getArea() 方法
+        console.log(rect1.getArea())
+        console.log(rect2.getArea())
+        
+
+
+        
+    </script>
+</body>
+</html>

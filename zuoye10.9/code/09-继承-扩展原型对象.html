@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // 为内置构造函数的原型对象添加新的属性或方法（不建议这样做）
+        
+
+        // 为原型对象添加 shuffle() 方法，用于打乱元素的顺序
+        Array.prototype.shuffle = function () {
+            // 创建数组，用于保存随机生成的索引
+            var indexs = [];
+            while(indexs.length < this.length) {
+                var i = Math.floor(Math.random() * this.length);
+                if (!indexs.includes(i)) {
+                    indexs.push(i)
+                }
+            }
+            var result = []
+            for(var j = 0; j < indexs.length; j++) {
+                result[indexs[j]] = this[j]
+            }
+            return result;
+        };
+
+        // 注意，在原型对象中添加的属性会被所有的实例对象继承。
+        // 例如，上面添加的 shuffle() 方法会被所有的数组继承。
+        var arr1 = new Array(1, 2, 3, 4, 5);
+        var arr2 = new Array('a', 'b', 'c', 'd', 'e');
+
+        console.log(arr1.shuffle())
+        console.log(arr2.shuffle())
+
+        console.log(arr1, arr2)
+
+
+        
+    </script>
+</body>
+</html>

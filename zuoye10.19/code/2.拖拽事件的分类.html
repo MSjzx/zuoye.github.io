@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: hotpink;
+        }
+        
+        #box2 {
+            width: 400px;
+            height: 400px;
+            background-color: khaki;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1" draggable="true">box1</div>
+    <div id="box2">box2</div>
+    <script>
+        // 由于在拖拽的过程中要经过document文档 但是文档不接受被拖拽的元素 会显示一个禁止的光标
+        // 解决办法 可以监听document对象的ondragover事件 然后事件的处理方法中 阻止事件的默认行为。
+        document.ondragover = function(evt) {
+            evt.preventDefault();
+        };
+        // 被拖拽的元素上可以注册的事件
+        // ondragstart 开始拖拽时触发
+        // ondrag 拖拽的过程中触发
+        // ondradend 拖拽结束时触发
+
+        // 为被拖拽的元素注册事件
+        var box1 = document.querySelector('#box1');
+        box1.ondragstart = function(evt) {
+            console.log(evt.type)
+        };
+        box1.ondrag = function(evt) {
+            console.log(evt.type)
+        };
+        box1.ondragend = function(evt) {
+            console.log(evt.type)
+        }
+    </script>
+</body>
+
+</html>

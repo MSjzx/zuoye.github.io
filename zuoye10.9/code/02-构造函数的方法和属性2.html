@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+
+
+        //  定义一个表示矩形的构造函数 Rectangle
+        function Rectangle (width, height) {
+            this.width = width;
+            this.height = height;
+
+            this.getArea = function () {
+                return '矩形的面积为：' + this.width * this.height;
+            };
+        }
+
+       
+        // isRectangle() 方法，检测某个对象是否是矩形
+        Rectangle.isRectangle = function (rect) {
+            return rect instanceof Rectangle;
+        };
+
+        // create() 方法，用于创建矩形对象
+        Rectangle.create = function (width, height) {
+            return new Rectangle(width, height);
+        };
+
+        // 构造函数的方法和属性，是属于构造函数的，也就说只能通过构造函数去调用，并且不用事先创建对象
+        Rectangle.create(60, 60)
+
+        // 在构造函数中通过 this 关键字添加的方法，属于被创建的新对象（或者说被实例化的对象）
+        var rect1 = new Rectangle(60, 30);
+        
+        console.log(rect1.getArea())
+
+      
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 用于判断数组中是否包含某个元素
+        // 默认从索引0处开始往后找 找到返回true 否则返回false
+        // includes（元素，从哪索引开始查找）
+
+        var arrNum = [1, 2, 3, 4, 5];
+        console.log(arrNum.includes(1)); //true
+        console.log(arrNum.includes(6)); //false
+
+        // 当查找的元素是一个对象时 比较是对象在内存中地址
+        var obj = {
+            name: '李四'
+        };
+        var arrObj = [obj, {
+            name: '李四'
+        }, {
+            name: '张三'
+        }]
+        console.log(arrObj.includes(obj))
+    </script>
+</body>
+
+</html>

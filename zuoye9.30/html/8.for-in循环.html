@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 创建对象
+        var obj = {
+            name: '张三',
+            age: 20,
+            gender: false,
+            sayName: function() {
+                console.log('我叫' + this.name + '。')
+            }
+        };
+
+        //   每次for-in 都会从obj对象中取出一个属性名，赋值给变量key，然后我们就可以通过key取对应属性值 
+        for (var key in obj) {
+            console.log(key); //属性名
+            console.log(obj[key])
+        }
+
+        // 使用 for-in 循环遍历数组
+        var arr = ['a', 'b', 'c', 'd']
+        for (var index in arr) {
+            console.log(index); //索引
+            console.log(arr[index]); //索引对应的值
+        }
+
+        // 谁用for-in循环遍历字符串（字符串对象）
+        var str = 'abcdefghi'
+        for (var j in str) {
+            console.log(j); //每个字符对应的索引
+            console.log(str[j]); //索引对应的字符
+        }
+    </script>
+</body>
+
+</html>

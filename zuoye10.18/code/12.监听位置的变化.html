@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 使用 getCurrentPosition() 方法获取当前的地位位置。
+        var watchId = navigator.geolocation.watchPosition(function(position) {
+            console.log(position)
+
+        }, function(error) {
+            console.log(error)
+        }, {
+            enableHighAccuracy: true, // 是否要求高精确度的位置信息，默认是 false
+            // timeout: 10000,         // 指定超时时间
+            maximumAge: 0 // 位置信息缓存的时长
+        });
+        // 使用clearWatch(watchId)请求对位置的监听
+        navigator.geolocation.clearWatch(watchId);
+        console.log(watchId)
+    </script>
+</body>
+
+</html>

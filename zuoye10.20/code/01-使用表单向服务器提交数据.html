@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="http://localhost:8080/mgt/api/student/new" method="get">
+        <p>
+            <label>姓名：<input type="text" name="name"></label>
+        </p>
+        <p>
+            <label>年龄：<input type="text" name="age"></label>
+        </p>
+        <p>
+            <label>性别：<input type="text" name="gender"></label>
+        </p>
+        <p>
+            <label>电话：<input type="text" name="phone"></label>
+        </p>
+        <p>
+            <label>地址：<input type="text" name="address"></label>
+        </p>
+        <p>
+            <label>爱好：<input type="text" name="hobbies"></label>
+        </p>
+        <p>
+            <label>生日：<input type="date" name="birther"></label>
+        </p>
+        <p>
+            <label>备注：<textarea name="remark" cols="30" rows="10"></textarea></label>
+        </p>
+        <p>
+            <input type="submit" value="提交">
+        </p>
+    </form>
+    
+    <!-- 
+
+        "name":"赵森","age":22,"gender":"男","phone":"12345678913",
+        "address":"郑州市高新区","remark":"喜欢睡觉",
+        "hobbies":["吸烟","喝酒","烫头"],"birther":"1998-12-12"}
+     -->
+</body>
+</html>

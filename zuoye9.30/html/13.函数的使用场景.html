@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.作为值被赋值给其他变量
+        // function foo() {
+        //     console.log('hello')
+        // }
+        // var bar = foo;
+        // // 此时 bar和foo同时引用一个函数 因此既可以使用bar也可以使用foo去调用函数
+        // bar();
+        // foo();
+
+        // 2.作为对象属性的值
+        function sayName() {
+            console.log('岁岁')
+        }
+        var obj = {
+            name: '元元',
+            sayHello: function() {
+                console.log('元元')
+            },
+            sayName: sayName
+
+        };
+        // 3.作为实参传递给其他函数
+        function test1() {
+            console.log('我在另一个函数内部被调用了')
+        }
+
+        function test2(fun) {
+            // 在函数内部调传入的函数
+            fun()
+        }
+        test2(test1);
+
+        // 4.作为其他函数的返回值
+        function fun1() {
+            // 在函数内部声明函数
+            function fun2() {
+                console.log('我在函数外部被调用了')
+            }
+            // 将内部函数返回到函数外部
+            return fun2;
+        }
+        // 使用变量fun3接收fun1返回的内部函数fun2
+        var fun3 = fun1()
+            // 调用fun3时，其实是在调用fun2
+        fun3()
+            // 5.作为构造函数 用于创建自定义的类型对象
+            // 根据功能的不同 函数可以分为：普通函数和构造函数
+            // 普通函数一般用于实现功能(业务逻辑) 例如我们前写的计算阶乘 累加以及比较大小值得函数
+            // 构造函数用创建对象 例如Array Date Object RegExp这些都是内置得构造函数
+            // 构造函数与普通函数除了功能上得区别以外 构造的首字母一般都是大写的 调用的时侯需要使用new操作符
+            // 处理这些内置的构造函数以外 我们能不能创建自己的构造函数
+        function Person(name, age, gender) {
+            // 当我们使用new操作符调用一个函数时，函数内部会自动创建一个该类型（Person）的对象‘
+            // 我们可以在函数内部使用this关键字访问这个新创建的对象
+            // 函数调用结束后,新创建的对象会被自动得返回到函数外部
+            console.log(this)
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.sayName = function() {
+                console.log(this.name)
+            };
+            return this;
+        }
+
+        // 使用构造函数创建对象
+        var person1 = new Person('元元', 20, '女');
+        console.log(person1.sayName())
+    </script>
+</body>
+
+</html>

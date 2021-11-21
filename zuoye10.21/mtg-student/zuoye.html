@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./vendor/boot/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">某某某管理系统</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">学员管理</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">教员管理</a>
+                    </li>
+                </ul>
+                <form class="d-flex" id="search">
+                    <input class="form-control me-2" type="search" name="keyword" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">aaassssssss</button>
+                </form>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">新建</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">姓名</th>
+                            <th scope="col">年龄</th>
+                            <th scope="col">性别</th>
+                            <th scope="col">爱好</th>
+                            <th scope="col">电话</th>
+                            <th scope="col">地址</th>
+                            <th scope="col">生日</th>
+                            <th scope="col">备注</th>
+                            <th scope="col">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form id="myform">
+                    <div class="mb-3 row">
+                        <label for="exampleInputEmail1" class="form-label col-sm-1">姓名：</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="name">
+                        </div>
+                        <label for="exampleInputEmail1" class="form-label col-sm-1">年龄：</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="age">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="exampleInputEmail1" class="form-label col-sm-1">性别：</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="gender">
+                        </div>
+                        <label for="exampleInputEmail1" class="form-label col-sm-1">爱好：</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="phone">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="exampleInputEmail1" class="form-label col-sm-1">电话：</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="address">
+                        </div>
+                        <label for="exampleInputEmail1" class="form-label col-sm-1">地址：</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="hobbies">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="exampleInputEmail1" class="form-label col-sm-1">生日：</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="birther">
+                        </div>
+                        <label for="exampleInputEmail1" class="form-label col-sm-1">备注：</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="remark">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">提交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./vendor/utils/utils.js"></script>
+    <script>
+        var list = 'http://172.16.3.100:8080/mgt/api/student/list';
+        var create = 'http://172.16.3.100:8080/mgt/api/student/new';
+        var removeURL = 'http://172.16.3.100:8080/mgt/api/student/remove';
+        var updateURL = 'http://172.16.3.100:8080/mgt/api/student/update';
+
+        var students = [];
+        // 要修改的学员信息
+        var found = null;
+        // 1.获取所有的学员信息
+        get(list, function(res) {
+            if (res.code) {
+                students = res.data;
+                // 遍历数据 生成HTML代码片段 然后设置到tbody元素中
+                if (res.data.length) {
+                    document.querySelector('tbody').innerHTML = res.data.map(function(student) {
+                        return '<tr>\
+                            <th>' + student.name + '</th>\
+                            <td>' + student.age + '</td>\
+                            <td>' + student.gender + '</td>\
+                            <th>' + student.hobbies + '</th>\
+                            <td>' + student.phone + '</td>\
+                            <td>' + student.address + '</td>\
+                            <td>' + student.birther + '</td>\
+                            <td>' + student.remark + '</td>\
+                            <td>\
+                                <button type="button" class="remove btn btn-danger btn-sm" data-sdt-id="' + student.id + '">删除</button>\
+                                <button type="button" class="update btn btn-success btn-sm" data-sdt-id="' + student.id + '">修改</button>\
+                            </td>\
+                        </tr>';
+                    }).join('');
+                } else {
+                    document.querySelector('tbody').innerHTML = '<tr><th colspan="9">暂无数据</th></tr>'
+                }
+                // 为【删除】和【修改】按钮注册事件
+                document.querySelectorAll('.remove').forEach(function(btn) {
+                    btn.onclick = function(evt) {
+                        console.log('点击删除按钮')
+                        console.log(evt.target.dataset.sdtId)
+
+                        remove(removeURL, {
+                            id: evt.target.dataset.sdtId
+                        }, function(res) {
+                            console.log(res)
+                        })
+                    };
+                })
+
+
+                document.querySelectorAll('.update').forEach(function(btn) {
+                    btn.onclick = function(evt) {
+                        console.log('点击修改按钮')
+
+                        found = students.find(function(student) {
+                            return student.id == evt.target.dataset.sdtId;
+                        });
+
+                        // 过滤出所有 input 元素
+                        Array.from(document.querySelector('#myform')).forEach(function(ele) {
+                            if (ele.type != 'submit') {
+                                ele.value = found[ele.name];
+                            }
+                        });
+                    };
+                })
+
+            }
+        });
+
+        // 2. 为表单注册提交事件
+        var myform = document.querySelector('#myform');
+        myform.onsubmit = function(evt) {
+
+            // 过滤出所有 input 元素
+            var inputs = Array.from(evt.target).filter(function(ele) {
+                return ele.type != 'submit'
+            });
+
+            // 获取 input 元素中值（用户输入的值）
+            var data = inputs.reduce(function(result, input) {
+                result[input.name] = input.value;
+                return result;
+            }, {});
+
+            // 清空 input 元素中的值
+            inputs.forEach(function(input) {
+                input.value = ''
+            });
+
+            if (found) {
+                console.log(data, found)
+                data.id = found.id;
+                data.create_time = found.create_time;
+                data.update_time = found.update_time;
+                // 修改操作
+                put(updateURL, data, function(res) {
+                    console.log(res)
+                });
+
+                found = null;
+            } else {
+                // 新建操作
+                // 将用户输入的数据发送给服务器
+                post(create, data, 'json', function(res) {
+                    console.log(res)
+                });
+            }
+            // 阻止表单提交
+            evt.preventDefault();
+        };
+
+
+        // 获取搜索表单
+        document.querySelector('#search').onsubmit = function(evt) {
+            evt.preventDefault();
+            console.log(this.keyword.value)
+            get('http://localhost:8080/mgt/api/student/list?name=' + this.keyword.value, function(res) {
+                console.log(res)
+
+                // 遍历数据，生成 HTML 代码片段，然后设置到 tbody 元素中
+                if (res.data.length) {
+                    document.querySelector('tbody').innerHTML = res.data.map(function(student) {
+                        return '<tr>\
+                                <th>' + student.name + '</th>\
+                                <td>' + student.age + '</td>\
+                                <td>' + student.gender + '</td>\
+                                <th>' + student.hobbies + '</th>\
+                                <td>' + student.phone + '</td>\
+                                <td>' + student.address + '</td>\
+                                <td>' + student.birther + '</td>\
+                                <td>' + student.remark + '</td>\
+                                <td>\
+                                    <button type="button" class="remove btn btn-danger btn-sm" data-sdt-id="' + student.id + '">删除</button>\
+                                    <button type="button" class="update btn btn-success btn-sm" data-sdt-id="' + student.id + '">修改</button>\
+                                </td>\
+                            </tr>';
+                    }).join('');
+                } else {
+                    document.querySelector('tbody').innerHTML = '<tr><th colspan="9">未查询到结果</th></tr>'
+                }
+
+                // 为【删除】和【修改】按钮注册事件
+                document.querySelectorAll('.remove').forEach(function(btn) {
+                    btn.onclick = function(evt) {
+                        console.log('点击删除按钮')
+                        console.log(evt.target.dataset.sdtId)
+
+                        remove(removeURL, {
+                            id: evt.target.dataset.sdtId
+                        }, function(res) {
+                            console.log(res)
+                        })
+                    };
+                })
+
+
+                document.querySelectorAll('.update').forEach(function(btn) {
+                    btn.onclick = function(evt) {
+                        console.log('点击修改按钮')
+
+                        found = students.find(function(student) {
+                            return student.id == evt.target.dataset.sdtId;
+                        });
+
+                        // 过滤出所有 input 元素
+                        Array.from(document.querySelector('#myform')).forEach(function(ele) {
+                            if (ele.type != 'submit') {
+                                ele.value = found[ele.name];
+                            }
+                        });
+                    };
+                })
+
+            })
+        };
+    </script>
+
+</body>
+
+</html>

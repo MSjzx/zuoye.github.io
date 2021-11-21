@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.Object对象
+        var obj1 = {
+            name: '张三',
+            SayHi: function() {
+                console.log('大家好,我是' + this.name)
+            }
+        };
+        var obj2 = new Object(); //{}
+        obj2.name = '李四';
+        obj2['sayHi'] = function() {
+            console.log('大家好，我叫' + this.name)
+        };
+
+        // 2.Array数组
+        var arr1 = [1, 2, 3];
+        var arr2 = new Array(); //{}
+        var arr3 = new Array(3); //长度为3的空数组
+        var arr4 = new Array(1, 2, 3); //[1,2,3]
+
+        // 3.Date日期
+        var date1 = new Date(); //当前时间
+        var date2 = new Date(1212312111); //1970.1.1到现在的毫秒
+        var date3 = new Date('2021-9-30 9:51:0'); //
+        var date4 = new Date(2021, 9, 11, 12, 10, 0);
+
+        // 4.三种包装器对象 String Number Boolean
+
+
+        // 5.RegExp正则
+        var reg1 = /foo/img;
+        var reg2 = new RegExp('foo', 'igm')
+    </script>
+</body>
+
+</html>

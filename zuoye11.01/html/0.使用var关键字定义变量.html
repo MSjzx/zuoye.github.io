@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. var关键字是用来定义变量的
+        var foo = 'hello';
+        // 2. 一次定义多个变量
+        var str = 'hello',
+            num = '123';
+        // 3。定义变量时 可以只声明不赋值 变量的值会被自动赋值undefined
+        var bar;
+        // 4.定义变量后 可以随时修改便变量的值
+        var str = 'hello';
+        str = 'world';
+        // 5.变量的声明会被提升
+        console.log(bool)
+        var bool = true; //undefined
+        // 6.统一作用域下可以有多个同名的变量 最后一个变量会把前面的变量所覆盖掉
+        var arr = [1, 2, 3];
+        var arr = [4, 5, 6]; //[4,5,6]
+        // 7.使用var定义的变量会被挂到window对象上（作为window对象的属性存在）
+        var jQuery = function() {};
+        console.log(window)
+            // 8.在代码块中使用var关键字定义的变量不会被束缚在代码块中
+            // 例如 if代码中定义的变量 for循环中定义的变量 在代码块外是可以访问到的
+        for (var i = 0; i < 10; i++) {
+            var foo = i;
+        }
+        if (true) {
+            var bar = 'hello'
+        }
+        console.log(i, foo, bar)
+    </script>
+</body>
+
+</html>

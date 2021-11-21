@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function max(a, b) {
+            if (a > b) {
+                return a;
+
+            } else {
+                return b;
+            }
+        }
+
+        // 使用return语句可以从函数内部向函数外部返回一些数据
+        // 当函数体内的代码执行到return语句之后 函数就会结束，也就是，return语句后面的代码不会执行。
+        // return语句同时具有两个作用:返回数据和终止函数执行
+
+        // 例如,创建一个函数,实参的数量至少为2,并且实参的类型必须是数字,否则函数什么都不做,直接返回undefined
+        function foo(a, b) {
+            if (arguments.length < 2 || (typeof a != 'number' && typeof b != 'number')) {
+                throw new Error('实参的数量至少为2,并且实参的类型必须是数字');
+
+            }
+            // 如果条件不成立,则if条件语句后面的代码不会执行
+            return a * b;
+        }
+        foo()
+    </script>
+</body>
+
+</html>

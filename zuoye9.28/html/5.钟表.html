@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #clock {
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            background: url('../img/clock.jpg')no-repeat center;
+            position: relative;
+        }
+        
+        #hour {
+            width: 600px;
+            height: 600px;
+            background: url('../img/hour.png')no-repeat center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        #minute {
+            width: 600px;
+            height: 600px;
+            background: url('../img/minute.png')no-repeat center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        #second {
+            width: 600px;
+            height: 600px;
+            background: url('../img/second.png')no-repeat center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 表示时分秒的元素 -->
+    <div id="clock">
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+    </div>
+    <script>
+        // 3.获取时分秒
+        var hour = document.getElementById('hour');
+        var minute = document.getElementById('minute');
+        var second = document.getElementById('second');
+
+        // 4.设置间歇定时器 每隔一秒执行一次
+        setInterval(function() {
+            // 5.创建表示当前时间的日期对象
+            var now = new Date();
+            // 6.调用日期对象的方法，分别获取时分秒
+            var hh = now.getHours();
+            var mm = now.getMinutes();
+            var ss = now.getSeconds();
+            // 7.将时分秒换算成角度
+            // 360/12=30 一小时30°
+            var hhdeg = hh * 30;
+            // 360/60=6 一分钟走6°
+            var mmdeg = mm * 6;
+            // 360/60=6 一秒走6°
+            var ssdeg = ss * 6;
+            // 8.让时分秒旋转起来
+            second.style.transform = 'rotate(' + ssdeg + 'deg)';
+            minute.style.transform = 'rotate(' + mmdeg + 'deg)';
+            // 分针走一圈 时针走一格
+            // hhdeg=hhdeg+(mm/60)*30;
+            // 分针走了mm 时针需要走多少小格（mm/12）,然后再算这些小格有多少度
+            // 分针不满12分钟 时针不走
+            // 分针每走12分钟 时针走一格
+            hhdeg = hhdeg + Math.floor(15 / 12) * 6;
+            hour.style.transform = 'rotate(' + hhdeg + 'deg)';
+        }, 1000)
+    </script>
+</body>
+
+</html>

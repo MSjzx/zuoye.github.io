@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 使用video元素可以在页面中插入视频 -->
+    <video controls autoplay width="800" height="600" poster="./fengmian.jpeg">
+        <source src="./videos/tears-of-steel-battle-clip-medium.mp4" type="video/mp4">
+        <source src="./videos/tears-of-steel-battle-clip-medium.webm" type="">
+        <!-- 提示信息默认情况下是不显示的  当前浏览器不支持标签时才会显示 -->
+        <p>你的浏览器不支持视频标签 请更换查看</p>
+    </video>
+    <!-- video 标签常用的属性
+    src  属性用于设置视频连接地址
+    controls  属性用于显示视频的控制栏 默认不显示 布尔类型的属性 不需要赋值 写出来就默认为true
+     autoplay 可以让是视频一上来就自动播放 这也是一个布尔类型的属性
+
+     width 和 height 用于控制video标签所占的尺寸 并不能控制视频播放的尺寸
+     poster 可以用来设置视频的封面
+     muted 可以让视频静音
+
+
+
+-->
+</body>
+
+</html>

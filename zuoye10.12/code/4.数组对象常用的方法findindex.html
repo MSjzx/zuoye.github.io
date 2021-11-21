@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 在数组中插找某个元素 并将找到的值返回 如果找不到则返回undefined.
+        // arr1.find(function(value,index,array){},this)
+        // find()
+        var arr1 = [1, 2, 3, 4, 5];
+        var result = arr1.findIndfex(function(value, index, array) {
+            // 如果当前遍历出来的值 是你想要的，则只需返回true即可
+            if (value == 3) {
+                return true;
+            }
+        })
+        console.log(result)
+    </script>
+</body>
+
+</html>

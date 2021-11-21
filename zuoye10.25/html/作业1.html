@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <p>
+        <label><input id="all" type="checkbox"><span>全选</span></label>
+        <label><input id="not" type="checkbox"><span>反选</span></label>
+    </p>
+
+    <p><label><input class="item" type="checkbox">选项1</label></p>
+    <p><label><input class="item" type="checkbox">选项2</label></p>
+    <p><label><input class="item" type="checkbox">选项3</label></p>
+    <p><label><input class="item" type="checkbox">选项4</label></p>
+    <p><label><input class="item" type="checkbox">选项5</label></p>
+    <p><label><input class="item" type="checkbox">选项6</label></p>
+
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+
+            // 1. 获取【全选】复选框
+            var $all = $('#all');
+
+            // 2. 获取【反选】复选框
+            var $not = $('#not');
+
+            // 3. 获取【选项】复选框
+            var $item = $('.item');
+
+            // 4. 为【全选】复选框注册点击事件
+            $all.click(function() {
+
+                if ($(this).prop('checked')) {
+                    // 当【全选】复选框被选中时，应该把所有的【选项】复选框也选中
+                    $item.prop('checked', true);
+                    $(this).next().text('取消全选');
+                } else {
+                    $item.prop('checked', false);
+                    $(this).next().text('全选');
+                }
+
+                // $item.prop('checked', $(this).prop('checked'));
+            });
+
+            // 5. 为【反选】复选框注册点击事件
+            $not.click(function() {
+                $item.each(function() {
+                    // if ($(this).prop('checked')) {
+                    //     $(this).prop('checked', false)
+                    // } else {
+                    //     $(this).prop('checked', true)
+                    // }
+
+                    $(this).prop('checked', !$(this).prop('checked'));
+                })
+            });
+
+            // 6. 为【选项】复选框注册点击事件
+            $item.click(function() {
+
+                var index = $item.index(this)
+                if ($(this).prop('checked')) {
+                    var allTrue = true;
+                    // 如果当前被点击的选项是 true，则需要进一步判断它的所有兄弟元素是否也被选中
+                    $item.each(function(i) {
+                        if (index != i) {
+                            if (!$(this).prop('checked')) {
+                                allTrue = false;
+                            }
+                        }
+                    });
+
+                    // 如果其他复选框都已经处于选中状态，则将【全选】复选框选中
+                    if (allTrue) {
+                        $all.prop('checked', true);
+                        $all.next().text('取消全选');
+                    }
+                } else {
+                    $all.prop('checked', false);
+                    $all.next().text('全选');
+                }
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>

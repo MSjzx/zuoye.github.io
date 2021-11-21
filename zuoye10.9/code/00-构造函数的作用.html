@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        /* 
+        
+            使用构造函数的目的是方便我们创建具有相同属性和方法的对象。
+            构造函数与普通的函数没什么两样，唯一的区域是构造函数是用来创建对象的，而普通函数是来实现具体的业务逻辑的。
+            在书写的时候，为了区分它们，我们通常会把构造函数的首字母大写。
+
+            到目前为止，我们已经学了很多内置的构造函数，例如，Object，Array，Date，RegExp等等。
+            除了这些内置的构造函数以外，我们也可以创建自己的构造函数。
+
+         */
+
+        //  定义一个表示矩形的构造函数 Rectangle
+        function Rectangle (width, height) {
+            // 固定的属性可以直接写
+            this.edges = 4;
+
+            // 不确定的属性可以参数传入
+            this.width = width;
+            this.height = height;
+
+            this.getArea = function () {
+                return '矩形的面积为：' + this.width * this.height;
+            };
+        }
+
+        // 通过构造函数创建对象
+        var rect1 = new Rectangle(60, 30);
+        var rect2 = new Rectangle(60, 60)
+
+        // 访问对象的属性
+        console.log(rect1.edges);  // 4
+        console.log(rect1.width);  // 60
+        console.log(rect1.height);  // 30
+
+        console.log(rect2.edges);  // 4
+        console.log(rect2.width);  // 60
+        console.log(rect2.height);  // 60
+
+        // 调用对象的方法
+        console.log(rect1.getArea());  // 1800
+        
+        console.log(rect2.getArea());  // 3600
+
+        /* 
+        
+            当我们使用 new 操作符调用构造函数时，函数内部会自动创建一个该类型（Rectangle）的对象。
+            我们可以在函数体内通过 this 关键字访问新创建的对象。（例如，为对象添加属性和方法）
+            当函数执行结束后，新创建的对象会被自动地返回到函数外部。
+        
+        */
+
+        /* 
+        
+            注意：我们也可以在构造函数中使用 return 语句手动地返回一个值。
+            如果我们返回的是一个复杂数据类型的值（各种对象），则它会替代新创建的对象被返回。
+            如果我们返回的是一个简单数据类型的值（字符串，数字），则这些值会被忽略，新创建的对象依旧会被返回。
+
+        */
+
+        // 我们可以使用 instanceof 操作符检测新创建的对象是否是 Rectangle 的实例。
+        console.log(rect1 instanceof Rectangle);  // true
+        console.log(rect2 instanceof Rectangle);  // true
+
+    </script>
+</body>
+</html>

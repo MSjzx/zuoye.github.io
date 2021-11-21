@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var arr = {
+                "name": "周胜",
+                "age": 20,
+                "gender": "男",
+                "number": "喜欢睡觉"
+            };
+
+        // 使用 JSON.stringify() 方法将 Array 或 Object 对象转换成 JSON 格式的字符串时，默认会将转换结果变成一行。
+        // console.log(JSON.stringify(arr));  // '[{"name":"周胜","age":"20","gender":"男","number":"喜欢睡觉"}]'
+
+        // 如果想要为转换结果指定缩进，需要额外的参数。
+        // console.log(JSON.stringify(arr, null, 2));
+        // console.log(JSON.stringify(arr, null, 4));
+
+        // 第二个参数，需要传入一个函数或数组，不需要过滤或修改值时，可以传入 null 即可
+        var result = JSON.stringify(arr, function (key, value) {
+            if (key != 'age') {
+                return value;
+            } else {
+                return value + 20;
+            }
+        }, 2);
+
+        console.log(result)
+
+
+
+    </script>
+</body>
+
+</html>

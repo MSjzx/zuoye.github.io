@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box"></div>
+    <h1>Hello jQuery</h1>
+    <h1>Hello jQuery</h1>
+    <h1>Hello jQuery</h1>
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            // 使用索引获取jQuery对象中的DOM元素
+            console.log($('h1'))
+            console.log($('h1')[0])
+            console.log($('h1')[1])
+            console.log($('h1')[2])
+
+            // 使用get(index)方法获取jQuery对象中分DOM元素
+            console.log($('h1').get(0))
+            console.log($('h1').get(1))
+
+            // 获取jquery对象中DOM元素得数量
+            console.log($('h1').length)
+
+            // jQuery方法用法二 怎样将DOM元素转换成jQuery对象
+            var headings = document.querySelectorAll('h1');
+            console.log(headings)
+            console.log($(headings))
+
+            // jQuery 方法用法三：根据HTML字符串创建jQuery对象
+            $('<h1>HEllo World</h1>').appendTo('body')
+                // append()前面是被插入的对象，后面是要在对象内插入的元素内容
+                //appendTo()前面是要插入的元素内容，而后面是被插入的对象
+
+            // 怎样将jQuery对象转换成Dom对象
+            // 使用get(index)获取jQuery对象中Dom元素
+            // 使用toArray()方法将jQuery对象转换成Array对象
+            console.log($('h1').toArray())
+        })
+    </script>
+</body>
+
+</html>

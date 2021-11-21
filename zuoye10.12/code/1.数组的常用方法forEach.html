@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 遍历数组中的元素
+        // forEach(函数，函数中this的指向)
+
+        /*
+        
+            没遍历一个元素 函数就会被调用一次 并将遍历出的元素作为参数传入函数
+
+            num遍历出来的元素
+            idx遍历出来的元素对应的索引
+            arr数组本身
+        
+        */
+        var obj = {
+            name: 'hahaha'
+        };
+        var array = [1, 2, 3, 4, 5];
+        array.forEach(function(num, idx, arr) {
+            console.log(num, idx, arr)
+            console.log(this)
+        }, obj)
+    </script>
+</body>
+
+</html>

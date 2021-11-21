@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: hotpink;
+        }
+        
+        .nav1 {
+            width: 150px;
+        }
+        
+        .nav-list1 {
+            height: 35px;
+            color: #fff;
+            padding: 0 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #324252;
+            background-color: #3E5165;
+        }
+        
+        .nav-list-item1 {
+            font-size: 15px;
+        }
+        
+        .nav-item1-active {
+            background-color: #324252;
+            color: #0AFBCA;
+        }
+        
+        .close {
+            width: 20px;
+            height: 20px;
+            background: url('./../img/arrow-right.png') no-repeat center/cover;
+        }
+        
+        .open {
+            width: 20px;
+            height: 20px;
+            background: url('./../img/arrow-down.png') no-repeat center/cover;
+        }
+        
+        .nav2 {
+            display: none;
+        }
+        
+        .nav-list2 {
+            height: 35px;
+            padding: 0 8px 0 32px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            border-top: 1px solid #324252;
+            background-color: #23313F;
+        }
+        
+        .nav-list-item2 {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav1">
+
+        <div class="nav-list1">
+            <div class="nav-list-item1">一级菜单</div>
+            <div class="close"></div>
+        </div>
+        <div class="nav2">
+            <div class="nav-list2">
+                <div class="nav-list-item2">二级菜单</div>
+            </div>
+            <div class="nav-list2">
+                <div class="nav-list-item2">二级菜单</div>
+            </div>
+            <div class="nav-list2">
+                <div class="nav-list-item2">二级菜单</div>
+            </div>
+        </div>
+        <div class="nav-list1">
+            <div class="nav-list-item1">一级菜单</div>
+            <div class="close"></div>
+        </div>
+        <div class="nav2">
+            <div class="nav-list2">
+                <div class="nav-list-item2">二级菜单</div>
+            </div>
+            <div class="nav-list2">
+                <div class="nav-list-item2">二级菜单</div>
+            </div>
+            <div class="nav-list2">
+                <div class="nav-list-item2">二级菜单</div>
+            </div>
+        </div>
+        <div class="nav-list1">
+            <div class="nav-list-item1">一级菜单</div>
+            <div class="close"></div>
+        </div>
+        <div class="nav2">
+            <div class="nav-list2">
+                <div class="nav-list-item2">二级菜单</div>
+            </div>
+            <div class="nav-list2">
+                <div class="nav-list-item2">二级菜单</div>
+            </div>
+            <div class="nav-list2">
+                <div class="nav-list-item2">二级菜单</div>
+            </div>
+        </div>
+        <div class="nav-list1">
+            <div class="nav-list-item1">一级菜单</div>
+            <div class="close"></div>
+        </div>
+        <div class="nav2">
+            <div class="nav-list2">
+                <div class="nav-list-item2">二级菜单</div>
+            </div>
+            <div class="nav-list2">
+                <div class="nav-list-item2">二级菜单</div>
+            </div>
+            <div class="nav-list2">
+                <div class="nav-list-item2">二级菜单</div>
+            </div>
+        </div>
+        <div class="nav-list1">
+            <div class="nav-list-item1">一级菜单</div>
+            <div class="close"></div>
+        </div>
+        <div class="nav2">
+            <div class="nav-list2">
+                <div class="nav-list-item2">二级菜单</div>
+            </div>
+            <div class="nav-list2">
+                <div class="nav-list-item2">二级菜单</div>
+            </div>
+            <div class="nav-list2">
+                <div class="nav-list-item2">二级菜单</div>
+            </div>
+        </div>
+        <div class="nav-list1">
+            <div class="nav-list-item1">一级菜单</div>
+            <div class="close"></div>
+        </div>
+        <div class="nav2">
+            <div class="nav-list2">
+                <div class="nav-list-item2">二级菜单</div>
+            </div>
+            <div class="nav-list2">
+                <div class="nav-list-item2">二级菜单</div>
+            </div>
+            <div class="nav-list2">
+                <div class="nav-list-item2">二级菜单</div>
+            </div>
+        </div>
+    </div>
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            // 1.获取所有得一级菜单选项
+            $('.nav-list1').click(function() {
+                var $last = $(this).children('div:empty');
+                if ($last.hasClass('close')) {
+
+                    $last.removeClass('close');
+                    $last.addClass('open');
+                } else {
+                    $last.removeClass('open');
+                    $last.addClass('close');
+                }
+                $(this).toggleClass('nav-item1-active')
+                $(this).next().slideToggle();
+            })
+        })
+    </script>
+</body>
+
+</html>

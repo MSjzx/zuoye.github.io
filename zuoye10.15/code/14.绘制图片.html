@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            background-color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <img src="./cat.jpeg" alt="" id="cat"> -->
+    <canvas width="600" height="400" id="mycanvas">
+        不支持
+    </canvas>
+    <script>
+        // 获取canvas元素
+        var myCanvas = document.getElementById('mycanvas')
+            // 画笔
+        var myContext = myCanvas.getContext('2d');
+        // // 准备要绘制的图片方式一 获取页面中已有的图片
+        // var img = document.getElementById('cat');
+        // // 监听图片加载完成后的onload事件
+        // img.onload = function() {
+        //     console.log('图片已经加载完成')
+        //     myContext.drawImage(img, 0, 0);
+        // }
+
+        // // 准备要绘制的图片方式二 动态创建一个img元素
+        // var img2 = document.createElement('img');
+        // img2.src = './cat.jpeg';
+        // img2.onload = function() {
+        //     myContext.drawImage(img2, 0, 0)
+        // };
+        // 准备要绘制的图片方式一：Image 构造函数创建一个图片
+        var img3 = new Image();
+        img3.src = './cat.jpeg';
+        img3.onload = function() {
+            myContext.drawImage(img3, 0, 0)
+        };
+    </script>
+</body>
+
+</html>

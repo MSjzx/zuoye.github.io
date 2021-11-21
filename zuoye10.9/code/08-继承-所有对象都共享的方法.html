@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // 所有的对象都直接或间接继承 Object.prototype 对象中属性和方法
+        var arr = [1, 2, 3];
+        var date = new Date();
+        var obj = {name: '李四'};
+            
+        console.log(arr)
+        console.dir(date)
+        console.log(obj)
+
+        // Object.prototype 对象中的常用的方法
+
+        // hasOwnProperty() 方法可以用来判断对象自己的属性列表中是否包含某个属性
+        obj.hasOwnProperty('name');  // true
+
+        // isPrototypeOf() 方法用于判断一个对象是否是另一个对象的原型对象
+        console.log(Object.prototype.isPrototypeOf(obj));  // true
+        console.log(Array.prototype.isPrototypeOf(arr));  // true
+        console.log(Date.prototype.isPrototypeOf(date));  // true
+
+        // propertyInEnumerable() 方法用于判断对象中的某个属性是否是可枚举的
+        console.log(obj.propertyIsEnumerable('name'));
+
+        // 为 obj 对象添加一个不可枚举的属性 age
+        Object.defineProperty(obj, 'age', {
+            enumerable: false,
+            configurable: true,
+            value: 20,
+            writable: true
+        });
+
+        console.log(obj.propertyIsEnumerable('age'));  // false
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello 元元</h1>
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            //  为了防止操作DOM时 DOM还未加载完成 导致程序出错
+            // 我们需要将代码得执行时机延迟到文档加载完成完成后 在执行
+            // 此时 可以将代码放到ready方法中
+            var h1 = document.querySelector('h1')
+            console.log(h1)
+        })
+    </script>
+</body>
+
+</html>

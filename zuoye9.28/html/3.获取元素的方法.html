@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">main</div>
+    <div class="box foo bar">box1</div>
+    <div class="box foo bar">box2</div>
+    <div class="box foo bar">box3</div>
+    <script>
+        // 根据标签的id属性值 获取单个元素
+        var main = document.getElementById('main');
+        // 获取class 属性值中包含box类名的所有元素
+        var boxs = document.getElementsByClassName('box');
+        // 获取页面中所有的div元素
+        var divs = document.getElementsByTagName('div');
+
+        console.log(main);
+        console.log(boxs);
+        console.log(divs)
+
+        // 使用querySelector('css选择器')获取单个元素
+        // 如果有多个元素匹配css选择器，则只返回找到的第一个元素
+        var box1 = document.querySelector('box');
+        // 使用querySelectorAll()方法获取多个元素
+        var boxAll = document.querySelectorAll('.box');
+        // 即使它只找到了一个元素，也会以类数组的形式返回元素
+        var main2 = document.querySelectorAll('#main');
+        console.log(box1);
+        console.log(boxAll);
+        console.log(main2)
+    </script>
+</body>
+
+</html>

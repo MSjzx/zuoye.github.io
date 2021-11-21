@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="600" height="400" id="mycanvas">
+        浏览器不支持 canvas标签 请升级
+
+    </canvas>
+    <script>
+        // 获取canvas元素
+        var mycanvas = document.getElementById('mycanvas');
+        // 获取画布的上下文对象 画笔
+        var myContext = mycanvas.getContext('2d');
+
+        // 使用strokeRect(x,y,width,heght)绘制矩形
+        // x,y表示矩形左上角的坐标，width height矩形的宽高
+        myContext.strokeRect(100, 100, 200, 100);
+    </script>
+</body>
+
+</html>

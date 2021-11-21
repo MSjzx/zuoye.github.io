@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 可以对完整的 URI 进行 urlencoded 解码
+        var url1 = decodeURI('http://127.0.0.1:3868/code/03-%E4%BD%BF%E7%94%A8%EF%BC%A1jax%E6%96%B9%E6%B3%95%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82.html')
+
+        // 可以对完整的 URI 进行 urlencoded 编码
+        var url2 = encodeURI('http://127.0.0.1:3868/code/03-使用Ａjax方法发送请求.html')
+
+        // encodeURIComponent() 方法可以对 URI 中的片段进行编码
+        var str1 = 'name=周胜&age=22&gender=男&phone=120&address=不知道&hobbies=爱玩手机&birther=2021-10-21&remark=爱玩手机&id": 163471115588&date=2021/10/2';
+        var url3 = encodeURIComponent(str1)
+        // name%3D%E5%91%A8%E8%83%9C%26age%3D22%26gender%3D%E7%94%B7%26phone%3D120%26address%3D%E4%B8%8D%E7%9F%A5%E9%81%93%26hobbies%3D%E7%88%B1%E7%8E%A9%E6%89%8B%E6%9C%BA%26birther%3D2021-10-21%26remark%3D%E7%88%B1%E7%8E%A9%E6%89%8B%E6%9C%BA%26id%22%3A%20163471115588%26date%3D2021%2F10%2F2
+
+        // decodeURIComponent() 方法可以对 URI 中的片段进行解码
+        var url4 = decodeURIComponent(url3)
+        console.log(url1)
+        console.log(url2)
+        console.log(url3)
+        console.log(url4)
+    </script>
+</body>
+</html>

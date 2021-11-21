@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+    <title>Document</title>
+    <style>
+        .goods-list {
+            width: 900px;
+            padding: 20px;
+            border: 2px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .goods-list-item {
+            width: 200px;
+        }
+        
+        .goods-list-item img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .shoppingcart {
+            width: 900px;
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #ccc;
+        }
+        
+        .cart-item {
+            border: 2px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .cart-item img {
+            width: 60px;
+            height: auto;
+            /* margin-right: auto; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="goods-list">
+        <div class="goods-list-item" draggable="true" data-good-id="1">
+            <img src="images/rabbite1.jpeg" draggable="false" alt="">
+            <p>双兔傍低走</p>
+            <p>29.99</p>
+        </div>
+        <div class="goods-list-item" draggable="true" data-good-id="2">
+            <img src="images/rabbite2.jpeg" draggable="false" alt="">
+            <p>大耳兔</p>
+            <p>19.99</p>
+        </div>
+        <div class="goods-list-item" draggable="true" data-good-id="3">
+            <img src="images/rabbite3.jpeg" draggable="false" alt="">
+            <p>短尾兔</p>
+            <p>20.00</p>
+        </div>
+        <div class="goods-list-item" draggable="true" data-good-id="4">
+            <img src="images/rabbite4.jpeg" draggable="false" alt="">
+            <p>美人兔</p>
+            <p>39.99</p>
+        </div>
+    </div>
+
+    <div class="shoppingcart">
+        请将商品拖拽至此处
+    </div>
+
+    <script>
+        // 1. 为商品元素设置属性 draggable="true"，为 img 元素设置 draggable="false"
+
+        // 2. 获取所有的商品元素
+        var goods = document.querySelectorAll('.goods-list-item');
+
+        // 3. 为所有的商品元素注册拖拽事件
+        goods.forEach(function(good) {
+            good.ondragstart = function(evt) {
+                console.dir(evt.target.dataset.goodId)
+                console.dir(evt.target.children[0].src)
+                console.dir(evt.target.children[1].innerText)
+                console.dir(evt.target.children[2].innerText)
+
+                // 4. 当商品被拖拽时，使用事件对象的 dataTransfer 保存数据
+                // evt.dataTransfer.setData('id', evt.target.dataset.goodId);  // 商品ID
+                // evt.dataTransfer.setData('img', evt.target.children[0].src);  // 图片路径
+                // evt.dataTransfer.setData('name', evt.target.children[1].innerText);  // 商品名称
+                // evt.dataTransfer.setData('price',evt.target.children[2].innerText);  // 商品单价
+
+                evt.dataTransfer.setData('good', JSON.stringify({
+                    'id': evt.target.dataset.goodId, // 商品
+                    'img': evt.target.children[0].src, // 图
+                    'name': evt.target.children[1].innerText,
+                    'price': parseFloat(evt.target.children[2].innerText),
+                }))
+            };
+        });
+
+        // 5. 获取购物车元素
+        var cart = document.querySelector('.shoppingcart');
+
+        // 6. 为购物车元素注册 ondragover 事件
+        cart.ondragover = function(evt) {
+            evt.preventDefault();
+            if (!cart.children.length) {
+
+                evt.target.innerText = '释放鼠标即可将商品加入购物车';
+            }
+        };
+
+        // 7. 为购物车元素注册 ondragleave 事件
+        cart.ondragleave = function(evt) {
+            evt.preventDefault();
+            if (!cart.children.length) {
+
+                evt.target.innerText = '请将商品拖拽至此处';
+            }
+        };
+
+        // 8. 创建数组，用于保存已经添加过的商品列表
+        var shoppingCart = [];
+
+        // 9. 为购物车元素注册 ondrop 事件
+        cart.ondrop = function(evt) {
+            evt.preventDefault();
+
+            // var id = evt.dataTransfer.getData('id');  // 获取图片路径
+            // var img = evt.dataTransfer.getData('img');  // 获取图片路径
+            // var name = evt.dataTransfer.getData('name');  // 获取商品名称
+            // var price = evt.dataTransfer.getData('price');  // 获取商品单价
+
+            var obj = JSON.parse(evt.dataTransfer.getData('good'))
+
+            console.log(obj)
+
+            var good = shoppingCart.find(function(ele) {
+                return ele.id === obj.id
+            });
+
+            if (good) {
+                // 当前商品已经加入过购物车
+                console.log('当前商品已经加入过购物车')
+                good.count++;
+            } else {
+                // 当前商品还未加入过购物车，将拖拽进来的商品信息记录到 shoppingCart 数组中
+                // shoppingCart.push({
+                //     id: id,
+                //     img: img,
+                //     name: name,
+                //     price: price,
+                //     count: 1
+                // });
+
+                shoppingCart.push(Object.assign({
+                    count: 1
+                }, obj))
+            }
+
+            // var string = '';
+            // // 遍历购物车中的商品信息
+            // for (let i = 0; i < shoppingCart.length; i++) {
+            //     string += '<div class="cart-item" id="'+ shoppingCart[i].id +'">\
+            //         <img src="'+ shoppingCart[i].img +'" alt="">\
+            //         <div>'+ shoppingCart[i].name +'</div>\
+            //         <div>'+ shoppingCart[i].count +'</div>\
+            //         <div>'+ shoppingCart[i].price +'</div>\
+            //     </div>'
+            // }
+
+            var string = shoppingCart.map(function(obj) {
+                return '<div class="cart-item" id="' + obj.id + '">\
+                    <img src="' + obj.img + '" alt="">\
+                    <div>' + obj.name + '</div>\
+                    <div>' + obj.count + '</div>\
+                    <div>' + obj.price + '</div>\
+                </div>';
+            }).join('');
+
+            // 计算总价
+            var total = shoppingCart.reduce(function(total, obj) {
+                total += obj.price * 100 * obj.count;
+                return total;
+            }, 0)
+
+            string += '<p>' + (total / 100).toFixed(2) + '￥</p>';
+
+            cart.innerHTML = string;
+
+
+            // console.log(string)
+
+            // var cartItem = document.createElement('div');
+            // var goodImg = document.createElement('img');
+            // var goodName = document.createElement('div');
+            // var goodPrice = document.createElement('div');
+            // var goodCount = document.createElement('div');
+
+            // cartItem.classList.add('cart-item');
+            // goodImg.src = img;
+            // goodName.innerText = name;
+            // goodPrice.innerText = price;
+            // goodCount.innerText = 0;
+
+            // cartItem.appendChild(goodImg);
+            // cartItem.appendChild(goodName);
+            // cartItem.appendChild(goodCount);
+            // cartItem.appendChild(goodPrice);
+
+            // cart.appendChild(cartItem);
+
+        };
+    </script>
+
+</body>
+
+</html>

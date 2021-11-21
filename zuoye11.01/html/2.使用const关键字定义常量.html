@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.const关键字是用来定义常量的 一经定义不允许修改 否则会报错
+        const foo = 'hello';
+        foo = 'world'; //invalid assignment to const 'foo'
+        console.log(foo)
+            // 2.在定义变量时 必须要赋值否则会出错
+        const bar; //missing = in const declaration
+        //3.在同一作用域下 不能重复定义同名的常量 否则会报错
+        const bar = '123';
+        const bar = '456'
+
+        // 4.常量的声明不会被提升 必循先定义 让后再使用否则会报错
+        console.log(PI)
+        const PI = 3.14
+            // 5.常量也会被束缚到代码块中 在代码块外不能使用
+        let obj = {
+            name: 'yuayua',
+            age = '20'
+        }
+        for (const key in obj) {
+            console.log(key, obj[key])
+        }
+        console.log(key) //会报错
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 数组中过滤一些满足条件的元素
+        // 例如 返回年龄大于25的人员
+
+        var arr1 = [{
+            name: '张三',
+            age: 22
+        }, {
+            name: '李四',
+            age: 26
+        }, {
+            name: '王五',
+            age: 21
+        }, {
+            name: '赵六',
+            age: 28
+        }, {
+            name: '周七',
+            age: 30
+        }];
+        var result = arr1.filter(function(person, index, array) {
+            return person.age >= 25;
+        })
+        console.log(result)
+    </script>
+</body>
+
+</html>

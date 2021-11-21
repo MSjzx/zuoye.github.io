@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <h1>Hello jQuery</h1>
+        <h1>Hello jQuery</h1>
+        <h1>Hello jQuery</h1>
+    </div>
+
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        $(function () {
+
+            // 使用索引获取 jQuery 对象中的 DOM 元素
+            // console.log($('h1'))
+            // console.log($('h1')[0])
+            // console.log($('h1')[1])
+            // console.log($('h1')[1])
+
+            // 使用 get(index) 方法获取 jQuery 对象中的 DOM 元素
+            // console.log($('h1').get(0))
+            // console.log($('h1').get(1))
+            // console.log($('h1').get(2))
+            
+            // 获取 jQuery 对象中 DOM 元素的数量
+            // console.log($('h1').length)
+
+            // jQuery 方法用法二：怎样将 DOM 元素转换成 jQuery 对象
+            var headings = document.querySelectorAll('h1');
+            // console.log(headings)
+            // console.log($(headings))
+
+            // jQuery 方法用法三：根据 HTML 字符串创建 jQuery 对象
+            $('<h1>Hello World</h1>').appendTo('body')
+
+            // 怎样将 JQuery 对象转换成 DOM 对象
+            // 使用 get(index) 获取 jQuery 对象中 DOM 元素
+            // 使用 toArray() 方法将 jQuery 对象转换成 Array 对象
+            console.log($('h1').toArray())
+
+
+
+        })
+    </script>
+</body>
+</html>

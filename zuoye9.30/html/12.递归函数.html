@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 递归函数指的是一个函数在他的函数体内调用其自身
+        // 递归函数会反复调用自身 直至遇到结束条件(递归地边界/出口)
+        // 示例一:1到100之间的累加
+
+        function sum(num) {
+            if (num == 1) {
+                return 1;
+            } else {
+                return num + sum(num - 1);
+            }
+        }
+        console.log(sum(100))
+
+        // 示例二:汉诺塔游戏
+        function hangame(n, a, b, c) {
+            if (n == 1) {
+                console.log(n + '号盘从' + a + '移动到' + c);
+            } else {
+                hangame(n - 1, a, c, b)
+                console.log(n + '号盘从' + a + '移动到' + c)
+                hangame(n - 1, b, a, c)
+            }
+        }
+        hangame(3, 'A', 'B', 'C')
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function get(url) {
+            // 创建 XMLHttpRequest 对象
+            var xhr = new XMLHttpRequest();
+
+            // 监听 readyState 属性的变化
+            xhr.onreadystatechange = function () {
+                console.log(xhr.readyState)
+                if (xhr.readyState == 4 && xhr.status >= 200 && xhr.status < 300) {
+                    // 如果 readyState 属性变成 4，说明请求完成了
+                    // 如果 status 属性的值为 200 至 299 之间的状态码，说明请求成功了
+                    console.log(JSON.parse(xhr.response))
+                    console.log(xhr)
+                }
+            };
+
+            xhr.open('get', url);
+            xhr.send(null);
+        }
+
+        function post(url, data, type) {
+            // 创建 XMLHttpRequest 对象
+            var xhr = new XMLHttpRequest();
+
+            // 监听 readyState 属性的变化
+            xhr.onreadystatechange = function () {
+                console.log(xhr.readyState)
+                if (xhr.readyState == 4 && xhr.status >= 200 && xhr.status < 300) {
+                    // 如果 readyState 属性变成 4，说明请求完成了
+                    // 如果 status 属性的值为 200 至 299 之间的状态码，说明请求成功了
+                    console.log(JSON.parse(xhr.response))
+                    console.log(xhr)
+                }
+            };
+
+            xhr.open('post', url);
+
+            if (type == 'json') {
+                data = JSON.stringify(data);
+                xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+            } else if (type == 'urlencoded') {
+                data =  Object.entries(data).map(function (pair) {
+                return pair[0] + '=' + pair[1];
+                }).join('&');
+
+                // 进行 URL 编码
+                data = encodeURI(data);
+
+                // 设置请求头，告诉服务器数据的编码
+                xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded; charset=utf-8');
+            } else {
+                xhr.setRequestHeader('Content-Type', 'text/plain; charset=utf-8');
+            }
+
+            xhr.send(data);
+        }
+
+        // 1. 发送 JSON 格式的数据
+        var obj = {
+            "name": "周胜",
+            "age": "22",
+            "gender": "男",
+            "phone": "120",
+            "address": "不知道",
+            "hobbies": "爱玩手机",
+            "birther": "2021-10-21",
+            "remark": "爱玩手机",
+            "id": 1634711155889,
+            "date": "2021/10/20"
+        };
+
+        post('', obj, 'json')
+       
+    </script>
+</body>
+</html>

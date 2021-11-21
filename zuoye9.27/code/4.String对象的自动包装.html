@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //    普通的字符串
+        var str1 = 'Hello World';
+        // String 类型的对象
+        var str2 = new String('Hello World');
+        // 使用字符串对象的length 属性获取字符串的长度
+        console.log(str2.length); //11
+        console.log(str2.split('o')); //['Hell','W','rld']
+
+        // str1是一个普通的字符串，为什么我们可以字符串一样使用它呢
+        console.log(str1.length); //11
+        console.log(str1.split('o')); //['Hell','W','rld']
+
+        //当我们把普通的字符串当成对象使用时　ＪＳ解析引擎会自动地将字符串临时包装（转换）成字符串对象。
+        // 我们可以使用下面的代码解释自动包装的过程
+        var temp = new String(str1);
+        temp.length
+        temp.split('o')
+
+        // 自动包装后的字符串对象　只存在与你使用它的属性或方法的那一刻
+        console.log(typeof str1); //'string'
+
+        // 今后我们想使用String对象的方法和属性时 不必主动地创建String对象 直接把普通的字符串 当成String对象使用
+    </script>
+</body>
+
+</html>

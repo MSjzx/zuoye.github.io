@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            background-color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./cat.jpeg" alt="" id="cat">
+    <canvas width="600" height="400" id="mycanvas">
+        你的浏览器不支持 canvas 标签，请升级浏览器。
+    </canvas>
+    <script>
+        // 获取canvas 元素
+        var myCanvas = document.getElementById('mycanvas');
+        // 获取画布的上下文对象 画笔
+        var myContext = myCanvas.getContext('2d');
+        // 准备要绘制的图片方式一 获取页面中已有的图片
+        var img = document.getElementById('cat');
+        // 监听图片加载完成后的onload事件
+        img.onload = function() {
+            console.log('图片加载完成')
+                // myContext.drawImage(img, x, y);
+                // myContext.drawImage(img, 0, 0);
+                // myContext.drawImage(img, x, y, drawWidth, drawHeight);
+                // myContext.drawImage(img, 0, 0, 100, 100);
+                // 从原图中选取一个区域 绘制到画板上
+                // myContext.drawImage(img,srcX,srcY,scrWidth,scrHeight,drawX,drawY,drawWidth,drawHight);
+            myContext.drawImage(img, 104, 74, 490, 390, 0, 0, 100, 100)
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.Object对象
+        var obj1 = {
+            name: '张三',
+            sayName: function() {
+                console.log('大家好，我叫' + this.name)
+            }
+        };
+        // 2.Array 数组
+        var arr1 = [1, 2, 3];
+        // 3.Date日期
+        var date1 = new Date();
+        // 4.RegExp正则
+        var reg2 = new RegExp('foo', 'igm');
+
+        // 使用instanceof 操作符检测某个对象是否时某个构造函数的实例
+        // 判断obj1是否是通过Object构造函数创建的
+        console.log(obj1 instanceof Object);
+        console.log(arr1 instanceof Array);
+        console.log(date1 instanceof Date);
+        console.log(reg2 instanceof RegExp);
+        console.log(arrr1 instanceof Date);
+
+        // 但是我们判断其他对象是否时object的实例时 返回的结果是true
+        console.log(arr1 instanceof Object);
+        console.log(date1 instanceof Object);
+        console.log(reg2 instanceof Object);
+    </script>
+</body>
+
+</html>

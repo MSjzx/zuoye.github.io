@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1. HTML 页面中有些元素默认值就支持跨域请求（获取与当前页面不同源的资源）。
+        例如，img，script，video，audio，link
+    -->
+
+    <!-- img 可以加载来自于其他服务器的图片 -->
+    <!-- <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp17.qhimg.com%2Fbdr%2F__%2Fd%2F_open360%2Fcg1028%2F43.jpg&refer=http%3A%2F%2Fp17.qhimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1637372022&t=94e2d1b98689dfcfc319d090c50fd9d0" alt=""> -->
+    
+    <!-- script 标签可以引入 CDN 服务器上 JS 文件 -->
+    <!-- <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.js"></script> -->
+
+
+    <!-- 2. JSONP （JSON Padding） 就是利于 <script> 标签具有的跨域功能，间接进行跨域请求。
+            JSONP 技术需要前后台进行配合，前台将某个方法的名称告诉后台，后台会返回一端 JS 代码，代码中的内容就是对前台方法的调用。
+     -->
+
+     <!-- 使用 script 向非同源的服务器发送请求，并将页面中的某个方法的名字告诉目标服务器 -->
+    <script>
+
+        function callback(data) {
+            console.log(data)
+        }
+
+    </script>
+    <script src="http://localhost:8080/mgt/api/student/jsonpdemo?cb=callback"></script>
+   
+</body>
+</html>

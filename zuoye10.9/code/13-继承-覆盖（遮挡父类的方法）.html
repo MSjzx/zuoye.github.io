@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // 创建构造函数 Rectangle 矩形
+        function Rectangle(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        // 用于求矩形面积的方法
+        Object.defineProperty(Rectangle.prototype, 'getArea', {
+            enumerable: false,
+            configurable: true,
+            writable: true,
+            value: function () {
+                return '矩形的面积为：'+ this.width * this.height;
+            }
+        });
+
+        
+        // 创建构造函数 Square 正方形
+        function Square (size) {
+            this.width = size;
+            this.height = size;
+        }
+
+        // 正方形也需要求面积和对角线，可以让正方形继承矩形
+        Square.prototype = Object.create(Rectangle.prototype, {
+            constructor: {
+                value: Square,
+                enumerable: false,
+                configurable: true,
+                writable: true
+            },
+            // Square.prototype 原型对象中 getArea() 会覆盖 Rectangle.prototype 原型对象中 getArea
+            getArea: {
+                enumerable: false,
+                configurable: true,
+                writable: true,
+                value: function () {
+                    return '正方形的面积为：'+ this.width * this.height;
+                }
+            }
+        });
+
+        var squ1 = new Square(60)
+
+        console.log(squ1.getArea())
+
+        console.log(squ1)
+
+
+        
+       
+
+    </script>
+</body>
+</html>

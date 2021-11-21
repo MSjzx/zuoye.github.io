@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str1 = 'This is my computer.This is my book.'
+
+        // 使用字面量（直接量）
+        var reg1 = /hello/;
+        // replace()和replaceAll()替换字符串
+        console.log(str1.replace('is', 'arr'));　
+        console.log(str1.replace(/is/g, 'are'));
+        console.log(str1.replace(/\bis\b/, 'are'))
+        console.log(str1.replaceAll('is', 'are'))
+
+        // search() 
+        console.log(str1.search(/is/)); // 2
+        console.log(str1.search(/iss/)); // -1
+
+        // match
+        console.log(str1.match(/is/g))
+
+        // split()
+        console.log(str1.split(/\bis\b/)
+    </script>
+</body>
+
+</html>

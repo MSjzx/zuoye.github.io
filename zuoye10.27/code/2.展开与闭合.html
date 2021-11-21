@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 400px;
+            height: 400px;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" id="show">闭合</button>
+    <button type="button" id="hide">展开</button>
+    <button type="button" id="toggle">展开和闭合切换</button>
+    <div id="box"></div>
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            // 获取div#box元素
+            var $box = $('#box')
+                // 显示按钮 并为其注册点击事件
+            $('#show').click(function() {
+                    //$box.slidUp()
+                    $box.slideUp(3000, 'linear', function() {
+                        console.log('slide finish!')
+                    })
+                })
+                //隐藏按钮，并为其注册点击事件
+            $('#hide').click(function() {
+                    $box.slideDown(3000, 'swing', function() {
+                        console.log('slide finish!')
+                    })
+                })
+                // 显示和隐藏切换
+            $('#toggle').click(function() {
+                $box.slideToggle(3000, 'linear', function() {
+                    console.log('toggle finish')
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

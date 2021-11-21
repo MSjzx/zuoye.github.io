@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./iconfont.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <!-- 开始验证 -->
+        <div class="line" onclick="stps(0)">
+            <div class="stp">
+                <i class="iconfont icon-jieshu"></i>
+            </div>
+        </div>
+        <!-- 邮箱验证 -->
+        <div class="line" onclick="stps(1)">
+            <div class="stp">
+                <i class="iconfont icon-youxiang"></i>
+            </div>
+        </div>
+        <!-- 生物验证 -->
+        <div class="line" onclick="stps(2)">
+            <div class="stp">
+                <i class="iconfont icon-zhiwenshezhi"></i>
+            </div>
+        </div>
+        <!-- 用户确认 -->
+        <div class="line" onclick="stps(3)">
+            <div class="stp">
+                <i class="iconfont icon-yonghu"></i>
+            </div>
+        </div>
+    </div>
+    <a href="#" onclick="window.location.reload()">重置</a>
+    <script>
+        var lines = document.getElementsByClassName("line")
+        var stp = document.getElementsByClassName("stp")
+
+        function stps(val) {
+            for (var i = 0; i <= val; i++) {
+                stp[i].style.border = " 1px solid #00b894";
+                stp[i].style.boxShadow = "inset 0 0 20px #00b894 , 0 0 20px #00b894";
+                lines[i].style.setProperty('color', '#00b894');
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>

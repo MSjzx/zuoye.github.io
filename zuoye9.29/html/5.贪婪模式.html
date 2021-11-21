@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var html = '<div>hello</div><div>world</div>';
+        var reg = /<div>.*<\/div>/g;
+
+
+
+        //匹配并捕获日期(\d{4})[\-\/]?(\d{1,2})[\-\/]?(\d{1,2})
+        /* 
+                  2021-9-29
+                  2021-09-09
+                  2021/7/9
+                  20210909
+              
+        */
+
+        /* 
+        \(?\d{4}[\-\)\.]?\d{3}[\.\-]?\d{4}
+
+
+        0371-5748269
+        (0396)9584672
+        5589.854.7542
+        8541-546-8475
+        85247584695
+        
+        */
+
+        /* 
+            ^[0-9A-z]{6,18}@(qq|126|163|139)\.com
+        
+            485716895@qq.com
+            11223gisag@126.com
+            985987599@163.com
+            chengLw@139.com
+
+        
+        */
+
+        /* ```javascript
+
+        ```(javascript|js)[\n\w]*
+    </script>
+</body>
+
+</html>

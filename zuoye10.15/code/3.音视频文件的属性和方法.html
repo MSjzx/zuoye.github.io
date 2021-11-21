@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <video>
+        <source src="./videos/tears-of-steel-battle-clip-medium.mp4" type="video/mp4">
+        <source src="./videos/tears-of-steel-battle-clip-medium.webm" type="video/webm">
+        <p>你的浏览器不支持视频标签，请更换一个浏览器查看。</p>
+
+    </video>
+    <p>
+        <button type="button" id="play">播放</button>
+        <button type="button" id="pause">暂停</button>
+        <button type="button" id="volume_up">音量+</button>
+        <button type="button" id="volume_down">音量-</button>
+        <button type="button" id="replay">重新播放</button>
+    </p>
+    <script>
+        var video = document.querySelector('video');
+        var play = document.querySelector('#play');
+        var pause = document.querySelector('#pause');
+        var volumup = document.querySelector('#volume_up');
+        var volumdown = document.querySelector('#volume_down');
+        var replay = document.querySelector('#replay');
+
+        play.onclick = function() {
+            video.play();
+        };
+        pause.onclick = function() {
+            video.pause();
+        };
+        volumeUp.onclick = function() {
+            var volume = video.volume * 10;
+            if (volume < 10) {
+                volume += 2;
+            }
+            video.volume = volume / 10
+            console.log(video.volume)
+        };
+        volumdown.onclick = function() {
+            var volum = video.volume * 10;
+            if (volume > 0) {
+                volum -= 2;
+            }
+            video.volum = volum / 10
+            console.log(video.volume)
+        };
+
+        replay.onclick = function() {
+            // 重新加载资源
+            video.load();
+            video.play()
+        };
+        console.dir(video)
+            // 使用play()方法让视频播放
+            // 使用pasue()方法 可以暂停视频
+            // duration属性可以获取当前视频的总长度 以秒为单位
+            // curenTime 当前视频播放进度 以秒为单位
+            // volume 播放当前视频的音量 取值范围是0-1
+            // pause 视频是否处于暂停状态 false表示正在播放 true表示处于暂停
+            // videoWidth videoHeight 视频的实际尺寸
+    </script>
+</body>
+
+</html>

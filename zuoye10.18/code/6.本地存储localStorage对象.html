@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 访问05文档保存的数据
+        console.log(localStorage.getItem('name'));
+        console.log(localStorage.getItem('age'));
+
+        // 遍历同源文档存储的所有数据
+        // lenght属性表示的是同源文档保存的所有数据的位量
+        // key(index)方法可以用来根据索引获取键名
+        for (var i = 0; i < localStorage.length; i++) {
+            console.log(localStorage.key(i)); //键名
+            console.log(localStorage.getItem(localStorage.key(i))); //键名对应的键值
+        }
+    </script>
+</body>
+
+</html>

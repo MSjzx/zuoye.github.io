@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">box1</div>
+    <script>
+        var box1 = document.querySelector('#box1');
+        box1.ondragover = function(evt) {
+            evt.preventDefault();
+        };
+        box1.ondrop = function(evt) {
+            evt.preventDefault();
+
+            // evt.dataTransfer.files这是FileList对象，
+            // FileList中保存的都是拖拽进来的File对象
+            console.log(evt.dataTransfer.files)
+            var fileList = evt.dataTransfer.files;
+            // 使用FileReader对象读取文件中的内容
+            var reader = new FileReader();
+            reader.onload = function() {
+                var img = document.createElement('img');
+                img.src = reader.result;
+                document.body.appendChild(img)
+                console.log(reader.result)
+            };
+            reader.readAsDataURL(fileList[0])
+        }
+    </script>
+</body>
+
+</html>

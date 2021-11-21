@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 3.全局样式 */
+        
+        *,
+         ::after,
+         ::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* 图片列表的样式 */
+        
+        #img_box {
+            width: 750px;
+            height: 340px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .img-list {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        /* 5.指示符号的样式 */
+        
+        #carousel {
+            width: 790px;
+            position: relative;
+        }
+        
+        .circle-list {
+            height: 24px;
+            width: 140px;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.4);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -70px;
+        }
+        
+        .circle-list-item {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+        
+        .active {
+            background-color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="carousel">
+        <!-- 1.图片列表 -->
+        <div id="img_box">
+            <div class="img-list">
+                <div class="img-list-item">
+                    <img src="../img/banner-1.jpg" alt="">
+                </div>
+                <div class="img-list-item">
+                    <img src="../img/banner-2.jpg" alt="">
+                </div>
+
+                <div class="img-list-item">
+                    <img src="../img/banner-3.jpg" alt="">
+                </div>
+
+                <div class="img-list-item">
+                    <img src="../img/banner-4.jpg" alt="">
+                </div>
+
+                <div class="img-list-item">
+                    <img src="../img/banner-5.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!--2. 指示符号 -->
+        <div class="circle-list">
+            <div class="circle-list-item active"></div>
+            <div class="circle-list-item"></div>
+            <div class="circle-list-item"></div>
+            <div class="circle-list-item"></div>
+            <div class="circle-list-item"></div>
+        </div>
+    </div>
+    <script>
+        // 6. 获取小点
+        var circles = document.getElementsByClassName('circle-list-item');
+
+        // 7. 获取图片的共同父元素
+        var imgList = document.getElementsByClassName('img-list')[0];
+
+        // 8. 创建 count 变量，用于记录当前显示图片的索引
+        var count = 1;
+
+        // 9.创建自动轮播的方法
+        function autoPlay() {
+            imgList.autoPlayId = setInterval(function() {
+                // 10. 如果轮播最后一张图片时，让 count 重新归零
+                if (count > 4) {
+                    count = 0;
+                }
+
+                // 15. 先去除所有小点上的 active 类名
+                for (var i = 0; i < circles.length; i++) {
+                    circles[i].classList.remove('active');
+                }
+
+                // 16. 为当前显示的图片对应的小点加上 active 类型
+                circles[count].classList.add('active');
+
+
+
+                // 11. 计算移动的距离 = -（图片索引 * 图片宽度）
+                var target = count * -790;
+
+                // 12. 移动元素
+                imgList.style.left = target + 'px';
+
+                // 13. count 加一，表示下一次应该轮播下一张图片
+                count++;
+
+            }, 2000)
+        }
+        // 14.调用aytoPlay()方法，开启自动轮播
+        autoPlay();
+        // 17.当鼠标放到图片上时，停止轮播
+        imgList.onmouseover = function() {
+                // 18. 清除定时器
+                clearInterval(imgList.autoPlayId);
+            }
+            // 19.当鼠标移出图片区域时 启动轮播
+        imgList.onmouseout = function() {
+                // 20.调用autoPlay()方法 重新开启轮播
+                autoPlay();
+            }
+            // 21.遍历所有小点
+        for (var j = 0; j < circles.length; j++) {
+            // 22.为当前遍历出来的小点创建自定义属性，用于记录当前j的值
+            circles[j].idx = j;
+            // 23.为小点注册事件
+            circles[j].onmouseover = function() {
+                // 24.让自动轮播与焦点轮播的索引同步
+                count = this.idx;
+                // 25.当鼠标放到小点上时，停止自动轮播
+                clearInterval(imgList.autoPlayId);
+                // 26.清除其他小点上的active类名
+                for (var k = 0; k < circles.length; k++) {
+                    circles[k].classList.remove('active');
+                }
+                // 27.给当前鼠标放上去的那个小点加上active类名
+                this.classList.add('active');
+                // 28.计算要移动的距离=鼠标放上去的小点索引*-图片的宽度
+                var targrt = this.idx * -790;
+                // 29.设置图片共同的父元素的left值 可以实现移动图片的效果
+                imgList.style.left = targrt + 'px';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

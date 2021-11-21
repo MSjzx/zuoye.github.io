@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            background-color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="600" height="400" id="mycanvas">
+        你的浏览器不支持 canvas 标签，请升级浏览器。
+    </canvas>
+    <script>
+        // 获取canvas元素
+        var myCanvas = document.getElementById('mycanvas');
+        // 获取画布的上下文对象(画笔)
+        var myContext = myCanvas.getContext('2d');
+        // ellipse(x,y,radiusX,radiusY,rotation,startRadian,endRadian,顺时针还是逆时针)
+        // x,y表示椭圆的中心点坐标
+        // radiusX表示椭圆在水平方向上的半径
+        // radiusY表示椭圆在垂直方向上的半径
+        // rotation控制椭圆的旋转，值为弧度
+        // startRadian 起始弧度
+        // endRadian结束弧度
+        myContext.ellipse(300, 200, 200, 100, Math.PI * 0.5, 0, 2 * Math.PI, false);
+        myContext.stroke();
+    </script>
+</body>
+
+</html>

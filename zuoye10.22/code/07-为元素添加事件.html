@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <h1 class="heading">Hello jQuery1</h1>
+        <h1 class="heading">Hello jQuery2</h1>
+        <h2 class="heading">Hello jQuery3</h2>
+        <h2 class="heading">Hello jQuery4</h2>
+    </div>
+
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        $(function () {
+
+            // 选择所有的 h1 元素，并给他们注册点击事件
+            // $('h1').on('click', function (evt) {
+            //     console.log($(this).text())
+            // });
+
+            // 由于点击事件太常用了，jQuery 为我们提供一个简单的方法
+            // $('h2').click(function () {
+            //     console.log($(this).text())
+            // });
+
+            // 注册只触发一次的事件
+            $('h1').one('click', function () {
+                console.log('hello')
+                $(this).css({
+                    color: 'red',
+                    border: '2px solid #0f0',
+                    backgroundColor: 'blue'
+                })
+            }).on('mouseover', function () {
+                $(this).css('fontWeight', 'normal');
+            })
+
+
+
+            // 如果不指定要删除的事件，则会删除元素身上注册的所有事件
+            // $('h1').off();
+            $('h1').off('mouseover');
+
+        })
+    </script>
+</body>
+</html>

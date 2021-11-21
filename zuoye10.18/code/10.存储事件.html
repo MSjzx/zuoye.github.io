@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="add" type="button" onclick="localStorage.setItem('name','元元')">新增数据</button>
+    <button id="add" type="button" onclick="localStorage.setItem('name','元元')">修改数据</button>
+    <button id="add" type="button" onclick="localStorage.removeItem('name','元元')">删除数据</button>
+
+    <script>
+        // 当使用sessionStorage 或localStorage存储数据时 会触发storage事件
+        window.onstorage = function(evt) {
+            console.log(evt)
+        };
+    </script>
+</body>
+
+</html>

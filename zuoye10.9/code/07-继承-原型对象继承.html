@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // 原型对象继承是 JS 中默认的继承方式，我们什么都不用做，对象默认就会继承原型对象中属性和方法。
+
+        // 1. 例如，任何使用 Object 构造函数或直接量（{}）创建的对象，其 [[Prototype]] 属性都会被自动赋值为 Object.prototype。
+        var obj = new Object();  // 等价于 {}
+            obj.name = '李四'
+
+        // obj 对象的原型对象就是 Object.prototype
+        console.log(Object.getPrototypeOf(obj) === Object.prototype);  // true
+
+        // Object.prototype 对象中的所有属性和方法都会被 obj 对象继承。
+        console.log(obj.toString());  // '[object Object]'
+
+        // 该方法只在 obj 对象自己的属性列表中查找，不会去原型对象中查找。
+        console.log(obj.hasOwnProperty('name'));  // true 判断对象中是否包含某个属性
+        console.log(obj.hasOwnProperty('toString'));  // false
+        
+        // in 操作符不仅会在 obj 对象自己的属性列表中查找，还会去原型对象中查找。
+        console.log('name' in obj);  // true
+        console.log('toString' in obj);  // true
+
+
+        // 2. 任何其他类型的对象（包括使用自定义构造函数创建的对象）都是间接地继承 Object.prototype。
+
+        var arr = new Array(1, 2, 3);
+
+        // arr 对象直接继承 Array.prototype
+        console.log(Object.getPrototypeOf(arr) === Array.prototype);  // true
+
+        // 由于 Array.prototype 继承 Object.prototype
+        console.log(Object.getPrototypeOf(Array.prototype) === Object.prototype);  // true
+
+        // 因此，arr 对象间接继承 Object.prototype
+   
+    </script>
+</body>
+</html>

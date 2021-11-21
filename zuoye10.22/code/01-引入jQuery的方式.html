@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 使用 CDN 服务器提供的 jQuery 库-->
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- 备选方案，防止 CDN 服务器挂掉 -->
+    <script>window.jQuery || document.write('<script src="./jquery-3.6.0.js"><\/script>');</script>
+
+    <script>
+
+        // 引入 jQuery 文件后，window 对象中会多两个属性，一个是 jQuery，另一个 jQuery 的别名 $
+        console.log(window)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // 创建构造函数 Rectangle 矩形
+        function Rectangle(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        // 用于求矩形面积的方法
+        Rectangle.prototype.getArea = function () {
+            return '矩形的面积为：'+ this.width * this.height;
+        };
+
+        // 求矩形对角线的长度
+        Rectangle.prototype.getDiagonal = function () {
+            return '矩形对角线的长度为：'+ Math.sqrt(this.width ** 2 + this.height ** 2);
+        };
+
+        // 创建构造函数 Square 正方形
+        function Square (size) {
+            this.width = size;
+            this.height = size;
+        }
+
+        // 正方形也需要求面积和对角线，可以让正方形继承矩形
+        Square.prototype = Object.create(Rectangle.prototype, {
+            constructor: {
+                value: Square,
+                enumerable: false,
+                configurable: true,
+                writable: true
+            }
+        });
+
+        // Object.create() 方法是用来创建 Object 类型的对象的
+        // 并且可以让我们指定新创建对象的原型对象是谁
+        // 并且还可以为对象添加新属性，还能指定属性的描述符
+
+        var squ1 = new Square(60)
+
+        console.log(squ1.getArea())
+        console.log(squ1.getDiagonal())
+
+        console.log(squ1)
+
+
+        
+       
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./vendor/boot/css/bootstrap.min.css">
+</head>
+
+<body>
+    body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">某某某管理系统</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">学员管理</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">教员管理</a>
+                    </li>
+                </ul>
+                <form class="d-flex" id="search">
+                    <input class="form-control me-2" type="search" name="keyword" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">aaassssssss</button>
+                </form>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">新建</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">姓名</th>
+                            <th scope="col">年龄</th>
+                            <th scope="col">性别</th>
+                            <th scope="col">爱好</th>
+                            <th scope="col">电话</th>
+                            <th scope="col">地址</th>
+                            <th scope="col">生日</th>
+                            <th scope="col">备注</th>
+                            <th scope="col">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form id="myform">
+                    <div class="mb-3 row">
+                        <label for="exampleInputEmail1" class="form-label col-sm-1">姓名：</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="name">
+                        </div>
+                        <label for="exampleInputEmail1" class="form-label col-sm-1">年龄：</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="age">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="exampleInputEmail1" class="form-label col-sm-1">性别：</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="gender">
+                        </div>
+                        <label for="exampleInputEmail1" class="form-label col-sm-1">爱好：</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="phone">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="exampleInputEmail1" class="form-label col-sm-1">电话：</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="address">
+                        </div>
+                        <label for="exampleInputEmail1" class="form-label col-sm-1">地址：</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="hobbies">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="exampleInputEmail1" class="form-label col-sm-1">生日：</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="birther">
+                        </div>
+                        <label for="exampleInputEmail1" class="form-label col-sm-1">备注：</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="remark">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">提交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./vendor/utils/utils.js"></script>
+    <script>
+        $(function() {
+
+        })
+    </script>
+</body>
+
+</html>

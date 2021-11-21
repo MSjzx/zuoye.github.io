@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+
+        // 我们前面已经用到了很多构造函数的方法。
+        
+        // 例如，Object 构造函数的一些常用方法
+        
+        // Object.keys()
+        // Object.isExtensible()
+        // Object.isFrozen()
+        // Object.isSealed()
+        // Object.getOwnPropertyDescriptor()
+        // Object.getOwnPropertyDescriptors()
+
+        // Object 构造函数的属性
+        // Object.prototype
+
+        // 例如，Array 构造函数的一些常用方法
+
+        // console.log(Array.isArray([]));  // 用于判断某个对象是否是数组
+        // Array.from();  // 把类数组或可枚举的对象转换成数组对象
+        // 例如，将类数组转换成数组对象
+        // var divs = document.querySelectorAll('div');
+        // console.log(Array.from(divs))
+
+        // Array.of();  // 可以用来创建数组，几乎等价于 new Array()，
+        // 例如，使用 of() 方法创建只有数字元素的数组
+        // var arr1 = new Array(5);  // 长度为 5 的空数组
+        // var arr2 = Array.of(5);  // [5]
+        // console.log(arr1, arr2)
+
+        // Array 构造函数的属性
+        // Array.prototype = {
+        //     pop: function () {},
+        //     push: function () {},
+        //     shift: function () {},
+        //     ...
+        // };
+
+        // 例如，Date 构造函数的一些常用方法
+        // Date.now();  // 获取当前时间的时间戳，等价于 new Date().getTime()
+        // Date 也有一个属性 prototype，属性值是一个对象，对象里面是一系列的方法
+
+        //  定义一个表示矩形的构造函数 Rectangle
+        function Rectangle (width, height) {
+            this.edges = 4;
+            this.width = width;
+            this.height = height;
+
+            this.getArea = function () {
+                return '矩形的面积为：' + this.width * this.height;
+            };
+        }
+
+
+        // 向构造函数中添加方法，检测某个对象是否是矩形
+        Rectangle.isRectangle = function (rect) {
+            return rect instanceof Rectangle;
+        };
+
+        // create() 方法，用于创建矩形对象
+        Rectangle.create = function (width, height) {
+            return new Rectangle(width, height);
+        };
+
+        var rect1 = new Rectangle(60, 30);
+
+        // 通过 create() 方法也可以创建矩形对象
+        var rect2 = Rectangle.create(60, 60);
+
+
+        // 使用 isRectangle() 方法检测某个对象是否是矩形
+        console.log(Rectangle.isRectangle([]));  // false
+        console.log(Rectangle.isRectangle({}));  // false
+        console.log(Rectangle.isRectangle(rect1));  // true
+        console.log(Rectangle.isRectangle(rect2));  // true
+
+
+        console.dir(Rectangle)
+
+    </script>
+</body>
+</html>

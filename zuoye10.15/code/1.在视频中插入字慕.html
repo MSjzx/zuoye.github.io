@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        video::cue {
+            background-image: linear-gradient(to bottom, dimgray, lightgray);
+            color: papayawhip;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 使用 video 元素可以在页面中插入视频 -->
+    <video controls>
+         <source src="./videos/tears-of-steel-battle-clip-medium.mp4" type="">
+         <source src="./videos/tears-of-steel-battle-clip-medium.webm" type="video/webm">
+         <!-- 使用track标签可以再视频中插入字幕 -->
+         <track default kind="subtitles" src="./zimu.vtt" srclang="zh" label="中文">
+         <track default kind="subtitles" src="./zimu2.vtt" srclang="en" label="英文">
+          <!-- 提示信息默认情况下是不显示的，当浏览器不支持标签时，才会显示。 -->
+        <p>你的浏览器不支持视频标签，请更换一个浏览器查看。</p>
+     </video>
+</body>
+
+</html>

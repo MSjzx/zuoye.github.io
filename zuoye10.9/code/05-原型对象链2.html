@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+
+        // 对象的 [[Prototype]] 属性指向谁？你的看这个对象是通过哪个构造函数创建的。
+
+        // 例如，arr 对象是通过 Array 构造函数创建的，因此 arr 对象 [[Prototype]] 属性就指向的构造函数 Array 的 prototype 属性。
+        var arr = new Array(1, 2, 3);
+
+        // 获取 arr 的 [[Prototype]] 属性的值
+        var proto = Object.getPrototypeOf(arr);
+
+        // 判断 proto 是否等于 Array 构造函数的 prototype 属性
+        console.log(proto === Array.prototype);  // true
+
+        // 由于 Array.prototype 的值也是个对象，什么类型的对象呢？Object
+        // 因此 Array.prototype 对象中 [[Prototype]] 属性指向 Object.prototype
+
+        console.log(Object.getPrototypeOf(Array.prototype) === Object.prototype)
+
+
+        console.log(arr)
+        console.dir(Array)
+        console.dir(Object)
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <p><input type="checkbox">学习
+    </p>
+    <p><input type="checkbox">吃饭
+    </p>
+    <p><input type="checkbox">睡觉
+    </p>
+    <p><input type="checkbox">游戏
+    </p>
+
+    <p><input type="button" id="checkAll" value="全选">
+    </p>
+    <p><input type="button" id="nocheckAll" value="取消全选">
+    </p>
+
+    <p><input type="button" id="checkno" value="反选">
+    </p>
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+
+            $('#checkAll').click(function() {
+
+                $(":checkbox").each(function() {
+                    this.checked = true
+
+
+
+                })
+            });
+
+
+            $('#nocheckAll').click(function() {
+                $(":checkbox").each(function() {
+
+
+
+                    this.checked = false
+                })
+            });
+            $('#checkno').click(function() {
+                $(":checkbox").each(function() {
+                    this.checked = !this.checked
+                })
+            });
+
+        })
+    </script>
+</body>
+
+</html>

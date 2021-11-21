@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            background-color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="600" height="400" id="mycanvas">
+浏览器不支持
+    </canvas>
+    <script>
+        // 获取canvas元素
+        var mycanvas = document.getElementById('mycanvas');
+        // 获取画布上下文对象 （画笔）
+        var myContext = mycanvas.getContext('2d');
+        // 使用fillRect(x,y,width,height)绘制矩形
+        // x，y表示矩形左上角的坐标 width height 矩形的宽高
+        myContext.fillRect(100, 100, 200, 100);
+        // 选取矩形区域 然后区域中的图形删除
+        myContext.clearRect(100, 100, 50, 50);
+    </script>
+</body>
+
+</html>

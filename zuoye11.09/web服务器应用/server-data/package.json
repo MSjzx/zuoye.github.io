@@ -1,0 +1,12 @@
+{
+    "name": "server-data",
+    "version": "1.0.0",
+    "description": "用于讲解怎样获取浏览器前台传入的数据",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "jzx",
+    "license": "ISC"
+}

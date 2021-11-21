@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+         ::after,
+         ::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 13.引入Chess.js，必须放到Board.js和Cell.js之前 -->
+    <script src="./Chess.js"></script>
+    <!-- 6.引入Cell.js必须要放到Board.js之前 -->
+    <script src="./Cell.js"></script>
+    <!-- 1. 引入表示面板的JS文件 Board.js -->
+    <script src="./Board.js"></script>
+</body>
+
+</html>

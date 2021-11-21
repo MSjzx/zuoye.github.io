@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+         ::before,
+         ::after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        #msg_box,
+        #msg_list {
+            width: 980px;
+            margin: 20px auto 0;
+            padding: 20px;
+            border: 1px solid #000;
+        }
+        
+        #msg_box>*+*,
+        #msg_list>*+* {
+            margin-top: 20px;
+        }
+        
+        #msg_list {
+            display: none;
+        }
+        
+        #msg {
+            width: 100%;
+        }
+        
+        #btn,
+        .del {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="msg_box">
+        <h2>有什么新鲜事想告诉大家？</h2>
+        <form action="">
+            <textarea id="msg" cols="30" rows="10"></textarea>
+            <p><span id="count">还可以输入340个字</span><button type="button" id="btn">发布</button></p>
+        </form>
+    </div>
+    <div id="msg_list"></div>
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            //    1.为输入框注册input 事件
+            $('#msg').on('input', function() {
+                    var messages = $(this).val().trim();
+                    var length = messages.length;
+                    if (length > 340) {
+                        messages = messages.substring(0.340) //截取字段
+                        $(this).val(messages)
+                        $('#count').text('不能再输入啦！！！')
+                    } else {
+                        $('#count').text('还可以输入' + (340 - length) + '个字')
+                    }
+                })
+                // 2.发布按钮注册点击事件
+            $('#btn').on('click', function() {
+                // 如果输入内部不为空 则进行发布操作
+                var messages = $('#msg').val();
+                if (messages.length) {
+                    // 判断消息列表的子元素是否为0，如果为0说明当前发布的是第一条消息 此时需要把消息列表显示出来
+                    if (!$('#msg_list').children().length) {
+                        $('#msg_list').css('display', 'block')
+                    }
+                    // 创建一条消息 并追加到消息列表的顶部
+                    $('<p>' + messages + '<button type="button" class="del">删除</button></p>').prependTo('#msg_list');
+                    $('.del').click(function() {
+                            // 删除按钮得父元素，也就是p
+                            $(this).parent().remove();
+                            // 当消息列表为空时 需要将消息列表隐藏
+                            if (!$('#msg_list').children().length) {
+                                $('#msg_list').css('display', 'none')
+                            }
+                        })
+                        // 清空输入框
+                    $('#msg').val('')
+                        // 回复还能输入得字数
+                    $('#count').text('还可以输入340个字');
+                } else {
+                    $('#count').text('消息内容不能为空！！！！').css({
+                        color: 'red',
+                        fontSize: '32px',
+                        fontWeight: 'bold'
+                    })
+                }
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>

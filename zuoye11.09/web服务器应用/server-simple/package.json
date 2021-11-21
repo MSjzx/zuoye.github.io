@@ -1,0 +1,14 @@
+{
+  "name": "server-simple",
+  "version": "1.0.0",
+  "description": "简单的web服务器",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "server"
+  ],
+  "author": "jzx",
+  "license": "ISC"
+}

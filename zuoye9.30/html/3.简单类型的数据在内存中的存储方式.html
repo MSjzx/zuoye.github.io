@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.String 类型
+        var str1 = 'abc';
+        // 当我们将一个变量的值赋给另一个变量时，会将变量中的至完全复制一份 然后
+        // 放到新创建的变量中
+        var str2 = str1;
+        // 当修改str1中保存的值时
+        str1 = 'def';
+        // 不会影响到str2中保存的值
+        console.log(str2); //'abc'
+    </script>
+</body>
+
+</html>

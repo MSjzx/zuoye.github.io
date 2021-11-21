@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        ::after,
+        ::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <div data-x="12" data-y="15" id="box"></div>
+
+    <script>
+        var box = document.getElementById('box')
+        console.dir(box.dataset.x )
+        console.dir(box.dataset.y )
+        console.dir(box.dataset )
+    </script>
+</body>
+</html>

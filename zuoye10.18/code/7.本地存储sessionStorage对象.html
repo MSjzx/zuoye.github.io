@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 以键值对的形式存储数据
+        sessionStorage.setItem('name', '李');
+        sessionStorage.setItem('age', '20');
+
+        // 根据键名获取对应的值
+        console.log(sessionStorage.getItem('name'));
+        console.log(sessionStorage.getItem('age'));
+        // 修改
+        sessionStorage.setItem('name', '张')
+            // 删除
+        sessionStorage.removeItem('name');
+        // 清空
+        sessionStorage.clear();
+    </script>
+</body>
+
+</html>

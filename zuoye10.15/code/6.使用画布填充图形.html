@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            background-color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="600" height="400" id="mycanvas">
+
+    </canvas>
+    <script>
+        // 获取canvas元素
+        var myCanvas = document.getElementById('mucanvas');
+        // 画笔
+        var myContext = myCanvas.getContext('2d');
+
+        // 1.绘制三角形
+        // 开启一条线
+        myContext.beginPath();
+        // 设置起点
+        myContext.moveTo(300, 100);
+        // 起点到目标
+        myContext.lineTo(400, 200);
+        // 绘制第二条
+        myContext.lineTo(200, 200);
+        // 结束线径
+        myContext.closePath();
+        // 设置填充颜色
+        myContext.fillStyle = '#fof';
+        // 填充图形
+        myContext.fill();
+
+        // 绘制五角星
+        // 2. 绘制五角星
+        myContext.beginPath();
+
+        drawStar(myContext, 30, 80, 300, 300, 0)
+
+        function drawStar(cxt, r, R, x, y, rot) {
+            cxt.beginPath();
+            for (let i = 0; i < 5; i++) {
+                cxt.lineTo(Math.cos((18 + i * 72 - rot) / 180 * Math.PI) * R + x, -Math.sin((18 + i * 72 - rot) / 180 * Math.PI) * R + y);
+
+                cxt.lineTo(Math.cos((54 + i * 72 - rot) / 180 * Math.PI) * r + x, -Math.sin((54 + i * 72 - rot) / 180 * Math.PI) * r + y);
+            }
+
+            cxt.closePath();
+            cxt.stroke();
+        }
+    </script>
+</body>
+
+</html>

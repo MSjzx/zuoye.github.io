@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <h1>Hello jQuery</h1>
+        <h1>Hello jQuery</h1>
+        <h1>Hello jQuery</h1>
+    </div>
+
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        $(function () {
+
+            // 用法一：用于获取文档中的 DOM 元素，用法与 document.querySelector/All() 很相似。
+            // 该方法返回的是一个 jQuery 类型的对象，对象的原型上提供很多好用的方法。
+            // 例如，获取文档中的所有 h1 标签
+            // $('h1')
+
+            // 当获取元素时，还传入第二个参数，用于指定查找范围。
+            // console.log($('h1', '#box'))
+
+            // 上面的写法类似于后代选择器 '#box h1'
+            // console.log($('#box h1'))
+        })
+    </script>
+</body>
+</html>

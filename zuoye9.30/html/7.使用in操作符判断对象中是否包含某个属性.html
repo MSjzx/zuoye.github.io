@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 创建对象
+        var obj = {
+            name: '张三',
+            age: 20,
+            gender: false,
+            sayName: function() {
+                console.log('我叫' + this.name + '。')
+            }
+        };
+
+        // 判断obj中是否有一个属性gender
+        console.log('gender' in obj); //true
+        console.log('name' in obj); //true
+        console.log('sayName' in obj); //true
+
+        // 当我们要访问的某个属性不存在时，则返回undefined.
+        // 当我们调用某个不存在的方法时 则会报错 说该属性不是一个函数
+        console.log(obj.phone); //undefined
+        // obj.sayHello();
+
+        // 你以后可能会看到别人使用另一种方式判断属性是否存在
+        if (obj.gender) {
+            console.log('属性存在')
+        } else {
+            console.log('属性不存在')
+        }
+        // 这样写是有问题的 例如 当gender=false
+        // 应该使用in操作符判断
+        console.log('gender' in obj)
+    </script>
+</body>
+
+</html>

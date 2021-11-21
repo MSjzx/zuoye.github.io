@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 普通的布尔值
+        var bool1 = true;
+
+        // 当使用new操作符调用Boolean()函数时，可以创建Boolean类型的对象
+
+        var bool2 = new Boolean(false);
+
+        // 当我们将Boolean()函数当成普通函数调用时，可以将其他类型的值转换成布尔值
+        console.log(Boolean(1)); //true
+        console.log(Boolean(0)); //false
+        console.log(Boolean('abc')); //true
+        console.log(Boolean('')); //false
+        console.log(Boolean(null)); //false
+
+        console.log(typeof bool1); //boolean
+        console.log(typeof bool2); //object
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            background-color: khaki;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="600" height="400" id="vas">
+
+    </canvas>
+    <script>
+        // 获取画布
+        var vas = document.querySelector('#vas');
+        // 获取上下文对象
+        var ext = vas.getContext('2d');
+        var col = 0,
+            row = 0;
+
+        // 创建img对象
+        var img = document.createElement('img');
+        img.src = './ph.png';
+        img.onload = function() {
+            // 从原图中截取一个区域 然会绘制到画板上
+            ext.clearRect(0, 0, 300, 200);
+            ext.drawImage(img, col * 62, row * 62, 62, 62, 248, 124, 62, 62);
+            col < 3 ? col++ : col = 0;
+            setTimeout(img.onload, 500)
+        };
+        // 监听键盘按下的事件
+        window.onkeydown = function(evt) {
+            switch (evt.keyCode) {
+                case 37:
+                    // left
+                    row = 1;
+                    break;
+                case 38:
+                    // up
+                    row = 3;
+                    break;
+                case 39:
+                    // right
+                    row = 2;
+                    break;
+                case 40:
+                    // down
+                    row = 0;
+                    break;
+                default:
+                    alert('请使用方向键')
+            }
+
+        }
+    </script>
+</body>
+
+</html>

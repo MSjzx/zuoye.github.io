@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="600" height="400" id="mycanvas">
+
+</canvas>
+    <script>
+        // 获取canvas元素
+        var myCanvas = document.getElementById('mycanvas');
+        // 获取画布上下对象 画笔
+        var myContext = myCanvas.getContext('2d');
+        // 开启线径
+        myContext.beginPath();
+        // s使用rect(x,y,width height）绘制矩形
+        // xy表示矩形左上角的坐标 width height 举行的宽高
+        myContext.rect(100, 100, 200, 100)
+            // 结束线径
+        myContext.closePath();
+        // 图形填充
+        myContext.stroke();
+    </script>
+</body>
+
+</html>

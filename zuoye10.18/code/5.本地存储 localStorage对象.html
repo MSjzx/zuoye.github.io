@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 使用locaStorage 对象以键值对的形式存储数据
+        localStorage.setItem('name', '元元');
+        localStorage.setItem('age', 20);
+        // 根据键名获取对应的键值
+        console.log(localStorage.getItem('name'));
+        console.log(localStorage.getItem('age'));
+        // 根据存储时使用键名修改对应的值
+        localStorage.setItem('name', '岁岁和元元');
+        localStorage.setItem('age', '20');
+        // 根据键名删除存储的数据
+        localStorage.removeItem('age');
+        // 清除同源文档(协议 域名 端口必须相同)存储的所有数据
+        // localStorage.claer();
+    </script>
+</body>
+
+</html>

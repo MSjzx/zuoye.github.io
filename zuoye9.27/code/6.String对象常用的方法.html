@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 普通的字符串
+        var str1 = 'Hello World';
+
+        // replace()替换字符串中的内容
+        // 如果patter是字符串，则仅替换第一个匹配项
+        console.log(str1.replace('llo', 'o'));
+
+        //获取字符串中的字串(不支持负的值)
+        // 例如 截取从索引2到9之间的字符串 不包含索引为9的字符
+        console.log(str1.substring(2, 9))
+
+        //slice()
+
+        console.log(str1.slice(2)); //'llo World'
+        console.log(str1.slice(-2)); //'ld'
+        console.log(str1.slice(2, 8)); //'llo Wo'
+        console.log(str1.slice(-8, -3)); //'lo Wo'
+
+        // 起始索引必须要比结束索引小，否则取不到任何值
+        console.log(str1.slice(-3, -8)); //
+    </script>
+</body>
+
+</html>

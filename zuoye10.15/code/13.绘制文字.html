@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            background-color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="600" height="400" id="mycanvas">
+        你的浏览器不支持 canvas 标签，请升级浏览器。
+    </canvas>
+    <script>
+        // 获取canvas元素
+        var myCanvas = document.getElementById('mycanvas');
+        // 获取画布的上下文对象  画笔
+        var myContext = myCanvas.getContext('2d');
+        // 设置字体的样式
+        // myContext.font = '48px 宋体';
+        // myContext.strokeStyle = '#f00';
+        // //  文字描边
+        // myContext.strokeText('Hello World', 100, 100, 400);
+
+        // 绘制文字 
+        myContext.font = '48px 宋体'
+        myContext.fillText('Hello World', 100, 100, 300);
+    </script>
+</body>
+
+</html>

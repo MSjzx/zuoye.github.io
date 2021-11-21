@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.toString = function () {
+                return '姓名：'+ this.name + ' 年龄：'+ this.age;
+            };
+        }
+
+
+        var p1 = new Person('李四', 20)
+        console.log(p1.fullName);  // undefined
+        console.log(p1.name);  // '李四'
+
+        console.log(p1.toString());  // '姓名：李四 年龄：20'
+        // console.log(p1.sayHello());  // 报错
+
+
+        // 当我们使用对象的属性或方法时，现在对象自己的属性列表中查找，
+        // 如果找不到，则然去原型对象中查找，如果原型对象也找不到，则去原型对象的原型对象中查找，
+        // 一直到 Object.prototype 对象，如果还找不到，则报错或返回 undefined。
+
+        // 如果多个原型对象中具有同名的属性或方法，则使用它找到的第一个。
+
+        console.log(p1)
+    </script>
+</body>
+</html>

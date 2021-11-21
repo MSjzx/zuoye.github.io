@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 通过变量(字面量)创建函数
+        // 1.1函数声明
+        // 函数声明会被提升到当前作用域的最顶端，因此我们可以在函数声明之前调用它。
+
+        // 函数声明之前调用函数
+        console.log(max(12.48)); //48
+
+        function max(a, b) {
+            if (a > b) {
+                return a;
+
+            } else {
+                return b;
+            }
+        }
+
+        // 1.2函数表达式
+        // 在函数定义之前调用函数 会抛出错误
+        console.log(min(12, 48))
+
+        // 将匿名函数赋值给变量
+        var min = function(a, b) {
+            if (a > b) {
+                return a;
+            } else {
+                return b;
+            }
+        }
+
+        // 解释为什么会出错
+        var min; //undefined
+        console.log(min);
+        min = function() {
+            if (a > b) {
+                return a;
+            } else {
+                return b;
+            }
+        }
+
+        // 2.通过构造函数创建函数
+        // 使用构造函数创建的函数不易于阅读和调式 不建议使用
+
+        // 不能函数定义之前的函数 否则会抛出错误
+        // console.log(sum(12,48))
+        var sum = new Function('a', 'b', 'return a + b');
+    </script>
+</body>
+
+</html>

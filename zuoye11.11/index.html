@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./iconfont.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="line" onclick="stps(0)">
+            <div class="stp">
+                <i class="iconfont icon-jieshu"></i>
+            </div>
+        </div>
+        <div class="line" onclick="stps(1)">
+            <div class="stp">
+                <i class="iconfont icon-youxiang"></i>
+            </div>
+        </div>
+        <div class="line" onclick="stps(2)">
+            <div class="stp">
+                <i class="iconfont icon-zhiwenshezhi"></i>
+            </div>
+        </div>
+        <div class="line" onclick="stps(3)">
+            <div class="stp">
+                <i class="iconfont icon-yonghu"></i>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var lines = document.getElementsByClassName("line")
+
+        function stps(val) {
+            for (var i = 0; i <= val; i++) {
+                lines[i].style.setProperty('color', '#00b894');
+            }
+        }
+    </script>
+</body>
+
+</html>

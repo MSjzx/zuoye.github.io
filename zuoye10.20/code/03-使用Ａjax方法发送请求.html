@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 创建 XMLHttpRequest 对象
+        var xhr = new XMLHttpRequest();
+
+        // 监听 readyState 属性的变化
+        xhr.onreadystatechange = function () {
+            console.log(xhr.readyState)
+            if (xhr.readyState == 4 && xhr.status >= 200 && xhr.status < 300) {
+                // 如果 readyState 属性变成 4，说明请求完成了
+                // 如果 status 属性的值为 200 至 299 之间的状态码，说明请求成功了
+                console.log(JSON.parse(xhr.response))
+                console.log(xhr)
+            }
+        };
+        
+        xhr.open('post', 'http://localhost:8080/mgt/api/student/new');
+
+        // 1. 发送 JSON 格式的数据
+        // var obj = {
+        //     "name": "周胜",
+        //     "age": "22",
+        //     "gender": "男",
+        //     "phone": "120",
+        //     "address": "不知道",
+        //     "hobbies": "爱玩手机",
+        //     "birther": "2021-10-21",
+        //     "remark": "爱玩手机",
+        //     "id": 1634711155889,
+        //     "date": "2021/10/20"
+        // };
+        // 如果请求的数据需要放到请求体中，则需要在请求头中指定数据所使用的编码。
+        // xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8')
+
+        // 2. 发送 application/x-www-form-urlencoded 编码的数据（表单提交默认使用的编码方式）
+        // name=value&name=value
+
+        // 准备好要发送的数据格式
+        var str = 'name=周胜&age=22&gender=男&phone=120&address=不知道&hobbies=爱玩手机&birther=2021-10-21&remark=爱玩手机';
+
+        // 使用 encodeURI() 方法对数据进行 application/x-www-form-urlencoded 编码
+        str = encodeURI(str);
+
+        xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded; charset=utf-8');
+
+        // 3. 发送纯文本
+        // xhr.setRequestHeader('content-type'., 'text/plain;charset=utf-8')
+
+        xhr.send(str);
+    </script>
+</body>
+</html>

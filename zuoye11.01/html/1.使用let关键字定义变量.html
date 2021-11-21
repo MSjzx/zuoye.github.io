@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. let 关键字也是用来定义变量的
+        // let str = 'hello';
+
+        // 2. 一次定义多个变量
+        // let str1 = 'hello', str2 = 'world';
+
+        // 3. 定义变量时，可以只声明不赋值，变量的值会被自动地赋值为 undefined。
+        // let foo;
+        // console.log(foo);  // undefined
+
+        // 4. 定义变量后，可以随时修改变量的值。
+        // let myname = '张三';
+        //     myname = '李四';
+        // console.log(myname)
+        // 
+        // 5.使用了他定义的变量不会被提升 因此需要先定义 在使用
+        // console.log(myname)
+        // let myname = '元元';
+        // 6. 同一作用域中不能定义多个同名的变量，否则会报错
+        // let myname = '赵江涛';
+        // let myname = '赵洪涛';
+
+        // 7.使用let定义的变量不会被挂载到window对象上
+        // let abc='yuayua'
+        // console.log(window);
+
+        // 8.在代码块中使用let关键字定义的变量会被束缚到代码块中
+        // 例如 if代码块中定义的变量 for循环中定义的变量  在代码块外部是不可以被访问到的
+        for (let j = 10; j < 20; j++) {
+            for (let i = 0; i < 10; i++) {
+                console.log(i, j)
+            }
+        }
+        if (true) {
+            let foo = 'bar'
+        }
+        console.log(foo)
+    </script>
+</body>
+
+</html>

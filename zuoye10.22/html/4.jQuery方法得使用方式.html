@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <h1>Hello jQuery</h1>
+        <h1>Hello jQuery</h1>
+        <h1>Hello jQuery</h1>
+    </div>
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            // 用法一：用于获取文档中得DOM元素 用法与document.querySelect/All()很相似
+            // 该方法返回一个jQuery类型得对象 对象的原型属性上提供很多好用的方法
+            // 例如 获取文档中所有h1标签
+            console.log($('h1'))
+        })
+    </script>
+</body>
+
+</html>

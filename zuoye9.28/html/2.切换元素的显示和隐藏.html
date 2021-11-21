@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #message_list {
+            width: 300px;
+            height: 300px;
+            padding: 20px;
+            border: 1px solid #000;
+            background-color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn" type="button">发布</button>
+    <div id="message_list"></div>
+    <script>
+        // 1.获取消息列表
+        var messageList = document.querySelector('#message_list');
+        // 2.获取按钮
+        var btn = document.querySelector('#btn');
+        // 3.声明变量flag，用与指示元素显示状态，true 表示处于显示状态
+        var flag = true;
+        //4.为按钮注册点击事件
+        btn.addEventListener('click', function() {
+            // 5.根据flag变量的值判断元素的显示状态
+            if (flag) {
+                // 6.如果flag=true,表示元素目前处于显示状态，需要把它隐藏掉
+                messageList.style.display = 'none';
+                // 7.将flag变量得值设置成false，表示元素已经被屏蔽掉了
+                flag = false;
+
+            } else {
+                // 8.如果flag=false 表示元素目前处于隐藏状态 需要把他显示出来
+                messageList.style.display = 'block';
+                // 9.将flag变量的值设置成ture 表示元素已经被显示出来了
+                flag = true;
+
+            }
+        });
+    </script>
+
+</body>
+
+</html>

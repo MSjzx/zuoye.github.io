@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            background-color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="600" height='400' id="mycanvas">
+       不支持该标签
+   </canvas>
+    <script>
+        //    获取canvas元素
+        var myCanvas = document.getElementById('mycanvas');
+        // 获取画布的上下文对象(画笔)
+        var myContext = myCanvas.getContext('2d');
+        // 开启一条线径
+        myContext.beginPath();
+        // 移动画笔的位置（设置画笔的起始点）
+        myContext.moveTo(300, 100);
+        // 从起始点向目标坐标画线
+        myContext.lineTo(400, 200);
+        // 绘制第二条线
+        myContext.lineTo(200, 200);
+        // 结束线径
+        myContext.closePath();
+
+        // 在绘制之前 可以设置画笔的特性
+        // 例如 设置画笔的颜色
+        myContext.strokeStyle = '#fof';
+        // 设置画笔的粗细
+        myContext.lineWidth = 4;
+        // 根据上面画笔得走向的描述 绘制线径
+        myContext.stroke();
+    </script>
+</body>
+
+</html>
